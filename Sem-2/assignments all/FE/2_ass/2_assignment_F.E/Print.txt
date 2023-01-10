@@ -1,0 +1,1283 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[1] Basic Calculator 
+--------------------------------------------------------------------------------------------
+
+<html>
+	<head>
+		<title>
+			1.Calculator
+		</title>
+		<link rel="stylesheet" href="1.css">
+		<script src="1.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div align="center">
+			<form>
+				<input type="text" id="result"><br><br></form>
+				<button class="button" value="C" onclick="getExpression('C')">C</button>
+				<button class="button" value="%" onclick="getExpression('%')">%</button>
+				<button class="button" value="+" onclick="getExpression('+')">+</button>
+				<button class="button" value="/" onclick="getExpression('/')">/</button><br><br>
+				<button class="button" value="7" onclick="getExpression('7')">7</button>
+				<button class="button" value="8" onclick="getExpression('8')">8</button>
+				<button class="button" value="9" onclick="getExpression('9')">9</button>
+				<button class="button" value="*" onclick="getExpression('*')">*</button><br><br>
+				<button class="button" value="4" onclick="getExpression('4')">4</button>
+				<button class="button" value="5" onclick="getExpression('5')">5</button>
+				<button class="button" value="6" onclick="getExpression('6')">6</button>
+				<button class="button" value="-" onclick="getExpression('-')">-</button><br><br>
+				<button class="button" value="1" onclick="getExpression('1')">1</button>
+				<button class="button" value="2" onclick="getExpression('2')">2</button>
+				<button class="button" value="3" onclick="getExpression('3')">3</button>
+				<button class="button" value="." onclick="getExpression('.')">.</button><br><br>
+				<button class="button" value="0" onclick="getExpression('0')">0</button>
+				<button class="button" value="=" onclick="getExpression('=')">=</button>
+			</form>
+		</div>
+	</body>
+</html>
+
+...............................................
+CSS
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffff;
+  background-color: hotpink;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: red}
+
+.button:active {
+  background-color: green;
+  box-shadow: black;
+  transform: translateY(4px);
+}
+input[type=text] {
+  border: 4px solid black;
+  border-radius: 90px;
+  width:250px;
+  height:50px;
+}
+...............................................
+JS
+
+function getExpression(e)
+{
+	var expression=sessionStorage.getItem("expression");
+	var flag=sessionStorage.getItem("flag");
+	var dot=sessionStorage.getItem("dot");
+	if( expression == null){
+		expression="";
+		sessionStorage.setItem("expression",expression);
+		sessionStorage.setItem("flag",0);
+		sessionStorage.setItem("dot",0);
+	}
+	if(e=="+" || e=="-" || e=="%" || e=="/" || e=="*"){
+		var count=sessionStorage.getItem("count");
+		if(flag==0){
+			alert("Wrong input!");
+		}
+		else{
+			expression=expression.concat(e);
+			sessionStorage.setItem("flag",0);
+			sessionStorage.setItem("dot",0);
+			sessionStorage.setItem("expression",expression);
+			document.getElementById("result").value=expression;
+		}
+	}
+	else if(e=="."){
+		if(dot==1){
+			alert("Wrong input!");
+		}
+		else{
+			expression=expression.concat(e);
+			sessionStorage.setItem("expression",expression);
+			sessionStorage.setItem("dot",1);
+			document.getElementById("result").value=expression;
+		}
+	}
+	else if( /\d/.test(e)){
+		expression=expression.concat(e);
+		sessionStorage.setItem("flag",1);
+		sessionStorage.setItem("expression",expression);
+		document.getElementById("result").value=expression;
+	}
+	else if(e=="=" && flag==0){
+		alert("Wrong input!");
+	}
+	else if(e=="=" ){
+		var result=eval(expression);
+		document.getElementById("result").value=result;
+		console.log(result);
+		sessionStorage.setItem("expression","");
+		sessionStorage.setItem("dot",0);
+		sessionStorage.setItem("flag",0);
+	}
+	else if(e=="C"){
+		sessionStorage.setItem("expression","");
+		sessionStorage.setItem("flag",0);
+		document.getElementById("result").value=null;
+	}
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[2] Form Field Validation(name, password, email, contact no)
+--------------------------------------------------------------------------------------------
+
+
+<html>
+<head>
+	<title>
+	2
+	</title>
+	<link rel="stylesheet" href="2.css">
+	<script type="text/javascript" src="2.js"></script>
+</head>
+<body>
+	<h3 align="center">Registration Form
+	<table align="center">
+	<form method="post" name="MyForm" onsubmit="return(validateForm());">
+		<tr>
+			<td>
+				<label for="name">Name-</label>
+			</td>
+			<td>
+				<input type="text" name="Name" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="contact_number">Contact number-</label>
+			</td>
+			<td>
+				<input type="text" name="Contact_number" maxlength="10">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="email">E-mail-</label>
+			</td>
+			<td>
+				<input type="text" name="Email" id="Email">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">Password-</label>
+			</td>
+			<td>
+				<input type="password" name="Password" id="password">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="submit">
+			</td>
+			<td>
+				<input type="reset" value="reset">
+			</td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
+
+....................................................
+CSS
+
+body{
+	background-color:pink;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:29px;
+}
+input{
+	border-radius:10px;
+	box-sizing:border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: brown;
+  border: none;
+  color: yellow;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 30px 33px;
+  cursor: pointer;
+}
+....................................................
+JS
+
+function validateForm()
+{
+	if(document.MyForm.Name.value == "" || /\d/.test(document.MyForm.Name.value))
+	{
+		alert("Enter your name correctly!");
+		document.MyForm.Name.focus();
+		return false;
+	}
+	if(document.MyForm.Contact_number.value=="" || /\D/.test(document.MyForm.Contact_number.value) || (document.MyForm.Password.value).length<8){
+		alert("Please provide your contact number!");
+		document.MyForm.Contact_number.focus();
+		return false;
+	}
+	if(document.MyForm.Email.value=="" || (document.MyForm.Email.value).indexOf("@")<1 || ((document.MyForm.Email.value).indexOf("."))-((document.MyForm.Email.value).indexOf("@"))<2){
+		alert("Please provide your email!");
+		document.MyForm.Email.focus();
+		return false;
+	}
+	if(document.MyForm.Password.value=="" || (document.MyForm.Password.value).length<8 ||  /\s/.test(document.MyForm.Password.value) ||  /\W/.test(document.MyForm.Password.value)){
+		alert("Please provide password!");
+		document.MyForm.Password.focus();
+		return false;
+	}
+	return true;
+	
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[3] Image change on mouse over event
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+<title>
+3
+</title>
+<script language="javascript" type="text/javascript">
+	function changeImage()
+	{
+		var number=Math.floor(Math.random() * 2);
+		var imageSrc="C:\Users\Harsh\Pictures\FlashIntegro\Screenshot_0.jpg","C:\Users\Harsh\Pictures\10.jpg"];
+		
+		document.getElementById("image").src=imageSrc[number];
+	}
+</script>
+</head>
+<body>
+<p align="center">
+<img src="C:\Users\Harsh\Pictures\FlashIntegro\Screenshot_0.jpg" width="510px" height="470px" onmouseover="changeImage()" id="image">
+</p>
+</body>
+</html>
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[4] Random Image change on mouse over event
+--------------------------------------------------------------------------------------------
+
+
+<html>
+<head>
+	<title>
+	4
+	</title>
+	<script language="jacvascript" type="text/javascript">
+		function changeImage()
+		{
+			var number=Math.floor(Math.random() * 4);
+			var imageSrc=["C:\Users\Harsh\Pictures\FlashIntegro\Screenshot_0.jpg","C:\Users\Harsh\Pictures\10.jpg"];
+			document.getElementById("image").src=imageSrc[number];
+			}
+	</script>
+</head>
+<body>
+	<p align="center">
+	<img src="C:\Users\Harsh\Pictures\10.jpg" width="1500px" onmouseover="changeImage()" id="image">
+	</p>
+	</body>
+</html>
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[5] Display your browser properties
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+5
+	</title>
+	<link rel="stylesheet" href="5.css">
+</head>
+<body>
+	<table align="center"  >
+		<tr>
+				<td>
+						Is Cookie Enabled?
+				</td>
+				<td id="cookie_enabled"></td>
+					<script  type="text/javascript" language="javascript">
+					document.getElementById("cookie_enabled").innerHTML= navigator.cookieEnabled;
+				</script>
+				</tr>
+			<tr>
+				<td>
+						Application Name
+				</td>
+				<td id="App_name"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App_name").innerHTML= navigator.appName;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Application Code Name
+				</td>
+				<td id="App_codename"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App_codename").innerHTML= navigator.appCodeName;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Engine Name
+				</td>
+				<td id="browser_name"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_name").innerHTML= navigator.product;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						App Version
+				</td>
+				<td id="App version"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App version").innerHTML= navigator.appVersion;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Agent
+				</td>
+				<td id="browser_agent"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_agent").innerHTML= navigator.userAgent;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Platform
+				</td>
+				<td id="browser_platform"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_platform").innerHTML= navigator.platform;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Language
+				</td>
+				<td id="browser_language"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_language").innerHTML= navigator.language;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Is Browser Online?
+				</td>
+				<td id="browser_online"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_online").innerHTML= navigator.onLine;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Is Browser Java Enabled?
+				</td>
+				<td id="java_enabled"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("java_enabled").innerHTML= navigator.javaEnabled();
+				</script>
+			</tr>
+
+		</table>
+		
+		
+</body>
+</html>
+
+
+
+CSS
+
+th, td {
+  border-bottom: 1px dotted #ddd;
+  padding: 15px;
+  text-align: left;
+   height: 50px;
+  vertical-align: bottom;
+}
+table {
+  border: 1px solid black;
+}
+	
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[6] Open a new window on button click even 
+--------------------------------------------------------------------------------------------
+
+
+<html>
+<head>	<title>6
+	</title>
+<link rel="stylesheet" href="6.css">
+<script type="text/javascript" language="javascript">
+	function newWindow()
+	{
+		window.open();
+	}
+</script>
+</head>
+<body>
+	<h3 align="center">Click
+	<table align="center">
+	<form method="post">
+		<tr>
+			<td>
+				<button class="button" onclick="newWindow()">Click</button>
+			</td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
+
+
+CSS
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 35px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffff;
+  background-color: purple;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 9px pink;
+}
+
+.button:hover {background-color: white}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[7] Move values from one list box to another 
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+	7
+	</title>
+	<link rel="stylesheet" href="7.css">
+	<script>
+		function moveToSelected()
+		{
+			var x = document.getElementById("food");
+			var i=x.selectedIndex;
+	var y=x.options[i].text;
+			var option = document.createElement("option");
+			option.text =y;
+			document.getElementById("veggies").add(option);
+			x.options.remove(i);
+		}
+		function moveToUnselected()
+		{
+			var x = document.getElementById("veggies");
+			var i=x.selectedIndex;
+			var y=x.options[i].text;
+			var option = document.createElement("option");
+			option.text =y;
+			document.getElementById("food").add(option);
+			x.options.remove(i);
+		}
+			
+</script>
+</head>
+<body>
+<h2 align="center" >
+	<form>
+		  <select id="food"  class="myselect">
+			<option>Wafer</option>
+   			<option>Biscuits</option>
+			<option>Col Drink</option>
+			<option>Juice</option>
+			<option>Cholcolate</option>
+			  </select>
+		</form>
+			<button class="button"  id="button1" onclick="moveToSelected()">Move to Selected</button>
+			<button class="button"  id="button1" onclick="moveToUnselected()">Move to Unselected</button>
+		<form>
+			<select  id="veggies" class="myselect">
+			<option></option>
+			</select>
+		</form>
+	</h2>
+	</body>
+</html>
+
+
+
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:25px;
+}
+.myselect {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 30%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+.myselect::-ms-expand {
+    display: none;
+}
+
+.myselect:hover {
+    border-color: #888;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #000ff0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #0ffff0;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.select {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    appearance: none;
+    background-color: #fff;
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[8] Make country, state and city combo box and fill these combo boxes according to user’s 
+ choice of country.
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+	8
+	</title>
+	<link rel="stylesheet" href="8.css">
+	<script type="text/javascript" src="8.js"></script>
+</head>
+<body>
+  <form>
+		<label>Select country:</label>
+		<select class="myselect" id="country" size="2" onchange="getStates()">
+			<option value="India">India</option>
+			<option value="Australia">Australia</option>
+		</select>
+ </form>
+ <form>
+		<label>Select state:</label>
+		<select class="myselect" id="state" size="4" onchange="getCities()">		</select>
+ </form>
+ <form action="ShowLocation.html">
+		<label>Select city:</label>
+		<select class="myselect" id="city" size="4" onchange="getLocation()">
+		</select>
+		<input type="submit" value="submit">
+		<input type="reset" value="reset">
+ </form>
+</body></html>
+
+
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:20px;
+}
+.myselect {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 30%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+.myselect::-ms-expand {
+    display: none;
+}
+
+.myselect:hover {
+    border-color: #888;
+}
+/* Focus style */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+  width:100px;
+  height:50px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text]{
+	border-radius:4px;
+	box-sizing:border-box;
+	height:30px;
+}
+.select{
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    appearance: none;
+    background-color: #fff;
+}
+..................................................
+JS
+
+function getStates()
+{
+	var India=["Gujarat","Delhi"];
+	var Australia=["Tasmania","Victoria"];
+	var states=new Map();
+	states.set("India",India);
+	states.set("Australia",Australia);
+	var x=document.getElementById("country");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var states_display = states.get(y);
+	for(var i=0;i<states_display.length;i++)
+	{
+		var option=document.createElement("option");
+		option.text=states_display[i];
+		document.getElementById("state").add(option);
+	}
+	sessionStorage.setItem("location","Country:"+y+"<br>State:");
+}
+function getCities()
+{
+	var Gujarat=["Ahmedabad","Surat"];
+	var Delhi=["Faridabad","Agra"];
+	var Tasmania=["Hobert","Burnie"];
+	var Victoria=["Ararat","Colac"];
+	var cities=new Map();
+	cities.set("Gujarat",Gujarat);
+	cities.set("Delhi",Delhi);
+	cities.set("Victoria",Victoria);
+	cities.set("Tasmania",Tasmania);
+	var x=document.getElementById("state");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var cities_display = cities.get(y);
+	for(var i=0;i<cities_display.length;i++)
+	{
+		var option=document.createElement("option");
+		option.text=cities_display[i];
+		document.getElementById("city").add(option);
+	}
+	var location=sessionStorage.getItem("location");
+	location=location+y;
+	sessionStorage.setItem("location",location+"<br>City");
+}
+function getLocation()
+{
+	var x=document.getElementById("city");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var location=sessionStorage.getItem("location");
+	location=location+y;
+	sessionStorage.setItem("location",location);
+}
+function printLocation(){
+	document.getElementById("location").innerHTML=sessionStorage.getItem("location");
+}
+	 
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[9] Display the list of food items and cold drinks, ask user to select the items and generate the 
+bill 
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+9
+	</title>
+	<link rel="stylesheet" href="9.css">
+	<script type="text/javascript" src="9.js"></script>	</head>
+<body>
+
+	<form >			<label>Select coldrinks:</label>
+				<select class="myselect" id="colddrinks">
+					<option value="Pepsi-Rs 50">Pepsi-Rs 50</option>
+					<option value="Bear-Rs 50">Bear-Rs 50</option>
+					<option value="Water-Rs 30">Water-Rs 30</option>
+					<option value="Maaza-Rs 60">Maaza-Rs 60</option>
+				</select>
+		
+				<label>Select food:</label>
+				<select class="myselect" id="fooditems">
+					<option value="Machronies-Rs 100">Machronies-Rs 100</option>
+					<option value="Pasta-Rs 50">Pasta-Rs 50</option>
+					<option value="Maggie-Rs 80">Maggie-Rs 80</option>
+					<option value="Dhosa-Rs 150">Dhosa-Rs 150</option>
+				</select>
+		</form>
+		<button class="button" onclick="moveSelectedColdDrink()" >Add Coldrink</button>
+		<button class="button" onclick="moveSelectedFoodItems()" >Add Fooditem</button>
+		<form action="Bill.html">
+				<label>Selected coldrinks:</label>
+				<select class="myselect" id="selected_colddrinks" size="4">
+				</select>
+				<label>Selected foodItems:</label>
+				<select class="myselect" id="selected_fooditems" size="4">
+				</select>
+				<input type="submit" value="submit"  class="button" onclick="getBill()">
+		</form>
+		<button class="button" onclick="removeSelectedColdDrink()">Remove Coldrink</button>
+		<button class="button" onclick="removeSelectedFoodItems()">Remove Fooditem</button>
+	</body>
+</html>
+
+...............................................
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:20px;
+}
+.myselect {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 35%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.05);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+.myselect::-ms-expand {
+    display: none;
+}
+
+.myselect:hover {
+    border-color: #888;
+}
+/* Focus style */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+  width:100px;
+  height:50px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text]{
+	border-radius:4px;
+	box-sizing:border-box;
+	height:30px;
+}
+.select {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    appearance: none;
+    background-color: #fff;
+}
+
+...............................................
+JS
+
+function moveSelectedColdDrink()
+{
+	var x=document.getElementById("colddrinks");
+	var selected_index=x.selectedIndex;
+	
+	var option=document.createElement("option");
+	option.text=x.options[selected_index].text;
+	console.log(option.text);
+	document.getElementById("selected_colddrinks").add(option);
+}
+function moveSelectedFoodItems()
+{
+	var x=document.getElementById("fooditems");
+	var selected_index=x.selectedIndex;
+	
+	var option=document.createElement("option");
+	option.text=x.options[selected_index].text;
+	console.log(option.text);
+	document.getElementById("selected_fooditems").add(option);
+}
+function removeSelectedColdDrink()
+{
+	var x = document.getElementById("selected_colddrinks");
+	var i=x.selectedIndex;
+	x.options.remove(i);
+}
+function removeSelectedFoodItems()
+{
+	var x = document.getElementById("selected_fooditems");
+	var i=x.selectedIndex;
+	x.options.remove(i);
+}
+function getBill()
+{
+	var total=0;
+	var bill="";
+	var colddrinks=document.getElementById("selected_colddrinks");
+	var fooditems=document.getElementById("selected_fooditems");
+	for(var i=0;i<colddrinks.length;i++){
+		var item=colddrinks.options[i].text;
+		bill=bill.concat(item);
+		bill=bill+"<br>";
+		total = total + parseInt(item.slice((item.indexOf("Rs"))+3,item.length));
+	}
+	bill=bill+"<br>";
+	for(var i=0;i<fooditems.length;i++){
+		var item=fooditems.options[i].text;
+		bill=bill.concat(item);
+		bill=bill+"<br>";
+		total = total + parseInt(item.slice((item.indexOf("Rs"))+3,item.length));
+	}
+	bill=bill+"<br>";
+	bill=bill+"Total:";
+	bill=bill+total;
+	sessionStorage.setItem("bill",bill);
+}
+function printBill()
+{
+	document.getElementById("Bill").innerHTML=sessionStorage.getItem("bill");
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[10] Display the current time and update it after every 1 second.(using date object)
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+10
+	</title>
+</head>
+<body>
+<h2>
+<p align="center" id="time"></h2>
+</p>	<script>
+		window.onload=function() {
+			getTime();
+		}
+		function getTime()
+		{
+			var today=new Date();
+			var hrs=today.getHours();
+			var min=today.getMinutes();
+			var sec=today.getSeconds();
+			min=formatDigits(min);
+			sec=formatDigits(sec);
+		document.getElementById("time").innerHTML=hrs+":"+min+":"+sec;
+setInterval("getTime()",1000);
+		}
+		function formatDigits(digit)
+		{
+			if(digit<10){
+				digit="0"+digit;
+			}
+			return digit;
+		}
+	</script>
+</body>
+</html>
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[11] Display random quotes on button click.
+--------------------------------------------------------------------------------------------
+
+
+<html><head><title>11</title>
+<link rel="stylesheet" href="11.css">
+<script language="jacvascript" type="text/javascript">
+	function changeQuote()
+	{
+		var number=Math.floor(Math.random() * 4);
+		var quoteSrc=["Life is Too Short to Argue Just say Get lost ” — Harsh Dedakiya",
+		"“Don't Spend time on Girlfrien Spend Time on Carrier” — Aryan Hiarapara ",
+		"“Fun is Fun Without Fun Evrything is Hawan” — Trupal Lathiya",
+		"“Don't You Copmare with me .” — Nidhi Chavda",
+		" “I am the Smartest Girl Here"— Ekta agja"
+		];
+		document.getElementById("quotes").innerHTML=quoteSrc[number];
+	}</script>
+</head>
+<body>
+	<p align="center" style="padding-top=100px;">
+		<div id="quotes">
+			“Everything is impossible if you don't have willing to do that.” — Baba RanchodDas Chanchad
+		</div>
+		<button onclick="changeQuote()" class="button">Click to change Quote</button>
+	</p>
+</body>
+</html>
+
+....................................................
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:25px;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[12] Add a new entry in combo box dynamically 
+--------------------------------------------------------------------------------------------
+
+
+<html><head><title>
+	12	</title>
+	<link rel="stylesheet" href="12.css">
+		<script>
+	function moveToSelected()
+		{
+			var flag=0;
+			var items=document.getElementById("Fruits");
+			var element = document.getElementById("newElement").value;
+			for(var i=0;i<items.length;i++)
+			{
+				if(!element.toLowerCase().localeCompare((items.options[i].text).toLowerCase())){
+					flag=1;
+					break;
+				}
+			}
+			if(flag==0)
+			{
+				var option = document.createElement("option");
+				option.text =element;
+				document.getElementById("Fruits").add(option);
+				}
+		}
+	</script>
+</head>
+<body>
+<div align="center">
+	<form>
+		  <label>Enter Fruitsr which you want to add:</label><input type="text" id="newElement">
+	</form>
+	<button class="button"  id="button1" onclick="moveToSelected()">Add</button><br><br>
+		<form>
+		  <select id="Fruits"  class="myselect">
+			<option>Santru</option>
+			<option>Ananas</option>
+			<option>Sakatati</option>
+			<option>Tarbuch</option>
+		  </select>
+		</form>
+	</div>
+	</body>
+</html>
+
+
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:25px;
+}
+.myselect {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 30%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-apAnanasance: none;
+    -webkit-apAnanasance: none;
+    apAnanasance: none;
+    background-color: #fff;
+}
+
+.myselect::-ms-expand {
+    display: none;
+}
+
+.myselect:hover {
+    border-color: #888;
+}
+/* Focus style */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text]{
+	border-radius:4px;
+	box-sizing:border-box;
+	height:30px;
+}
+.select {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    apAnanasance: none;
+    background-color: #fff;
+}

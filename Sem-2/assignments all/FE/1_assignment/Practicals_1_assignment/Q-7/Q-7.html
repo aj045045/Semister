@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------------------------------------------------<br>
+// 7.Write HTML code to draw a rectangle using Canvas and fill color in gradient from red to pink from start to end<br>
+-------------------------------------------------------------------------------------------------------------------------<br>
+
+<html> 
+<body> 
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid black" ></canvas> 
+<script> 
+var c = document.getElementById("myCanvas"); 
+var ctx= c.getContext("2d"); 
+var grd=ctx.createLinearGradient(0,0,200,0); 
+grd.addColorStop(0,"red"); 
+grd.addColorStop(1,"pink"); 
+ctx.fillStyle=grd; 
+ctx.fillRect(20,20,250,100); 
+ctx.stroke(); 
+</script> 
+</body> 
+</html>

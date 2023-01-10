@@ -1,0 +1,25 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers With Function]
+Sub :Advance Programming
+Roll.no :36
+
+**********************************************************************
+[12(7)] Copy one string to another string.
+**********************************************************************
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char* copyString(char s[])
+{	char* s2;
+    s2 = (char*)malloc(20);
+    strcpy(s2, s);
+    return (char*)s2;}
+int main()
+{   char s1[20];
+    char* s2;
+    printf("Enter the Word - ");
+    gets(s1);
+    s2 = copyString(s1);
+    printf("Copied string - %s", s2);
+    return 0;}

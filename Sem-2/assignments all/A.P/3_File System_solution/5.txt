@@ -1,0 +1,45 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :3[File System]
+Sub :Advance Programming
+Roll.no :36
+
+*******************************************************************************
+[5] Write a program to reverse a given linked list.
+*******************************************************************************
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+ 
+int main()
+{
+   FILE *fp;
+   char ch;
+ 
+   fp = fopen("hello.txt","r");
+ 
+   if(fp ==  NULL)
+   {
+       printf("File not found. \n");
+   }
+   else
+   {
+       printf("File is opening..... \n\n");
+       while((ch = fgetc(fp)) != EOF )
+       {
+           printf("%c", ch);
+       }
+    }
+ 
+    fclose(fp);
+ 
+    return 0;
+}
+
+*******************************************************************************
+OUTPUT:
+*******************************************************************************
+
+File is opening
+File not found

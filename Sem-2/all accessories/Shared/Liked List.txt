@@ -1,0 +1,156 @@
+
+
+// malloc.cpp : Defines the entry point for the console application.
+
+#include <stdio.h>
+#include <stdlib.h>
+void beginsert (int);
+struct node
+{
+  int data;
+  struct node *next;
+} *first = NULL, *temp, *last, *temp1;
+int choice;
+int
+main ()
+{
+  int ch, deletele, insertval;
+  struct node *temp;
+
+  do
+    {
+      temp = (struct node *) malloc (sizeof (struct node));
+      printf ("\n enter value :");
+      scanf ("%d", &temp->data);
+      temp->next = NULL;
+      if (first == NULL)
+	{
+	  first = temp;
+	  last = temp;
+	}
+      else
+    {
+     last->next = temp;
+    last = temp;
+    } 
+      printf ("enter [1]yes/[0]no : ");
+      scanf ("%d", &ch);
+
+    }
+  while (ch == 1);
+  
+  temp = first;
+  printf ("\n==========================================\n");
+  printf ("\t\tsingly link list");
+  printf ("\n==========================================\n");
+  while (temp != NULL)
+    {
+      printf ("\n %6d", temp->data);
+      temp = temp->next;
+    }
+  printf ("\n------------------------------------------\n");
+
+//delete
+  printf ("\n value to delete : ");
+  scanf ("%d", &deletele);
+  temp = first;
+  while (temp != NULL)
+    {
+      if (temp->data == deletele)
+	{
+	  temp1->next = temp->next;
+	  free (temp);
+	  break;
+	}
+      else
+	{
+	  temp1 = temp;
+	}
+      temp = temp->next;
+    }
+  temp = first;
+  printf ("\n==========================================\n");
+  printf ("\t\tSingly link list");
+  printf ("\n==========================================\n");
+  while (temp != NULL)
+    {
+      printf ("\n %6d", temp->data);
+      temp = temp->next;
+    }
+  printf ("\n------------------------------------------\n");
+
+  printf ("\n==========================================\n");
+  printf ("\t\tSingly link list ");
+  printf ("\n\t\t: Insert new node :");
+  printf ("\n==========================================\n");
+
+  printf ("\n enter where to add new node:");
+  scanf ("%d", &insertval);
+  temp = first;
+  while (temp != NULL)
+    {
+      if (temp->data == insertval)
+	{
+	  temp1 = (struct node *) malloc (sizeof (struct node));
+	  printf ("\n enter value");
+	  scanf ("%d", &temp1->data);
+	  temp1->next = temp->next;
+	  temp->next = temp1;
+	}
+      temp = temp->next;
+
+    }
+
+  printf ("\n------------------------------------------\n");
+  temp = first;
+  printf ("\n==========================================\n");
+  printf ("\t\tSingly link list");
+  printf ("\n==========================================\n");
+  while (temp != NULL)
+    {
+      printf ("\n %6d", temp->data);
+      temp = temp->next;
+    }
+  printf ("\n------------------------------------------\n");
+
+  printf ("Insertion before");
+  do
+    {
+      printf ("\nEnter the item which you want to insert?\n");
+      scanf ("%d", &ch);
+      beginsert (ch);
+      printf ("\nPress 0 to insert more ?\n");
+      scanf ("%d", &choice);
+    }
+  while (choice == 0);
+
+  return 0;
+}
+
+void
+beginsert (int ch)
+{
+  struct node *ptr = (struct node *) malloc (sizeof (struct node *));
+  if (ptr == NULL)
+    {
+      printf ("\nOVERFLOW\n");
+    }
+  else
+    {
+      ptr->data = ch;
+      ptr->next = first;
+      first = ptr;
+      printf ("\nNode inserted\n");
+      temp = first;
+      printf ("\n==========================================\n");
+      printf ("\t\tsingly link list");
+      printf ("\n==========================================\n");
+      while (temp != NULL)
+	{
+	  printf ("\n %6d", temp->data);
+	  temp = temp->next;
+	}
+      printf ("\n------------------------------------------\n");
+    }
+
+}

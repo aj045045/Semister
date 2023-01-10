@@ -1,0 +1,43 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers With Function]
+Sub :Advance Programming
+Roll.no :36
+
+**********************************************************************
+[12(4)]  Delete all occurrences of a string from another string
+**********************************************************************
+
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+  	char str[100], ch[100];
+  	int i, len , len2, j , k=0;
+ 
+  	printf("\n Please Enter 1 any String :  ");
+  	gets(str);
+  		printf("\n Please Enter 2 any String :  ");
+  	gets(ch);
+  	
+  
+	len = strlen(str);
+	   		len2 = strlen(ch);
+  	for(i = 0; i < len; i++)
+	{
+		if(str[i] == ch[k])
+		{
+			k++;
+			for(j = i; j < len; j++)
+			{
+				str[j] = str[j + 1];
+			}
+			len--;
+			i--;	
+		} 
+	}	
+	printf("\n The Final String after Removing All Occurrences of '%s' = %s ", ch, str);
+	
+  	return 0;
+}

@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------<br>
+//9. Draw a semi arc using HTML5 canvas.<br>
+-------------------------------------------------------------------------------<br>
+
+<html> 
+<body> 
+<canvas id="myCanvas" height="200" width="578" style="border:1px"></canvas> 
+<script> 
+var c = document.getElementById("myCanvas"); 
+var ctx = c.getContext("2d"); 
+ctx.beginPath(); 
+ctx.arc(288,75,70,0,Math.PI,false); 
+ctx.closePath(); 
+ctx.lineWidth=5; 
+ctx.fillStyle='red'; 
+ctx.fill(); 
+</script> 
+</body> 
+</html> 

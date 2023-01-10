@@ -1,0 +1,72 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers and Pointer Using Function]
+Sub :Advance Programming
+Roll.no :36
+
+/*******************************************************************************************************************
+[5] Write a program using pointers to implement the transpose of a matrix.
+*******************************************************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a[10][10], r, c, i, j, *ptr,m;
+    printf("Enter rows and columns of matrix: ");
+    scanf("%d %d", &r, &c);
+    ptr = (int *)malloc(r * c * sizeof(int)); 
+    printf("\nEnter elements of matrix:\n");
+    for(i=0; i<r; ++i)
+    {
+        for(j=0; j<c; ++j)
+        {
+            scanf("%d", &m);
+             *(ptr+ i*c + j)=m;
+        }
+    }
+    printf("\nMatrix using pointer is: \n");
+    for(i=0; i<r; ++i)
+    {
+        for(j=0; j<c; ++j)
+        {
+           printf("%d\t", *(ptr +i*c + j));
+        }
+        printf("\n");
+    }
+    printf("\nTranspose of Matrix:\n");
+    for(i=0; i<c; ++i)
+    {
+        for(j=0; j<r; ++j)
+        {
+             printf("%d\t",*(ptr +j*c + i));
+        }
+        printf("\n");
+   }
+   return 0;
+}
+
+/*********************************************************************************************************************
+OUTPUT:
+********************************************************************************************************************/
+Enter rows and columns of matrix: 2 4
+
+Enter elements of matrix:
+1
+2
+3
+4
+5
+6
+7
+8
+
+Matrix using pointer is: 
+1       2       3       4
+5       6       7       8
+
+Transpose of Matrix:
+1       5
+2       6
+3       7
+4       8

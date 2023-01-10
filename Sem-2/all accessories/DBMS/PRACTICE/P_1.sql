@@ -1,0 +1,35 @@
+create database XAZ;
+use XAZ;
+create table AA(
+SNAME VARCHAR(16),
+NUM numeric(8,3) primary key ,
+ADDRESS VARCHAR(21),
+EMAIL VARCHAR(18) 
+);
+
+INSERT INTO AA value(
+'ANSH',
+'456',
+'MGROAD',
+'AJw@GMAIL.COM'
+);
+
+INSERT INTO AA value(
+'VIRAT',
+'678',
+'GANDHINAGAR',
+'VR@GMAIL.COM'
+);
+
+INSERT INTO AA value(
+'ALEX',
+'876',
+'NAVRANGPURA',
+'AL@GMAIL.COM'
+);
+
+DESC AA;
+SELECT*FROM AA;
+ UPDATE AA
+ SET SNAME='HARSH' 
+ WHERE NUM='456';

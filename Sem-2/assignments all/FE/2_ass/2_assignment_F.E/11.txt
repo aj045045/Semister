@@ -1,0 +1,68 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[11] Display random quotes on button click.
+--------------------------------------------------------------------------------------------
+
+
+<html><head><title>11</title>
+<link rel="stylesheet" href="11.css">
+<script language="jacvascript" type="text/javascript">
+	function changeQuote()
+	{
+		var number=Math.floor(Math.random() * 4);
+		var quoteSrc=["Life is Too Short to Argue Just say Get lost ” — Harsh Dedakiya",
+		"“Don't Spend time on Girlfrien Spend Time on Carrier” — Aryan Hiarapara ",
+		"“Fun is Fun Without Fun Evrything is Hawan” — Trupal Lathiya",
+		"“Don't You Copmare with me .” — Nidhi Chavda",
+		" “I am the Smartest Girl Here"— Ekta agja"
+		];
+		document.getElementById("quotes").innerHTML=quoteSrc[number];
+	}</script>
+</head>
+<body>
+	<p align="center" style="padding-top=100px;">
+		<div id="quotes">
+			“Everything is impossible if you don't have willing to do that.” — Baba RanchodDas Chanchad
+		</div>
+		<button onclick="changeQuote()" class="button">Click to change Quote</button>
+	</p>
+</body>
+</html>
+
+....................................................
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:25px;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

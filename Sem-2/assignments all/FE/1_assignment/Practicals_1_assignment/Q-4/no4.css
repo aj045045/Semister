@@ -1,0 +1,46 @@
+div.a{
+	border-style: solid;
+	background-color:#FFB6C1;	
+}
+div.b{
+	
+	background-color:white;	
+}
+h3.a{
+	font-size:24px;
+	padding-left:440px;
+}
+p.a{
+	text-align: left;
+	padding-left:410px;
+
+	
+}
+p.b{
+	text-align: left;
+	padding-left:410px;
+}
+p.c{
+	text-align: left;
+	padding-left:410px;
+
+}
+p.d{
+		text-align: left;
+	padding-left:410px;
+
+}
+button{
+	color:white;
+	
+   border: none;
+  background-color: Orange;
+  padding: 19px 149px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 410px;
+  cursor: pointer;
+
+}

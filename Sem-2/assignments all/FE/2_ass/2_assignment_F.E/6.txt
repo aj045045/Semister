@@ -1,0 +1,60 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[6] Open a new window on button click even 
+--------------------------------------------------------------------------------------------
+
+
+<html>
+<head>	<title>6
+	</title>
+<link rel="stylesheet" href="6.css">
+<script type="text/javascript" language="javascript">
+	function newWindow()
+	{
+		window.open();
+	}
+</script>
+</head>
+<body>
+	<h3 align="center">Click
+	<table align="center">
+	<form method="post">
+		<tr>
+			<td>
+				<button class="button" onclick="newWindow()">Click</button>
+			</td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
+
+
+CSS
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 35px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffff;
+  background-color: purple;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 9px pink;
+}
+
+.button:hover {background-color: white}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

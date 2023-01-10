@@ -1,0 +1,31 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers With Function]
+Sub :Advance Programming
+Roll.no :36
+
+**********************************************************************
+[12(10)]  Convert string to all upper case
+**********************************************************************
+
+#include <stdio.h>
+#define maxsize 100 
+
+int main()
+{
+    char str[maxsize];
+    char * s = str;
+
+  
+    printf("Enter your text : ");
+    gets(str);
+
+    while(*s) 
+    {
+        *s = (*s > 'a' && *s <= 'z') ? *s-32 : *s;
+        s++;
+    }
+
+    printf("Uppercase string : %s",str);
+    return 0;
+}

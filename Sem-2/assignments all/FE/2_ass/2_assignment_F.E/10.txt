@@ -1,0 +1,43 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[10] Display the current time and update it after every 1 second.(using date object)
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+10
+	</title>
+</head>
+<body>
+<h2>
+<p align="center" id="time"></h2>
+</p>	<script>
+		window.onload=function() {
+			getTime();
+		}
+		function getTime()
+		{
+			var today=new Date();
+			var hrs=today.getHours();
+			var min=today.getMinutes();
+			var sec=today.getSeconds();
+			min=formatDigits(min);
+			sec=formatDigits(sec);
+		document.getElementById("time").innerHTML=hrs+":"+min+":"+sec;
+setInterval("getTime()",1000);
+		}
+		function formatDigits(digit)
+		{
+			if(digit<10){
+				digit="0"+digit;
+			}
+			return digit;
+		}
+	</script>
+</body>
+</html>

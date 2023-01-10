@@ -1,0 +1,914 @@
+
+Name 		:Ansh Yadav 
+Subject		:Adv.Programing
+Assignment	:Assignment-1
+
+
+
+
+
+[Q-1]
+
+#include <stdio.h>
+#include <math.h>
+
+struct student 
+        {
+            int roll_no;
+            char name[30];
+            int maths,science,english,total,percentage;
+    
+        };
+
+
+void detail(struct student s[], int n)
+        {
+            int i,j;
+            
+            for(i=0;i<n;i++)
+                {
+                    printf("\t\vEnter Detail of %d \t:\n",i);
+                    printf("Roll number:\t");
+						scanf("%d",&s[i].roll_no);    
+                    printf("Name is:\t");
+						scanf("%s",&s[i].name[i]);    
+            marks:  printf("Marks of maths, science and english marks less than 100\n");
+						scanf("%d %d %d",&s[i].maths,&s[i].science,&s[i].english);
+                        if (s[i].maths <=100 && s[i].science <=100 && s[i].english <=100)
+                            {
+                                s[i].total=s[i].maths + s[i].science + s[i].english;
+                                s[i].percentage=100 * s[i].total/300;
+                            }
+                        else 
+                            {
+                                goto marks;
+                            }
+                }
+        }
+
+
+void print_detail(struct student s[], int n)
+        {
+            int i,j;
+            for(i=0;i<n;i++)
+            {
+        
+                printf("\t\v--------------------------Detail of %d--------------------\n",i+1);
+                printf("Roll number:%d\n",s[i].roll_no);
+                printf("Name is:%s\n",s[i].name);
+                printf("Marks of \nmaths is :%d\n science is:%d\n English is :%d",s[i].maths,s[i].science,s[i].english);
+                printf("\nsum is:%d\n",s[i].total); 
+                printf("Per is :%d",s[i].percentage);
+              }
+        }     
+    
+
+
+int  main()
+        {
+            int n,sum,per;
+            struct student s[100];
+            printf("Enter end term");
+				scanf("%d",&n);
+             detail(s,n);    
+             print_detail(s,n);
+    return 0;
+}
+
+
+
+<------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+[Q-2]
+
+#include <stdio.h>
+#include <math.h>
+
+struct Num
+        {
+            float n1;
+            float n2;
+            float n3;
+            float sum;
+            float avg;
+        };
+
+
+void input(struct Num a)
+        { 
+             printf("Enter 3 Value:\n");
+            scanf("%f %f %f", &a.n1, &a.n2, &a.n3);
+            a.sum=a.n1 + a.n2 + a.n3;
+            a.avg=a.sum/3;
+        
+           
+        }     
+    
+
+
+int  main()
+        {
+            struct Num a;
+            input(a);    
+            
+         printf("sum is %f\n",a.sum);
+            printf("Average is %f\n",a.avg);
+        
+        return 0;
+        }
+        }
+		
+		
+
+<------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+[Q-3]
+
+#include <stdio.h>
+#include <time.h>
+
+struct time 
+        {
+            int h;
+            int m;
+        };
+        
+void time(struct time t,int min)
+        { 
+            int temp;
+            t.h=min/60;
+            t.m=min%60;
+            printf("\vTime is \t\nhh:mm \t\n%d:%d min",t.h, t.m);
+        }
+    
+int main()
+        { int min;
+            struct time t;
+            printf("Enter minutes:\t");
+            scanf("%d",&min);
+            time(t,min);
+            
+        return 0;
+        }
+		
+		
+<------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+[Q-4]
+
+
+#include <stdio.h>
+#include <math.h>
+
+struct salary
+        {
+            double basic_salary;
+            double hra;
+            double da;
+            double oa;
+            
+        };
+        
+struct employee 
+        {
+            int id;
+            char name[30];
+            struct salary s;
+        };
+void emp(struct employee e[],int n,int gs)
+        {  int i,j;
+            for(i=0;i<n;i++)
+                { 
+                    printf("Enter Detail of %d",i);
+                    printf("\nEmployee Id :");
+                        scanf("%d",&e[i].id);
+                    printf("\nName :");
+                        scanf("%s",&e[i].name[i]);
+                    printf("\nBasic salary:");
+                        scanf("%lf",&e[i].s.basic_salary);
+                   e[i].s.hra=(e[i].s.basic_salary*18)/100;
+                   e[i].s.da=(e[i].s.basic_salary*27)/100;
+                   e[i].s.oa=(e[i].s.basic_salary*30)/100;
+                }
+        }        
+void print_detail(struct employee e[],int n,int gs)
+        { int i;
+             printf ("---------------Detail of %d",i+1);
+            for(i=0;i<n;i++)
+            {
+            printf("Id :%d\n",e[i].id);
+            printf("Name :%s\n",e[i].name);
+            printf("Basic_salary:%lf\n",e[i].s.basic_salary);
+            printf("\nhra :%lf\n",e[i].s.hra);
+            printf("da:%lf\n",e[i].s.da);
+            printf("\n oa :%lf\n",e[i].s.oa);
+                   
+           gs=e[i].s.basic_salary+e[i].s.hra+e[i].s.da+e[i].s.oa;
+           printf ("\a\n\tGross salary is :%d",gs);                    
+            }
+            
+        }
+                
+int main()
+{  int n,gs=0;
+    struct employee e[100];
+    printf("Enter how many employe:");
+    scanf("%d",&n);
+    emp(e,n,gs);
+    print_detail(e,n,gs);
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-5]
+
+#include <stdio.h>
+#include <math.h>
+
+struct student 
+        {
+            int roll_no;
+            char name[30];
+            int sub[6],percent;
+    
+        };
+
+
+void detail(struct student s[], int n)
+        {
+            int i,j;
+            
+            for(i=0;i<n;i++)
+                {
+                    printf("\v\n\ttDetail of :%d\n",i+1);
+                    printf("Roll number:\t");
+                         scanf("%d",&s[i].roll_no);    
+                    printf("Name is:\t");
+                         scanf("%s",&s[i].name[i]); 
+            marks:  printf(" Enter Marks of 6 subject less than 100\t:");
+                    int sum=0;            
+                    for(j=0;j<6;j++)
+                        {
+                            scanf("%d",&s[i].sub[j]);
+                                
+                            if (s[i].sub[j]<=100)
+                            {
+                                sum+=s[i].sub[j];
+                            }
+                        else 
+                            { printf("you eneter value more than 100 ");
+                                goto marks;
+                            }
+                            
+                        }   
+                        
+                        s[i].percent=100*sum/600;
+                
+                   
+                    printf("\tPercentage  is%d\n",s[i].percent);
+                }
+            
+        }
+                
+void print_data(struct student s[], int n)
+        { int i,k,temp;
+                for(i=0;i<n;i++)
+                    {
+                        for(k=i+1;k<n;k++)
+                            {
+                                 if (s[i].percent > s[k].percent)
+                                    {
+                                        temp=s[i].percent;
+                                        s[i].percent=s[k].percent;
+                                        s[k].percent=temp;
+                                    }
+                                    
+                            }
+                    }
+                    
+                printf("\tAscending order are:");
+                for (i=0;i<n;i++)
+                    {
+                        printf("\n\t%d",s[i].percent);
+                    }
+        }
+
+
+
+
+
+int  main()
+        {
+            int n,sum,per;
+            struct student s[100];
+            printf("Enter end term\t:");
+            scanf("%d",&n);
+             detail(s,n); 
+            print_data(s,n);			 
+             
+    return 0;
+        }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-6]
+
+#include <stdio.h>
+struct book 
+        {
+            char book_name[30];
+            char author_name[30];
+            int pages;
+            int price;
+        };
+void detail (struct book b[])
+        {
+            int i;
+            for(i=0;i<10;i++)
+                {
+                    printf("\v\v\tEnter book detail %d",i+1);
+                    printf("\nBook name\t:");
+                        scanf("%s",&b[i].book_name[i]);
+                    printf("\nAuthor name\t:");
+                        scanf("%s",&b[i].author_name[i]);
+                    printf("\nPage number\t:");
+                        scanf("%d",&b[i].pages);
+                    printf("\nPrice \t:");
+                        scanf("%d",&b[i].price);
+                }
+        }
+void print(struct book b[])
+        { 
+            int i,j,temp;
+            printf("\v\v------------Details-----------");
+            for(i=0;i<10;i++)
+                {
+                    for(j=i+1;j<10;j++)
+                        {
+                            if(b[i].price > b[j].price)
+                                {
+                                    temp=b[i].price;
+                                    b[i].price=b[j].price;
+                                    b[j].price=temp;
+                                }
+                        }
+                                 printf("\nprice \t:%d",b[i].price);     
+                                printf("\nBook name \t:%s",b[i].book_name);
+                                printf("\nAuthor name \t:%s",b[i].author_name);
+                                printf("\npage number \t:%d",b[i].pages);
+                                printf("\nprice \t:%d",b[i].price);                     
+                        
+                         
+                    
+                }
+        }
+                        
+int main()
+        {
+            struct book b[10];
+            detail(b);
+            print(b);
+
+    return 0;
+        }
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-7]
+
+#include <stdio.h>
+struct member
+        {
+            char name[30];
+            int code;
+            int age;
+            long weight;
+            long height;
+        };
+        
+void detail(struct member m[],int n)
+        { int i;
+            for(i=0;i<n;i++)
+            {
+                printf("\n\tEnter detail %d",i );
+                printf("\nName :\t");
+                    scanf("%s",&m[i].name[i]);
+            
+               printf("\nCode :\t");
+                    scanf("%d",&m[i].code);
+            
+               printf("\nAge :\t");
+                    scanf("%d",&m[i].age);
+            
+               printf("\nWeight:\t");
+                    scanf("%ld",&m[i].weight);
+            
+               printf("\nHeight :\t");
+                    scanf("%ld",&m[i].height);
+            
+            }         
+        }
+        
+void print(struct member m[],int n)
+        {int i;
+            for(i=0;i<n;i++)
+                {
+                    if(m[i].weight > 50 &&  m[i].height > 40)
+                        { 
+                            printf("\n===========printing detail============");
+                            printf("\nName is \t:%s",m[i].name);
+                            printf("\ncode is \t:%d",m[i].code);
+                            printf("\nAge\t:%d",m[i].age);
+                            printf("\nHeight \t:%ld",m[i].height);
+                            printf("\nWeight \t:%ld",m[i].weight);
+                            
+                        }
+                        
+                    else
+                        {
+                           printf("weight is greater then 50 and height is greater than 40");
+                        }
+                }
+            
+        }
+int main()
+{ int n;
+    struct member m[15];
+    printf("enter n number:");
+    scanf("%d",&n);
+    detail(m,n);
+    print(m,n);
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-8]
+
+
+#include<stdio.h>
+#include<conio.h>
+ #include<string.h>
+
+struct cricket
+{
+	char pname[20];
+	char tname[20];
+	float bavg;
+};
+
+int main()
+{
+	struct cricket s[5],t;
+	int i,j,n=5;
+	float p;
+
+
+	printf("\nEnter data of %d players",n);
+	for(i=0;i<n;i++)
+	{
+		printf("\nEnter PName TName BAvg for player-%d = ",i+1);
+		scanf("%s %s %f",s[i].pname,s[i].tname,&p);
+		s[i].bavg=p;
+	}
+
+	for(i=1;i<=n-1;i++)
+	{
+		for(j=1;j<=n-i;j++)
+		{
+			if(strcmp(s[j-1].tname,s[j].tname)>0)
+			{
+				t=s[j-1];
+				s[j-1]=s[j];
+				s[j]=t;
+			}
+		}
+	}
+
+	printf("\nAfter teamwise sorting... Player list is ");
+	for(i=0;i<n;i++)
+	{
+		printf("\n%-20s %-20s %.2f",s[i].pname,s[i].tname,s[i].bavg);
+	}
+
+	getch();
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-9]
+
+#include<stdio.h>
+#include<string.h>
+
+struct player
+{
+    char name[30];
+    char sport[20];
+    char country[20];
+    int age;
+};
+void read(struct player p[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("\n\t\tPlayer   Data   %d",i+1);
+        printf("\nname : ");
+        scanf("%s",p[i].name);
+        printf("sprots : ");
+        scanf("%s",p[i].sport);
+        printf("country : ");
+        scanf("%s",p[i].country);
+        printf("age : ");
+        scanf("%d",&p[i].age);
+    }
+}
+void print(struct player p[],int n,char name[30])
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(strcmp(name,p[i].name)==0)
+        {
+        printf("\n\t\tPlayer   Data   %d",i+1);
+        printf("\nname : %s",p[i].name);
+        printf("\nsprots : %s",p[i].sport);
+        printf("\ncountry : %s",p[i].country);
+        printf("\nage : %d",p[i].age);
+        }
+    }
+}
+int main()
+{
+    struct player s[40];
+    int n;
+    char name[30];
+    printf("enter no. of data to store : ");
+    scanf("%d",&n);
+    read(s,n);
+    printf("----------------------------------------");
+    printf("\nenter player name : ");
+    scanf("%s",name);
+    print(s,n,name);
+    
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-10]
+
+#include <iostream>
+
+struct baseball
+		{
+			float hits;
+			float runs;
+			long errors;
+			long extra_time;	
+		}
+		
+struct football
+		{
+			float ties;
+			float goals;
+			long touch_down;
+			long turn_over;	
+		}
+struct league
+		{
+			char team[30];
+			char city[30];
+			int wins;
+			struct baseball b;
+			struct footbal f;
+		};
+void detail(struct league[],int n)
+		{ 
+			int i;
+			for (i=0;i<n;i++)
+				{
+					
+					printf("\nTeam name\t:");
+						scanf("%s",&l.team[i]);
+			
+					printf("\nCity name\t:");
+						scanf("%s",&l.city[i]);
+						
+					printf("\nwins\t:");
+						scanf("%d",&l.wins);
+				}
+					printf("\nBaseball hits\t:");
+						scanf("%f",&l.b.hits);
+					printf("\nBaseball runs\t:");
+						scanf("%f",&l.b.runs);
+					printf("\nBaseball no. of errors\t:");
+						scanf("%ld",&l.b.errors);
+					printf("\nBaseball no. of extra timing\t:");
+						scanf("%ld",&l.b.extra_time);
+					printf("\nFootball Ties \t:");
+						scanf("%f",&l.f.ties);
+			        printf("\nFootball goals\t:");
+						scanf("%f",&l.f.goals;
+			        printf("\nFootball Touch down\t:");
+						scanf("%ld",&l.f.touch_down);
+			        printf("\nFootball \t:");
+						scanf("%ld",&l.f.turn_over);
+			
+						
+		}
+		
+void print(struct league l[],int n)
+		{
+		 		int i;
+			for (i=0;i<n;i++)
+				{
+					printf("\nBaseball hits\t:%f",l.b.hits);
+					printf("\nBaseball runs\t:%f",l.b.runs);
+					printf("\nBaseball no. of errors\t:%ld",l.b.errors);
+					printf("\nBaseball no. of extra timing\t:%ld",l.b.extra_time);
+					printf("\nFootball Ties \t:%f",l.f.ties);
+			        printf("\nFootball goals\t:%fl.f.goals;
+			        printf("\nFootball Touch down\t:%ld",l.f.touch_down);
+			        printf("\nFootball \t:%ld",l.f.turn_over);
+			
+					
+				}
+		}
+int main() 
+		{
+			int n
+			struct league l[50];
+			printf("enter end term");
+				scanf("%d",&n);
+			
+			detail(l,n);
+			print(l,n);
+			return 0;
+		}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-11]
+#include <stdio.h>
+#include <string.h>
+
+struct bookshop
+		{
+			char author[30];
+			char title[30];
+            long price;
+            char publisher[30];
+            int shelf;
+			 
+		};
+		
+void detail(struct bookshop b[],int n)
+		{
+			int i;
+			for (i=0;i<n;i++)
+				{
+					printf("\n\v===%d==",i+1);
+					printf("\nAuthor name:");
+						scanf("%s",&b[i].author[i]);
+			
+					printf("\nTitle name:");
+						scanf("%s",&b[i].title[i]);
+			       
+				   printf("\nBook Price:");
+						scanf("%ld",&b[i].price);
+			
+					printf("\nBook publisher:");
+						scanf("%s",&b[i].publisher[i]);
+			
+					printf("\nBook stock position:");
+						scanf("%d",&b[i].shelf);
+			
+				}
+	
+			
+		}
+		
+void print(struct bookshop b[],int n,char t[],char a[])
+		{
+			int i,cpy,c,d;
+			for(i=0;i<n;i++)
+				{
+				  c=strcmp(t,b[i].title); 
+				  d=strcmp(a,b[i].author);
+					 
+					 if (c==0 && d==0 )
+				      {
+							printf("\nAuthor name:%s",b[i].author);
+			
+							printf("\nTitle name:%s",b[i].title);
+			       
+				  		  
+							printf("\nBook publisher:%s",b[i].publisher);
+			
+							printf("\nBook stock position:%d",b[i].shelf);
+					       
+						   printf("\nNo of copies You wanted: ");
+								scanf("%d",&cpy );
+					          switch(cpy)
+					           { 
+					              case 1:
+					              case 2:
+					                  	 printf("\nBook Price:%ld",b[i].price);
+						                break;
+						                break;
+						            
+						            default:
+						            	printf("Sorry! We don't have that much copies:");
+							            break;
+							            
+					           }
+				        }
+			         else
+		              	{
+			             printf("\n Sorry we don't have the boook you wanted ");
+                		}	         
+					       
+				      	
+			    }
+	    }				
+
+int main() 
+		{
+			int n,i;
+			char a[30];
+			char t[30];
+			struct bookshop b[50];
+			printf("\nHow many books are there:");
+				scanf("%d",&n);
+			detail(b,n);
+		
+			printf("\n\v Enter book title U wanted:");
+			   scanf("%s",&t[i]);
+			printf("\n\v Enter book author ");
+			      scanf("%s",&a[i]);
+			
+			print(b,n,t,a);
+			
+			return 0;
+		}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Q-12]
+
+
+#include <iostream>
+
+struct two_wheeler
+		{
+			int milage;
+			int type;
+			
+		};
+		
+struct four_wheeler
+		{
+		 int usage;
+		 int num;
+		 int type;	
+		};
+		
+struct 	vehicle
+		{
+			
+		 char name[30];
+		 int price;
+		 int type;
+			union veh
+				{
+					struct two_wheeler two;
+					struct four_wheeler four;
+				} u;
+	       	
+		};
+		
+void detail(struct vehicle v[],int n)
+		{
+			
+			int i;
+			for (i=0;i<n;i++)
+				{
+					printf("\n==Enter %d vehicle data==",i+1);
+					printf("\nVehicle Name:");
+						scanf("%s",&v[i].name[i]);
+                    printf("\nVehicle Price:");
+						scanf("%d",&v[i].price);
+				p:	printf("\nVehicle type [2/4 wheeler]");
+						scanf("%d",&v[i].type);
+					switch(v[i].type)
+						{
+						    case 2:
+						    	    printf("\n\nYou have two-wheeler");
+							        printf("\nVehicle milage:");
+				   				  		scanf("%d",&v[i].u.two.milage);
+				               two:      printf("\nVehicle type (geared/gearless):(0/1)");
+				                  		scanf("%d",&v[i].u.two.type);
+				                  	   if (v[i].u.two.type==0 || v[i].u.two.type==1)
+				                  	   {
+				                  	   		printf("U have enter the data");
+										 }
+									else
+										  {
+                                             printf("	\ninvalid data");								          
+										  goto two;
+									      }
+				                    break;
+				             
+							case 4:
+									printf("\n\nYou have four-wheeler");
+								four:	 printf("\nVehicle usage (auto/manual):(0/1)");
+				                  		scanf("%d",&v[i].u.four.usage);
+				                 		   if(v[i].u.four.usage==0 || v[i].u.four.usage==1)
+								    	   {
+											   printf("U have enter the data");
+								          }
+								          else
+										  {					          
+										  goto four;
+								         }
+				                    printf("\nVehicle engine number ");
+				                  		scanf("%d",&v[i].u.four.num);
+				                again:  	 printf("\nVehicle type (heavy/light):(0/1)");
+				                  		scanf("%d",&v[i].u.four.type);
+					               if(v[i].u.four.type==0 || v[i].u.four.type==1)
+								   { 
+								    	printf("U have enter the data");
+									}
+									      else
+										  {
+                                             printf("	\ninvalid data");								          
+										  	 goto again;
+									        }
+								    break;                     
+				    	 default:
+				    	       printf ("enter 2 wheeler or 4 wheeler (2/4)");
+							   goto p;  	 
+						       break;
+						
+						}	
+				    	
+						
+				}
+		}
+		
+void printing(struct vehicle v[],int n)
+		{
+          int i;
+          printf("\n\t===========Printing 2 wheeler  detail==========");
+          for (i=0;i<n;i++)
+          	{ 
+          		if (v[i].type == 2)
+          		{
+				 
+					printf("\n\n==========================================");
+					printf("\nVehicle Name\t:%s",v[i].name);
+                    printf("\nVehicle Price\t:%d",v[i].price);
+					printf("\nVehicle type [2/4 wheeler]\t:%d",v[i].type);
+				    printf("\n\nYou have two-wheeler");
+			        printf("\nVehicle milage:%d",v[i].u.two.milage);
+                  printf("\nVehicle type (geared/gearless):(0/1)\t:%d",v[i].u.two.type);	   
+				                    
+					}
+				}
+				
+				printf("\n\t=============printing 4 wheeler detai=======");
+				for(i=0;i<n;i++)
+				{
+	         			if (v[i].type == 4)
+					{
+				  	printf("\n\n======================================");
+					printf("\nVehicle Name\t:%s",v[i].name);
+                    printf("\nVehicle Price\t:%d",v[i].price);
+					printf("\nVehicle type [2/4 wheeler]\t:%d",v[i].type);
+	    			printf("\n\nYou have four-wheeler");
+	     	    	 printf("\nVehicle usage (auto/manual):(0/1)\t:%d",v[i].u.four.usage);
+                   printf("\nVehicle engine number\t:%d",v[i].u.four.num);
+             	 printf("\nVehicle type (heavy/light):(0/1)\t:%d",v[i].u.four.type);
+				
+				    	 
+						}
+		       
+	            }
+		}	
+		
+					
+int main()
+ 		{	 
+ 			int n;
+ 			struct vehicle v[10];
+ 			printf("Enter how many vehicle:");
+ 				scanf("%d",&n);
+ 			detail(v,n);
+ 			printing(v,n);
+			return 0;
+		}
+
+------------------------------------------------------------------------------------------------------------------------------------------------

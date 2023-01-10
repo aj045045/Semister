@@ -1,0 +1,65 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers and Pointer Using Function]
+Sub :Advance Programming
+Roll.no :36
+
+/**************************************************************************************************
+[1] Write a program using pointers to read array of integers and print its elements in reverse order.
+****************************************************************************************************/
+
+#include<stdio.h>
+
+int  main()
+{
+	int  arr[20],n,i;
+	int *ptra;
+	
+    printf("Enter Your End Term :");
+		scanf("%d",&n);
+	printf("\n\n");
+
+	printf("Enter Number :\n");
+
+    	ptra = &arr[0];
+	        for(i=0;i<n;i++)
+		    {
+		      	printf("[%d] :",i);
+			        scanf("%d",ptra);
+		    	++ptra;
+		    }
+			
+	printf("\n\n");
+			
+	printf("Printing Number :");
+	    ptra = &arr[n-1];	
+	        for(i=0;i<n;i++)
+	    	{
+		        printf("\n");
+		    	printf("[%d] :%d",i,*ptra);
+			    --ptra;
+			}
+	
+    return 0;
+}
+
+/**************************************************************************************************
+OUTPUT:
+************************************************************************************************/
+Enter Your End Term :5
+
+
+Enter Number :
+[0] :1
+[1] :2
+[2] :3
+[3] :4
+[4] :5
+
+
+Printing Number :
+[0] :5
+[1] :4
+[2] :3
+[3] :2
+[4] :1

@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------<br>
+14. Write HTML code to place the following web page into your web page.
+"https://www.etutorialspoint.com"<br>
+-------------------------------------------------------------------------<br>
+<html>
+	<head>
+		<title>Web page Have Web Page</title>
+	</head>
+	<body>
+		<h1>web page into your web page.
+"https://www.etutorialspoint.com"<br></h1>
+		<iframe src="https://www.etutorialspoint.com" height="550px" width="800 px "></iframes>	
+	</body>
+</html>

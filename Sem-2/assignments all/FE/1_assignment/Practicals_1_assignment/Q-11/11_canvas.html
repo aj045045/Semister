@@ -1,0 +1,26 @@
+-----------------------------------------------------------------------<br>
+//11. Write HTML5 code to draw the any image using Canvas.<br>
+------------------------------------------------------------------------<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Drawing a Rectangle on the Canvas</title>
+<style>
+	canvas {
+		border: 1px solid #000;
+	}
+</style>
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        context.rect(50, 50, 200, 100); 
+        context.stroke();
+    };
+</script>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+</body>
+</html>

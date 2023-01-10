@@ -1,0 +1,54 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :3[File System]
+Sub :Advance Programming
+Roll.no :36
+
+*******************************************************************************
+[10] Write a C program to split a given linked list into two.
+*******************************************************************************
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+struct labor{
+ long int tel;
+ char name[20]; 
+};
+int main()
+{
+int i,j,m;
+FILE *fp,*fpp;
+fp=fopen("imango.txt","w");
+struct labor a[30];
+printf("enter how many employee:");
+scanf("%d",&m);
+ fprintf(fp,"name\t\t phone\n");
+for(i=0;i<m;i++)
+{
+ printf("enter [%d] name and phone number:",i+1);
+ scanf("%s%d",&a[i].name,&a[i].tel);
+ fprintf(fp,"%s\t\t %d\n",a[i].name,a[i].tel);
+ 
+}
+fprintf(fp,"Thank you for entering the data");
+fclose(fp);
+fp=fopen("imango.txt","r");
+printf(" name\t\t phone\n ");
+
+for(i=0;i<m;i++)
+{
+ printf("%s\t\t %d\n",a[i].name,a[i].tel);
+}
+fclose(fp);
+getch();
+}
+
+*******************************************************************************
+OUTPUT:
+*******************************************************************************
+
+enter how many employee:5
+enter [1] name and phone number:david
+david 9876543212
+enter [2] name and phone number:enter [3] name and phone number:

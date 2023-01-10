@@ -1,0 +1,25 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers With Function]
+Sub :Advance Programming
+Roll.no :36
+
+**********************************************************************
+[12(11)]  Convert string to all lower case.
+**********************************************************************
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+    char *str = "THIS STRING LITERAL IS ARBITRARY";
+
+    printf("%s\n", str);
+    for (size_t i = 0; i < strlen(str); ++i) {
+        printf("%c", tolower((unsigned char) str[i]));
+    }
+    printf("\n");
+
+    return 0;
+}

@@ -1,0 +1,16 @@
+table,th,td{
+			border:solid black 2px;	}
+th{
+	color:white;
+	background-color:grey;
+}			
+td{
+	color:black;
+	background-color:WHITE;
+}
+table{
+	background-color:pink;
+	margin-left:200PX;
+    height:250PX;
+	weidth:200PX;
+}

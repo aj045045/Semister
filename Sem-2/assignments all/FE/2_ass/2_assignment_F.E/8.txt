@@ -1,0 +1,185 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[8] Make country, state and city combo box and fill these combo boxes according to user’s 
+ choice of country.
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+	8
+	</title>
+	<link rel="stylesheet" href="8.css">
+	<script type="text/javascript" src="8.js"></script>
+</head>
+<body>
+  <form>
+		<label>Select country:</label>
+		<select class="myselect" id="country" size="2" onchange="getStates()">
+			<option value="India">India</option>
+			<option value="Australia">Australia</option>
+		</select>
+ </form>
+ <form>
+		<label>Select state:</label>
+		<select class="myselect" id="state" size="4" onchange="getCities()">		</select>
+ </form>
+ <form action="ShowLocation.html">
+		<label>Select city:</label>
+		<select class="myselect" id="city" size="4" onchange="getLocation()">
+		</select>
+		<input type="submit" value="submit">
+		<input type="reset" value="reset">
+ </form>
+</body></html>
+
+
+CSS
+
+body{
+	background-color:papayawhip;
+	font-family:Century;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:20px;
+}
+.myselect {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 30%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+.myselect::-ms-expand {
+    display: none;
+}
+
+.myselect:hover {
+    border-color: #888;
+}
+/* Focus style */
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+  width:100px;
+  height:50px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=text]{
+	border-radius:4px;
+	box-sizing:border-box;
+	height:30px;
+}
+.select{
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    appearance: none;
+    background-color: #fff;
+}
+..................................................
+JS
+
+function getStates()
+{
+	var India=["Gujarat","Delhi"];
+	var Australia=["Tasmania","Victoria"];
+	var states=new Map();
+	states.set("India",India);
+	states.set("Australia",Australia);
+	var x=document.getElementById("country");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var states_display = states.get(y);
+	for(var i=0;i<states_display.length;i++)
+	{
+		var option=document.createElement("option");
+		option.text=states_display[i];
+		document.getElementById("state").add(option);
+	}
+	sessionStorage.setItem("location","Country:"+y+"<br>State:");
+}
+function getCities()
+{
+	var Gujarat=["Ahmedabad","Surat"];
+	var Delhi=["Faridabad","Agra"];
+	var Tasmania=["Hobert","Burnie"];
+	var Victoria=["Ararat","Colac"];
+	var cities=new Map();
+	cities.set("Gujarat",Gujarat);
+	cities.set("Delhi",Delhi);
+	cities.set("Victoria",Victoria);
+	cities.set("Tasmania",Tasmania);
+	var x=document.getElementById("state");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var cities_display = cities.get(y);
+	for(var i=0;i<cities_display.length;i++)
+	{
+		var option=document.createElement("option");
+		option.text=cities_display[i];
+		document.getElementById("city").add(option);
+	}
+	var location=sessionStorage.getItem("location");
+	location=location+y;
+	sessionStorage.setItem("location",location+"<br>City");
+}
+function getLocation()
+{
+	var x=document.getElementById("city");
+	var i = x.selectedIndex;
+	var y = x.options[i].text;
+	var location=sessionStorage.getItem("location");
+	location=location+y;
+	sessionStorage.setItem("location",location);
+}
+function printLocation(){
+	document.getElementById("location").innerHTML=sessionStorage.getItem("location");
+}
+	 

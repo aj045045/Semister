@@ -1,0 +1,48 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :3[File System]
+Sub :Advance Programming
+Roll.no :36
+
+*******************************************************************************
+[1] Write a program to create a singly linked list and display its elements in FIFO pattern. Also display the number of
+    elements in the list.
+*******************************************************************************
+
+#include <stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+int main(){
+   char ch;
+   FILE *fp;
+   fp=fopen("std1.txt","w");
+   printf("enter the text.press cntrl Z:\n");
+   while((ch = getchar())!=EOF){
+      putc(ch,fp);
+   }
+   fclose(fp);
+   fp=fopen("std1.txt","r");
+   printf("text on the file:\n");
+   while ((ch=getc(fp))!=EOF){
+      if(ch == ',')
+         printf("\t\t");
+      else
+         printf("%c",ch);
+   }
+   fclose(fp);
+   return 0;
+}
+
+*******************************************************************************
+OUTPUT:
+*******************************************************************************
+
+Enter the text.press cntrl Z:
+Name,Item,Price
+ben,1,23.4
+sam,2,45.6
+^Z
+text on the file:
+Name    Item    Price
+ben   1      23.4
+sam   2      45.6

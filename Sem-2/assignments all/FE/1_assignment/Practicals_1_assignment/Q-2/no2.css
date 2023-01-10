@@ -1,0 +1,54 @@
+.AA{
+    color: rgb(9, 105, 105);
+    text-align: center;
+}
+.date{
+    position: absolute;
+    right: 150px;
+    top: 110px;
+}
+.personal{
+    border: 1px solid black;
+    height: 80px;
+    padding: 50px 10px;
+    margin: 12px 12px;
+}
+.contact{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin:30px 12px;
+    display: inline-block;
+    position: absolute;
+}
+.cn{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 105px 600px;
+    padding: 12px 12px;
+    position: absolute;
+}
+.g{
+    width:60;
+}
+#n{
+    border: 1px solid black;
+    margin: 50px 15px;
+    padding: 12px 12px;
+}
+.s{
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    width: 330px;
+    height: 45px;
+}
+.t{
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    width: 330px;
+    height: 45px;
+}

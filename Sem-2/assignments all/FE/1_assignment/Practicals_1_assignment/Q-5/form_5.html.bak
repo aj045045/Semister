@@ -1,0 +1,106 @@
+--------------------------------------------------------<br>
+//5. Create a HTML form for Travel Reservation <br>
+--------------------------------------------------------<br>
+<html>
+	<head>
+		<title>Reservation form</title>
+		<link rel="stylesheet" href="form_5.css" type="text/css" >
+	</head>
+	<body>
+		<h1>Travel Reservation Form</h1>
+		<hr>
+		<form action="action.html">
+			<fieldset>
+				<legend>ONLINE FORM</legend>
+				
+				<h3><u>PASSANGER'S INFORMATION:</u><h3>
+				<table>
+				<tr>
+					<td><label for="f_name"><i>First name:</i></label></td>
+					<td>	<input type="text" id="f_name" name="f_name" placeholder="&#128274;FIRST NAME" required></td>
+				</tr>
+				<tr>
+					<td><label for="l_name"><i>Last name:</i></label></td>
+					<td>	<input type="text" id="l_name" name="l_name" placeholder="&#128274;LAST NAME" required></td>
+				</tr>			
+				<tr>
+					<td><label for="email"><i>E-mail ID:</i></label></td>
+					<td><input type="e-mail" id="email" name="email" placeholder="&#128274;E-MAIL ID" required></td>
+				</tr>	
+				<tr>
+				<td>				
+				<label for="dob"><i>Birth Date:</i></label></td>
+				<td><input type="date" id="dt" name="dt" required></td>
+					</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="gender"><i>Gender:</i></label>
+				</td>
+				<td class="td">	<input type="Radio" id="gender" name="gender" >	
+                <label for="gender">Male</label><br>
+					<input type="Radio" id="gender" name="gender" >	
+                <label for="gender">Female</label><br>
+					<input type="Radio" id="gender" name="gender" >
+                <label for="gender">Others</label>
+				</td>
+			  </tr>
+				<tr>
+			  <td>
+			  <label for="mobile"><i>Mobile Number:</i></label></td>
+				<td>	<input type="tel" id="mobile" name="mobile" placeholder="&#128274;123-456-789" required>
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="pack"><i>Tour Package:</i></label></td>
+					<td class="td"><input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Goa</label><br>
+					<input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Kashmir</label><br>
+					<input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Others</label>
+              	</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="per"><i>Number of Person:</i></label></td>
+					<td><input type="number" id="per" name="per" placeholder="&#128274;NO. OF PERSON" required>
+				</td>
+				</tr>
+					<tr>
+					<td>		
+			<label for="dt"><i>Arrival date:</i></label></td>
+					<td><input type="date" id="dt" name="dt" placeholder="&#128274; required></td>
+				</tr>
+				
+					<tr>
+				<td>
+				<label for="av"><i>What would You want <br>to Avail:</i></label></td>
+					<td class="td"><input type="Radio" id="av" name="av" >	
+                <label for="av">Boarding</label><br>
+					<input type="Radio" id="av" name="av" >	
+                <label for="av">Fooding</label><br>
+					<input type="Radio" id="av" name="av" >	
+                <label for="av">Sight seeing</label><br>
+              	<input type="Radio" id="av" name="av" >	
+                <label for="av">Others</label><br>
+				</td>	
+				</tr>
+				<tr>
+				
+				<td>	<label for="term"><i>Terms And condition:</i></label></td>
+ 					<td class="td"><input type="radio" id="term" name="term" >	
+                <label for="term">I agree</label><br>
+					<input type="Radio" id="term" name="term" >	
+                <label for="term">I disagree</label></td>
+				</tr>	
+			</table>
+				<input type="submit" id="submit" name="submit" >	
+                
+			</fieldset>			
+		</form>
+	</body>
+	</html>
+		
+	

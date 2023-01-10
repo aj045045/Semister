@@ -1,0 +1,120 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[2] Form Field Validation(name, password, email, contact no)
+--------------------------------------------------------------------------------------------
+
+
+<html>
+<head>
+	<title>
+	2
+	</title>
+	<link rel="stylesheet" href="2.css">
+	<script type="text/javascript" src="2.js"></script>
+</head>
+<body>
+	<h3 align="center">Registration Form
+	<table align="center">
+	<form method="post" name="MyForm" onsubmit="return(validateForm());">
+		<tr>
+			<td>
+				<label for="name">Name-</label>
+			</td>
+			<td>
+				<input type="text" name="Name" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="contact_number">Contact number-</label>
+			</td>
+			<td>
+				<input type="text" name="Contact_number" maxlength="10">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="email">E-mail-</label>
+			</td>
+			<td>
+				<input type="text" name="Email" id="Email">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">Password-</label>
+			</td>
+			<td>
+				<input type="password" name="Password" id="password">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="submit">
+			</td>
+			<td>
+				<input type="reset" value="reset">
+			</td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
+
+....................................................
+CSS
+
+body{
+	background-color:pink;
+	font-family:Century;
+	text-align:center;
+	text-decoration:bold;
+	text-indent:left;
+	font-size:29px;
+}
+input{
+	border-radius:10px;
+	box-sizing:border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: brown;
+  border: none;
+  color: yellow;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 30px 33px;
+  cursor: pointer;
+}
+....................................................
+JS
+
+function validateForm()
+{
+	if(document.MyForm.Name.value == "" || /\d/.test(document.MyForm.Name.value))
+	{
+		alert("Enter your name correctly!");
+		document.MyForm.Name.focus();
+		return false;
+	}
+	if(document.MyForm.Contact_number.value=="" || /\D/.test(document.MyForm.Contact_number.value) || (document.MyForm.Password.value).length<8){
+		alert("Please provide your contact number!");
+		document.MyForm.Contact_number.focus();
+		return false;
+	}
+	if(document.MyForm.Email.value=="" || (document.MyForm.Email.value).indexOf("@")<1 || ((document.MyForm.Email.value).indexOf("."))-((document.MyForm.Email.value).indexOf("@"))<2){
+		alert("Please provide your email!");
+		document.MyForm.Email.focus();
+		return false;
+	}
+	if(document.MyForm.Password.value=="" || (document.MyForm.Password.value).length<8 ||  /\s/.test(document.MyForm.Password.value) ||  /\W/.test(document.MyForm.Password.value)){
+		alert("Please provide password!");
+		document.MyForm.Password.focus();
+		return false;
+	}
+	return true;
+	
+}

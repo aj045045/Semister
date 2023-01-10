@@ -1,0 +1,78 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers and Pointer Using Function]
+Sub :Advance Programming
+Roll.no :36
+
+/**********************************************************************************************************************************************
+[3] Write a program using pointers to find minimum and maximum element of an array and display it along with the address at which it is located
+***********************************************************************************************************************************************/
+
+#include<stdio.h>
+
+void Max_min(int n)
+{
+    int i ;
+    int r[50];
+    int *ptr;
+    ptr=&r[0];
+    int *pmax , *pmin;
+    
+    printf("Enter %d Number\n:",n);
+   
+    for(i=0;i<n;i++)
+    {
+        printf("[%d] : ",i);
+             scanf("%d",&r[i]);
+    }
+
+    pmax=&r[0];    
+    for(i=0;i<n;i++)
+    {
+
+        if(*pmax < r[i]) 
+	    {
+	        pmax=&r[i];
+        }
+    }
+     pmin=&r[0];
+    for(i=0;i<n;i++)
+    {
+        if(*pmin > r[i]) 
+	    {
+	        pmin=&r[i];
+	    }
+    }
+ 
+ 
+    printf("\n\nMaximum \nNo :%d\nAddress :%p",*pmax,pmax);
+    printf("\n\nMinimum\nNo :%d\nAddress :%p",*pmin,pmin);
+}
+
+int main()
+{
+    int n;
+    printf("Enter End term :");
+    scanf("%d",&n);
+    Max_min(n);
+}
+
+/******************************************************************************************************************
+OUTPUT:
+********************************************************************************************************************/
+Enter End term :5
+Enter 5 Number :
+[0] : 55
+[1] : 4
+[2] : 99
+[3] : 8
+[4] : 1
+
+
+Maximum 
+No :99
+Address :0x7fff5c9a3588
+
+Minimum
+No :1
+Address :0x7fff5c9a3590

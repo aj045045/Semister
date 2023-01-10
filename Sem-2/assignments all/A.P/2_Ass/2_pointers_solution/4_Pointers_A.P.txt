@@ -1,0 +1,71 @@
+Name :Ansh Yadav
+Course :Msc(cs)-2
+Assignment :2[Pointers and Pointer Using Function]
+Sub :Advance Programming
+Roll.no :36
+
+/*******************************************************************************************************************
+[4] Write a program to count the number of vowels, consonants, digits and white space characters using pointers.
+*******************************************************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char arr[100],i;
+    int *pvow,*pcon,*pdig,*pspa;
+    int vowels=0,consonants=0,digits=0,space=0;
+    pvow=&vowels;
+    pcon=&consonants;
+    pdig=&digits;
+    pspa=&space;
+    
+    
+    printf("Enter the Characters :");
+    gets(arr);
+    for(i=0;i< strlen(arr);i++)
+    {
+           if(arr[i]=='A' || arr[i]=='a' || arr[i]=='E'|| arr[i]=='e'|| arr[i]=='I'|| arr[i]=='i'|| arr[i]=='O'|| arr[i]=='o'|| arr[i]=='U'|| arr[i]=='u')
+           {
+               ++*pvow;
+           }
+        
+           else if(arr[i]=='B'|| arr[i]=='C'|| arr[i]=='D'||  arr[i]=='F'|| arr[i]=='G'|| arr[i]=='H'|| arr[i]=='J'||  arr[i]=='k'|| arr[i]=='L' ||arr[i]=='M'|| arr[i]=='N'|| arr[i]=='P'|| arr[i]=='Q'|| arr[i]=='R'|| arr[i]=='S'|| arr[i]=='T'|| arr[i]=='V'|| arr[i]=='W'|| arr[i]=='X'|| arr[i]=='Y'|| arr[i]=='Z' || arr[i]=='b'|| arr[i]=='c'|| arr[i]=='d'|| arr[i]=='f'|| arr[i]=='g'|| arr[i]=='h'|| arr[i]=='j'|| arr[i]=='k'||  arr[i]=='l'|| arr[i]=='m'|| arr[i]=='n'|| arr[i]=='p'|| arr[i]=='q'|| arr[i]=='r'|| arr[i]=='s'|| arr[i]=='t'|| arr[i]=='v'|| arr[i]=='w'|| arr[i]=='x'|| arr[i]=='y'|| arr[i]=='z')
+            {
+                ++*pcon;
+            }
+          
+          
+            else if(arr[i]>='0' && arr[i]<='9')
+            {
+                ++*pdig;
+            }
+          
+            else if(arr[i]=' ')
+            {
+                ++*pspa;
+            }
+    }
+    printf("\n\n\nString :");
+    puts(arr);
+    printf("vowels :%d",*pvow);
+    printf("\nconsonants :%d",*pcon);
+    printf("\nDigit :%d",*pdig);
+    printf("\nSpace :%d",*pspa);
+    
+    return 0;
+}
+
+
+/*********************************************************************************************************************
+OUTPUT:
+********************************************************************************************************************/
+Enter the Characters :ansh yadav 182004
+
+
+String :ansh yadav 182004
+vowels :3
+consonants :6
+Digit :6
+Space :2

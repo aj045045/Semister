@@ -1,0 +1,833 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+
+-------------------------------------------------------
+//1. Create a web page using following format
+--------------------------------------------------------
+******************************************************************************
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times of India</title>
+    <link rel="stylesheet" href="no1.css">
+</head>
+<body>
+    
+    
+    <div class="india">
+        <h1>TIMES OF INDIA NEWS PAPER</h1>
+    </div>
+
+    <div class="a">
+        <p>News / City News</p>
+    </div>
+    <div class="b">
+        <h2>Rajasthan Man Kills Wife,son before hanging self</h2>
+        <p>A 28 year old man killed his wife and son before commiting suiside at gaoni village under neem ka thana sadar..</p>
+        <p>__________</p>
+
+
+        <h2>uttar pradesh: boy,14,beheaded by sister's friend ove..</h2>
+        <p>two friends of a teenage girl allegedly beheaded her 14-year old younger brother for objecting to their...</p>
+    </div>
+   <div class="img img1"></div>
+   <div class="img img2"></div>
+   <div class="img img3">
+       <h2>latest news live updates from across cities</h2>
+   </div>
+   <div class="img img4">
+       <h2>goa:laborious process,slim profit put jaggery production on bac..</h2>
+   </div>
+  
+   <div class="c">
+    <h2>vadodara:heritage lovers see red over green kala ghoda</h2>
+    <p>kala ghoda, the statue of maharaja sayajirao gaekwad ||| riding a hourse, has been the identity of</p>
+   </div>
+</body>
+</html>
+*****************************************************************************
+.india{
+    position: absolute;
+    right: 90px;
+    top: 40px;
+    
+}
+.a{
+    display: inline-block;
+    position: absolute;
+    left: 170px;
+    top: 135px;
+}
+.b{
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    margin: 137px 160px;
+    padding: 18px 0px;
+}
+.img1{
+    background-image: url(3.jpg);
+    padding: 27px 0px;
+    display: inline-block;
+    width: 202px;
+    height: 200px;
+    position: absolute;
+    top: 187px;
+    left: 494px;
+}
+.img3 h2{
+    width: 200px;
+    margin: 93px 0px;
+}
+.img2{
+    background-image: url(4.jpgl);
+    padding: 25px 0px;
+    display: inline-block;
+    position: absolute;
+    top: 187px;
+    left: 700px;
+    width: 200px;
+    height: 204px;
+}
+.img3{
+    background-image: url(5.jpgl);
+    display: inline-block;
+    padding: 12px 12px;
+    width: 137px;
+    height: 82px;
+    position: absolute;
+    top: 187px;
+    right: 275px;
+}
+
+.img4{
+    background-image: url(2.jpgl);
+    display: inline-block;
+    padding: 12px 12px;
+    width: 137px;
+    height: 82px;
+    position: absolute;
+    top: 380px;
+    right: 275px;
+}
+.img4 h2{
+    width: 183px;
+    margin: 93px 0px;
+}
+.c{
+    display: inline-block;
+    padding: 1px 0px;
+    margin: 445px 520px;
+    width: 329px;
+    height: 48px;
+}
+.d li{
+   display: block}
+  
+  
+  
+  
+----------------------------------------------------------------------------
+//2. Create a registration form
+-----------------------------------------------------------------------------  
+****************************************************************************
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+<link rel="stylesheet" href="no3.css">
+</head>
+<body>
+<div class="W">
+<img src="FoRm.bmp">
+</div
+    <header class="AA">
+        <h1>Student Regestration Forrm</h1>
+    </header>
+    <div class="date">
+    <tr>
+            <td><label for="date">Date:</label></td>
+            <td><input type="date" id="date" placeholder="Enter Date" required></td>
+        </div>
+    </tr>
+ 
+    <div class="personal">
+        <tr>
+            <td><h2>Personal Information</h2></td>
+            <td><label for="name">Name</label></td>
+           <td> <input type="text" size="180" placeholder="Enter Name" id="name"></td>
+            <br><br>
+           <td> <label for="date">Date of Birth</label>
+            <input type="date"  id="date" required></td>
+        </tr>
+        
+    </div>
+
+    <div class="contact">
+    <tr>
+        <h2>Contact Information</h2>
+    <td><label for="add">Address</label>
+        <input type="text" size="200" placeholder="enter address" id="add" required></td>
+    <br><br>
+
+    <td><label for="city">City:</label>
+        <input type="text"  id="city" placeholder="enter the city name" size="95" required></td>
+    <td><label for="state">STATE:</label>
+            <input type="text"  id="state" placeholder="enter the state name" size="95" required></td>
+    <br><br>
+
+    <td><label for="zip">ZIP:</label>
+        <input type="text"  id="zip" placeholder="enter the zip code" size="95" required></td>
+    <td><label for="country">Country:</label>
+        <input type="text"  id="country" placeholder="enter the country name" size="94" required></td>
+    <br><br>
+
+    <td><label for="phone">PHONE:</label>
+        <input type="text"  id="phone" placeholder="enter the  phone number" size="91" required></td>
+    <td><label for="email">Email:</label>
+        <input type="email"  id="email" placeholder="enter the  email" size="97" required></td>
+    <br><br>
+<div class="g">
+    <td><label for="member">Gender:</label>
+        <input type="radio" name="member">Male
+        <input type="radio" name="member">Female
+        <input type="radio" name="member">Other
+    </td>
+</div>
+
+<div id="n">
+   <h2>COURSE INFORMATION</h2>
+    <label for="choose">Course</label>
+        <select  id="choose">
+            <option value="choose">Choose Course</option>
+            <option value="choose">Msc(CS)</option>
+            <option value="choose">AI&ML</option>
+            <option value="choose">MCA</option>
+        </select><br><br>
+        <td><label for="member">Payment Details:</label>
+            <input type="radio" name="pay">Cash
+            <input type="radio" name="pay">Credit
+            <input type="radio" name="pay">Cheque
+        </td>
+        <br><br>
+        <td><label for="cmn">Comments:</label>
+            <input type="text"  id="cmn" placeholder="comments" size="190" required></td>
+</div>
+<div class="s">
+    <h3>Student's Signature</h3>
+</div>
+<div class="t">
+    <h3>Validated by</h3>
+</div>
+</body>
+</html>
+*******************************************************************************
+.AA{
+    color: rgb(9, 105, 105);
+    text-align: center;
+}
+.date{
+    position: absolute;
+    right: 150px;
+    top: 110px;
+}
+.personal{
+    border: 1px solid black;
+    height: 80px;
+    padding: 50px 10px;
+    margin: 12px 12px;
+}
+.contact{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin:30px 12px;
+    display: inline-block;
+    position: absolute;
+}
+.cn{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 105px 600px;
+    padding: 12px 12px;
+    position: absolute;
+}
+.g{
+    width:60;
+}
+#n{
+    border: 1px solid black;
+    margin: 50px 15px;
+    padding: 12px 12px;
+}
+.s{
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    width: 330px;
+    height: 45px;
+}
+.t{
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    width: 330px;
+    height: 45px;
+}
+
+
+-------------------------------------------------------------------------------
+//3.Create a Web Page for the following
+--------------------------------------------------------------------------
+*************************************************************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  .m{
+    border: 2px solid black;
+    
+}
+  .c{
+     text-align:center;
+  }
+</style>
+    <title>signup form</title>
+</head>
+
+<body>
+	<center>
+   <table class="c" width="100%" height="200%">
+		<td>
+			<th>
+				<img  src="html logo.png" width="200px" height="300px">
+			</th>
+ 
+			<th>
+				<form>
+
+				<div class="m">
+				<h1>sign up</h1>
+				<p>_________________</p>
+				<label for="name">Your username:</label><br>&#9977;
+					<input type="text" id="name" placeholder="Enter the user name"><br><br>
+    
+				<label for="mail">Your email:</label><br>&#9993;
+					<input type="email" id="mail" placeholder="Enter the email"><br><br>
+    
+				<label for="pass">Enter password:</label><br>&#9758;
+					<input type="password" id="pass" placeholder="Enter the email password"><br><br>
+    
+				<label for="pass">Re-enter password:</label><br>&#9758;
+					<input type="text" id="name" placeholder="Enter the user name">
+				</div>
+				</form>
+			</th>
+		
+			<th>
+				<img  src="css logo.png" width="200px" height="300px">
+			</th>       
+	</td>
+	</table>
+	</center>
+</body>
+</html>
+
+
+--------------------------------------------------------------------------
+//4. Create a web page for the following
+------------------------------------------------------------------------- 
+*************************************************************************
+ <HTML>
+<head>
+	<title>Form</title>
+<link rel="stylesheet" href="no4.css">	
+</head>
+<body >
+<div class="a">
+<p>
+	<form><div class="b">
+			<h3 class="a">Responsive Registration Form</h3><p class="a" >
+			<input type="text" id="Email" name="Email" placeholder="&#x1F4E7; Email" size="46.46cm"><br><br>
+  			
+			<input type="password" id="psw" name="psw" placeholder="&#x1F512; Password" required size="46.46cm"><br><br>
+			
+			<input type="re-type password" id="re-psw" name="re-psw" placeholder="&#x1F512; Re-Type Password" required size="46.46cm"><br><br></p>
+			<p class="b">
+			<input type="text" id="fname" name="fname" placeholder="&#x1F464 First name">
+			
+			<input type="text" id="lname" name="lname" placeholder="&#x1F464 Last name"><br><br>
+			<label for="Gender">Male</label>
+			<input type="radio" id="Gender" name="Male" >
+			<label for="Gender">Female</label>
+			<input type="radio" id="Gender" name="Female" >
+			
+			</p>
+			<p class="c">
+				
+
+					<select id="country" >
+					
+					
+					  <option  value="Select a Country">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Select a Country&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+					  <option  value="India">India</option>
+					  <option  value="China">China</option>
+					  <option  value="Japan">Japan</option>
+					  <option  value="Australia">Australia</option>
+					</select>
+			</p>
+			<p class="d">
+	         	<input type="checkbox" id="Terms" name="TerMs" value="term">
+				<label for="Terms"> I Agree with Terms and Condition </label><br>
+				<input type="checkbox" id="NEWS" name="NEWS" value="Boat">
+				<label for="NEWS"> I want to receive the Newsletter</label><br>
+			
+			</p>
+			<p class="e">
+			<button type="Register" value="Register">Register</button>
+			</p>
+			</div>
+	</form>
+	</p>
+	</div>
+</body>
+</HTML>
+*****************************************************************************
+div.a{
+	border-style: solid;
+	background-color:#FFB6C1;	
+}
+div.b{
+	
+	background-color:white;	
+}
+h3.a{
+	font-size:24px;
+	padding-left:440px;
+}
+p.a{
+	text-align: left;
+	padding-left:410px;
+}
+p.b{
+	text-align: left;
+	padding-left:410px;
+}
+p.c{
+	text-align: left;
+	padding-left:410px;
+
+}
+p.d{
+		text-align: left;
+	padding-left:410px;
+
+}
+button{
+	color:white;
+	
+   border: none;
+  background-color: Orange;
+  padding: 19px 149px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 410px;
+  cursor: pointer;
+}
+
+
+
+------------------------------------------------------------------------------
+//5. Create a HTML form for Travel Reservation
+-----------------------------------------------------------------------------
+****************************************************************************
+<html>
+	<head>
+		<title>Reservation form</title>
+		<link rel="stylesheet" href="form_5.css" type="text/css" >
+	</head>
+	<body>
+		<h1>Travel Reservation Form</h1>
+		<hr>
+		<form action="action.html">
+			<fieldset>
+				<legend>ONLINE FORM</legend>
+				
+				<h3><u>PASSANGER'S INFORMATION:</u><h3>
+				<table>
+				<tr>
+					<td><label for="f_name"><i>First name:</i></label></td>
+					<td>	<input type="text" id="f_name" name="f_name" placeholder="&#128274;FIRST NAME" required></td>
+				</tr>
+				<tr>
+					<td><label for="l_name"><i>Last name:</i></label></td>
+					<td>	<input type="text" id="l_name" name="l_name" placeholder="&#128274;LAST NAME" required></td>
+				</tr>			
+				<tr>
+					<td><label for="email"><i>E-mail ID:</i></label></td>
+					<td><input type="e-mail" id="email" name="email" placeholder="&#128274;E-MAIL ID" required></td>
+				</tr>	
+				<tr>
+				<td>				
+				<label for="dob"><i>Birth Date:</i></label></td>
+				<td><input type="date" id="dt" name="dt" required></td>
+					</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="gender"><i>Gender:</i></label>
+				</td>
+				<td class="td">	<input type="Radio" id="gender" name="gender" >	
+                <label for="gender">Male</label><br>
+					<input type="Radio" id="gender" name="gender" >	
+                <label for="gender">Female</label><br>
+					<input type="Radio" id="gender" name="gender" >
+                <label for="gender">Others</label>
+				</td>
+			  </tr>
+				<tr>
+			  <td>
+			  <label for="mobile"><i>Mobile Number:</i></label></td>
+				<td>	<input type="tel" id="mobile" name="mobile" placeholder="&#128274;123-456-789" required>
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="pack"><i>Tour Package:</i></label></td>
+					<td class="td"><input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Goa</label><br>
+					<input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Kashmir</label><br>
+					<input type="Radio" id="pack" name="pack" >	
+                <label for="pack">Others</label>
+              	</td>
+				</tr>
+				<tr>
+				<td>
+				<label for="per"><i>Number of Person:</i></label></td>
+					<td><input type="number" id="per" name="per" placeholder="&#128274;NO. OF PERSON" required>
+				</td>
+				</tr>
+					<tr>
+					<td>		
+			<label for="dt"><i>Arrival date:</i></label></td>
+					<td><input type="date" id="dt" name="dt" required></td>
+				</tr>
+				
+					<tr>
+				<td>
+				<label for="av"><i>What would You want <br>to Avail:</i></label></td>
+					<td class="td"><input type="Radio" id="av" name="av" >	
+                <label for="av">Boarding</label><br>
+					<input type="Radio" id="av" name="av" >	
+                <label for="av">Fooding</label><br>
+					<input type="Radio" id="av" name="av" >	
+                <label for="av">Sight seeing</label><br>
+              	<input type="Radio" id="av" name="av" >	
+                <label for="av">Others</label><br>
+				</td>	
+				</tr>
+				<tr>
+				
+				<td>	<label for="term"><i>Terms And condition:</i></label></td>
+ 					<td class="td"><input type="radio" id="term" name="term" >	
+                <label for="term">I agree</label><br>
+					<input type="Radio" id="term" name="term" >	
+                <label for="term">I disagree</label></td>
+				</tr>	
+			</table>
+				<input type="submit" id="submit" name="submit" >	
+                
+			</fieldset>			
+		</form>
+	</body>
+	</html>
+******************************************************************************
+<html>
+	<head>
+		<title>action page</title>
+	</head>
+	<body>
+		<h2>You have submitted Your Responce</h2>
+	</body>
+</html>
+*********************************************************************************
+body{
+	background-color:#FFDAB9;
+							}
+i{
+   color:#B22222;
+   font-family:sans-serif;
+						}	
+.td{
+     border:solid black 2px;
+	 background-color:WHITE;
+							}							
+legend{
+	    COLOR:#;
+					}
+h1 {
+		border:1px;
+		background-color:#FFFFE0;
+		color:#FFD700;
+		text-align:center;
+	}
+	
+	
+	
+-----------------------------------------------------------------------------------------------
+//6.Create a HTML page having a complex table. On completion, the page will look like following.
+-----------------------------------------------------------------------------------------------
+*************************************************************************
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="6_table.css"
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Quick</th>	
+				<th colspan="2">Brown Fox</th>
+				<th>Jumps</th>
+			</tr>
+			<tr>
+				<td rowspan="3">Over the</td>
+				<td>Lazy</td>
+				<td>Dog</td>
+				<td>And</td>
+			</tr>
+			<tr>
+				<td>Then</td>
+				<td>It</td>
+				<td>Fall</td>
+			</tr>
+			<tr>
+				<td colspan="3">Prey to a lion</td>
+			</tr>
+		</table>
+	</body>
+</html>
+*****************************************************************************
+table,th,td{
+			border:solid black 2px;	}
+th{
+	color:white;
+	background-color:grey;
+}			
+td{
+	color:black;
+	background-color:WHITE;
+}
+table{
+	background-color:pink;
+	margin-left:200PX;
+    height:250PX;
+	weidth:200PX;
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+// 7.Write HTML code to draw a rectangle using Canvas and fill color in gradient from red to pink from start to end
+-------------------------------------------------------------------------------------------------------------------------
+***************************************************************************************************************************
+<html> 
+<body> 
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid black" ></canvas> 
+<script> 
+var c = document.getElementById("myCanvas"); 
+var ctx= c.getContext("2d"); 
+var grd=ctx.createLinearGradient(0,0,200,0); 
+grd.addColorStop(0,"red"); 
+grd.addColorStop(1,"pink"); 
+ctx.fillStyle=grd; 
+ctx.fillRect(20,20,250,100); 
+ctx.stroke(); 
+</script> 
+</body> 
+</html>
+
+
+
+----------------------------------------------------------------------------------------
+// 8.Write HTML code to embed the audio in a document
+----------------------------------------------------------------------------------------
+*************************************************************************************
+<html>
+	<head>
+		<title>Mp3 audio</title>
+	</head>	
+	<body>
+	<h1>Embeded Audio</h1>
+		<audio controls autoplay>
+			<source src="Ghana_Kasoota_Raftaar_Surbhi.mp3" type="audio/mpeg">
+	</audio>		
+	</body>
+</html>
+
+
+
+----------------------------------------------------------------------------
+//9. Draw a semi arc using HTML5 canvas.
+-------------------------------------------------------------------------------
+*************************************************************************************
+<html> 
+<body> 
+<canvas id="myCanvas" height="200" width="578" style="border:1px"></canvas> 
+<script> 
+var c = document.getElementById("myCanvas"); 
+var ctx = c.getContext("2d"); 
+ctx.beginPath(); 
+ctx.arc(288,75,70,0,Math.PI,false); 
+ctx.closePath(); 
+ctx.lineWidth=5; 
+ctx.fillStyle='red'; 
+ctx.fill(); 
+</script> 
+</body> 
+</html> 
+
+
+
+
+---------------------------------------------------------------------------
+//10. Write HTML code to draw an outlined rectangle using Canvas.
+---------------------------------------------------------------------------
+****************************************************************************
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.rect(20, 20, 150, 100);
+ctx.stroke();
+</script> 
+
+</body>
+</html>
+
+
+
+
+-----------------------------------------------------------------------
+//11. Write HTML5 code to draw the any image using Canvas.
+------------------------------------------------------------------------
+************************************************************************
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+
+<img id="scream" width="220" height="277"
+src="pic_the_scream.jpg" alt="The Scream">
+
+<p>Canvas:</p>
+
+<canvas id="myCanvas" width="240" height="297"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("scream");
+   ctx.drawImage(img, 10, 10);
+};
+</script>
+
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------------------------------
+12. Draw a square using HTML5 SVG, fill that square with yellow color and make a 5px blue stroke width.
+--------------------------------------------------------------------------------------------------------
+********************************************************************************************************
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+
+<img id="scream" width="220" height="277"
+src="pic_the_scream.jpg" alt="The Scream">
+
+<p>Canvas:</p>
+
+<canvas id="myCanvas" width="240" height="297"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("scream");
+   ctx.drawImage(img, 10, 10);
+};
+</script>
+
+</body>
+</html>
+
+
+
+
+-------------------------------------------------------------------------
+// 13. Write HTML code to embed the following video in web document
+-------------------------------------------------------------------------
+***************************************************************************	
+<html>
+	<head>
+		<title>Mp4 Video</title>
+	</head>	
+	<body>
+	<h1>Embeded Audio</h1>
+		<video width="320" height="240" controls autoplay>
+			<source src="Ghana_Kasoota_Raftaar_Surbhi.mp3" type="video/mp4">
+	</video>		
+	</body>
+</html>
+
+
+
+-------------------------------------------------------------------------
+14. Write HTML code to place the following web page into your web page.
+"https://www.etutorialspoint.com"
+-------------------------------------------------------------------------
+**************************************************************************
+<html>
+	<head>
+		<title>Web page Have Web Page</title>
+	</head>
+	<body>
+		<h1>web page into your web page.
+"https://www.etutorialspoint.com"<br></h1>
+		<center><iframe src="https://www.etutorialspoint.com" height="550px" width="800 px "></iframes></center>	
+	</body>
+</html>
+
+*****************************************************************************
+
+	
+	
+
+	

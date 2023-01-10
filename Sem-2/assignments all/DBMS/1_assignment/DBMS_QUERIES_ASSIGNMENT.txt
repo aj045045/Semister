@@ -1,0 +1,319 @@
+Name :Ansh Yadav
+COurse :Mcs-2
+Assignment :2[SQL Queries]
+Sub :Database Management
+Roll.no :36
+
+**********************************************
+[1] Give all the details of customer Anil.
+**********************************************
+SELECT * FROM DEPOSIT
+WHERE CNAME='ANIL';
+-------------------------------------------
+OUTPPUT:
+--------------------------------------------
+# ACTNO, CNAME, BNAME, AMOUNT, ADATE
+'100', 'ANIL', 'VRCE', '1000.00', '1995-03-01'
+
+
+**************************************************************************************
+[2] Give the name of customer having living city = Bombay and branch city = nagpur
+**************************************************************************************
+SELECT DISTINCT CNAME
+ FROM CUSTOMER C ,BRANCH B
+WHERE  C.CITY='BOMBAY' AND B.CITY='NAGPUR';
+----------------------------------------------
+OUTPUT:
+---------------------------------------------
+# CNAME
+'NAREN'
+'KRANTI'
+'SHIVANI'
+
+
+****************************************************************************
+[3] Give name of customer having same living city as their branch city.
+****************************************************************************
+SELECT DISTINCT CNAME 
+FROM CUSTOMER C,BRANCH B
+WHERE C.CITY=B.CITY;
+----------------------------------------------------
+OUTPUT:
+--------------------------------------------------------
+# CNAME
+'PRAMOD'
+'MADHURI'
+'SUNIL'
+'NAREN'
+'KRANTI'
+'SHIVANI'
+
+
+**************************************************************************************************
+[4] Give the name of customer who are borrowers and depositers and having living city = Nagpur.
+**************************************************************************************************
+SELECT * FROM CUSTOMER C,BORROW B
+WHERE C.CNAME=B.CNAME AND C.CITY='NAGPUR';
+----------------------------------------------------------
+OUTPUT:
+-----------------------------------------------------------
+# CNAME, CITY, LOANNO, CNAME, BNAME, AMOUNT
+'MADHURI', 'NAGPUR', '321', 'MADHURI', 'ANDHERI', '2000.00'
+'PRAMOD', 'NAGPUR', '375', 'PRAMOD', 'VIRAR', '8000.00'
+
+
+*****************************************************************************************
+[5] Give the name of customers who are depositors having same branch city of Sunil.
+*************************************************************************************
+SELECT D.CNAME 
+FROM DEPOSIT D
+WHERE D.BNAME 
+IN (SELECT d.BNAME FROM DEPOSIT D WHERE D.CNAME='SUNIL'); 
+-------------------------------------------------------------
+OUTPUT:
+-------------------------------------------------------------
+# CNAME
+'SUNIL'
+
+
+********************************************************************************************************
+[6] Give name of depositors having same living city as Anil and having deposit amount greater than 2000.
+********************************************************************************************************
+SELECT *
+FROM DEPOSIT
+WHERE AMOUNT>=2000 IN
+(SELECT CITY FROM CUSTOMER
+WHERE CNAME='ANIL');
+-------------------------------------------------------------------------
+OUTPUT:
+------------------------------------------------------------------------
+# ACTNO, CNAME, BNAME, AMOUNT, ADATE
+'100', 'ANIL', 'VRCE', '1000.00', '1995-03-01'
+'101', 'SUNIL', 'AJNI', '5000.00', '1998-01-04'
+'102', 'MEHUL', 'KAROLBAGH', '3500.00', '1995-11-17'
+'104', 'MADHURI', 'CHANDNI', '1200.00', '1995-12-17'
+'105', 'PRAMOD', 'MGROAD', '3000.00', '1996-03-27'
+'106', 'SANDIP', 'ANDHERI', '2000.00', '1996-03-31'
+'107', 'SHIVANI', 'VIRAR', '1000.00', '1995-09-05'
+'108', 'KRANTI', 'NEHRUPLACE', '5000.00', '1995-07-02'
+'109', 'NAREN', 'POWAI', '7000.00', '1995-08-10'
+
+
+
+********************************************************************************************************
+[7] Give name of depositors having same branch as branch of Sunil.
+********************************************************************************************************
+SELECT CNAME FROM DEPOSIT WHERE BNAME
+IN(SELECT BNAME FROM BRANCH WHERE CNAME='SUNIL');
+----------------------------------------------------------------------------
+OUTPUT:
+----------------------------------------------------------------------------
+# CNAME
+'SUNIL'
+
+
+*****************************************************************************
+[8] Give name of borrowers having loan amount greater than amount of Parmod.
+******************************************************************************
+SELECT CNAME FROM BORROW
+WHERE AMOUNT>(SELECT AMOUNT FROM BORROW WHERE CNAME='PRAMOD');
+----------------------------------------------------------------
+OUTPUT:
+--------------------------------------------------------------------
+CNAME
+
+
+
+**********************************************************************************************
+[9] Give name of Customers living in same city where branch of depositor sunil is located.
+*********************************************************************************************
+SELECT CNAME 
+FROM CUSTOMER
+WHERE CNAME=(SELECT BNAME FROM DEPOSIT WHERE CNAME='SUNIL');
+-----------------------------------------------------------------------
+OUTPUT:
+-------------------------------------------------------------------------
+CNAME
+
+
+***********************************************************************************************************
+[10] Give name of borrowers having deposit amount greater than 1000 and loan amount greater than 2000.
+***********************************************************************************************************
+SELECT DISTINCT B.CNAME 
+FROM BORROW B,DEPOSIT D
+WHERE B.AMOUNT>2000
+AND D.AMOUNT>1000;
+-----------------------------------------------------------------
+OUTPUT:
+------------------------------------------------------------------
+# CNAME
+'KRANTI'
+'PRAMOD'
+'SUNIL'
+'MEHUL'
+
+
+*************************************************************************************************
+[11] Give loan no., loan amount, account no. deposit amount of customers living in city Nagpur.
+***********************************************************************************************
+SELECT BR.LOANNO,BR.AMOUNT,D.ACTNO,D.AMOUNT
+FROM DEPOSIT D,BORROW BR,CUSTOMER C
+WHERE C.CNAME=D.CNAME
+AND D.CNAME=BR.CNAME
+AND C.CITY='NAGPUR';
+-----------------------------------------------------
+OUTPUT:
+------------------------------------------------------
+# LOANNO, AMOUNT, ACTNO, AMOUNT
+'321', '2000.00', '104', '1200.00'
+'375', '8000.00', '105', '3000.00'
+
+
+**********************************************************************************************************
+[12] Give loan no., loan amount, account no., deposit amount of customers having branch located at Bombay.
+**********************************************************************************************************
+SELECT DISTINCT D.CNAME, D.ACTNO,D.AMOUNT,B.LOANNO,B.AMOUNT FROM DEPOSIT D, BORROW B
+WHERE D.BNAME IN(SELECT BNAME FROM BRANCH WHERE CITY='BOMBAY');
+--------------------------------------------------------------------
+OUTPUT:
+--------------------------------------------------------------------
+# CNAME, ACTNO, AMOUNT, loanno, AMOUNT
+'NAREN', '109', '7000', '210', '1000'
+'SHIVANI', '107', '1000', '210', '1000'
+'SANDIP', '106', '2000', '210', '1000'
+'NAREN', '109', '7000', '206', '5000'
+'SHIVANI', '107', '1000', '206', '5000'
+'SANDIP', '106', '2000', '206', '5000'
+'NAREN', '109', '7000', '311', '3000'
+'SHIVANI', '107', '1000', '311', '3000'
+'SANDIP', '106', '2000', '311', '3000'
+'NAREN', '109', '7000', '321', '2000'
+'SHIVANI', '107', '1000', '321', '2000'
+'SANDIP', '106', '2000', '321', '2000'
+'NAREN', '109', '7000', '375', '8000'
+'SHIVANI', '107', '1000', '375', '8000'
+'SANDIP', '106', '2000', '375', '8000'
+'NAREN', '109', '7000', '418', '3000'
+'SHIVANI', '107', '1000', '418', '3000'
+'SANDIP', '106', '2000', '418', '3000'
+
+
+*********************************************************************************************************************
+[13] Give loan no, loan amount, account no., deposit amount, branch name, branch city and living city of Pramod.
+*********************************************************************************************************************
+SELECT BR.LOANNO,BR.AMOUNT,D.ACTNO,D.AMOUNT,D.BNAME,B.CITY,C.CITY
+FROM BORROW BR,DEPOSIT D,BRANCH B,CUSTOMER C 
+WHERE C.CNAME='PRAMOD' 
+AND D.CNAME=C.CNAME 
+AND D.CNAME=BR.CNAME AND D.BNAME=B.BNAME;
+--------------------------------------------------------------------------------------
+OUTPUT:
+--------------------------------------------------------------------------------------
+# LOANNO, AMOUNT, ACTNO, AMOUNT, BNAME, CITY, CITY
+'375', '8000.00', '105', '3000.00', 'MGROAD', 'BANGALORE', 'NAGPUR'
+
+
+************************************************************************************************
+[14] Give deposit details and Loan details of Customer in same city where Pramod is living.
+***********************************************************************************************
+SELECT D.ACTNO,D.CNAME,D.BNAME,D.AMOUNT,D.ADATE,BR.LAONNO,BR.BNAME,BR.AMOUNT
+from DEPOSIT D,BORROW BR,CUSTOMER C
+where C.CNAME=D.CNAME AND D.CNAME=BR.CNAME AND C.CITY  
+IN (SELECT C.CITY FROM CUSTOMER C WHERE C.CNAME='PRAMOD');
+---------------------------------------------------------------------------------------
+OUTPUT;
+-----------------------------------------------------------------------------------
+# ACTNO, CNAME, BNAME, AMOUNT, ADATE, LOANNO, BNAME, AMOUNT
+'104', 'MADHURI', 'CHANDNI', '1200', '1995-12-17', '321', 'andhri', '2000'
+'105', 'PRAMOD', 'MGROAD', '3000', '1996-03-27', '375', 'virar', '8000'
+
+
+**************************************************************************************************
+[15] Give Name of Depositors having same Branch city as Sunil and having same Living city as Anil.
+**************************************************************************************************
+SELECT D.CNAME FROM DEPOSIT D,CUSTOMER C,BRANCH B
+WHERE D.CNAME=C.CNAME AND D.BNAME=B.BNAME AND B.CITY 
+IN (SELECT B.CITY FROM BRANCH B,DEPOSIT D WHERE D.CNAME='SUNIL' AND D.BNAME=B.BNAME) AND C.CITY 
+IN (SELECT C.CITY FROM CUSTOMER C WHERE C.CNAME='ANIL');
+----------------------------------------------------------
+OUTPUT:
+----------------------------------------------------------
+# CNAME
+'ANIL'
+
+
+******************************************************************************************************
+[16] Give name of depositors having amount greater than 5000 and having same living city as Pramod.
+*****************************************************************************************************
+SELECT DISTINCT D.CNAME FROM DEPOSIT D,CUSTOMER C
+WHERE D.AMOUNT>5000
+AND C.CITY IN(SELECT CITY FROM CUSTOMER WHERE CNAME='PRAMOD');
+--------------------------------------------------------
+OUTPUT:
+--------------------------------------------------------
+# CNAME
+'NAREN'
+
+
+*******************************************************************
+[17] Give city of customer having branch city same as Pramod
+*******************************************************************
+SELECT C.CITY FROM CUSTOMER C, DEPOSIT D, BRANCH B
+WHERE D.BNAME=B.BNAME AND D.BNAME=B.BNAME AND D.CNAME='PRAMOD'
+AND C.CNAM=D.CNAME;
+---------------------------------------------------------------------
+OUTPUT:
+-------------------------------------------------------------------
+# city
+'NAGPUR'
+
+
+**************************************************
+[18] Give branch city and living city of Pramod.
+*************************************************
+SELECT B.CITY, C.CITY 
+FROM BRANCH B,CUSTOMER C,DEPOSIT D
+WHERE C.CNAME='PRAMOD' 
+AND C.CNAME=D.CNAME 
+AND D.BNAME=B.BNAME;
+-------------------------------------------------------
+OUTPUT;
+------------------------------------------------------
+# CITY, CITY
+'BANGALORE', 'NAGPUR'
+
+
+*******************************************************
+[19] Give branch city of sunil and branch city of Anil.
+********************************************************
+SELECT B.CITY FROM DEPOSIT D, BRANCH B
+WHERE D.BNAME=B.BNAME
+AND D.CNAME IN('SUNIL','ANIL');
+---------------------------------------------
+OUTPUT:
+-------------------------------------------
+# CITY
+'NAGPUR'
+'NAGPUR'
+
+
+*********************************************************
+[20] Give living city of Ashok and Living city of Ajay.
+**********************************************************
+SELECT C.CNAME, C.CITY 
+FROM CUSTOMER C 
+WHERE C.CNAME='ASHOK'
+OR C.CNAME='ANIL';
+----------------------------------------------------------
+OUTPUT:
+-----------------------------------------------------
+# CNAME, CITY
+'ANIL', 'CALCUTTA'
+
+
+
+
+
+
+
+

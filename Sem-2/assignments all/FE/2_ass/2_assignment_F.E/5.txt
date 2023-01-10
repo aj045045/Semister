@@ -1,0 +1,130 @@
+Name:Ansh J yadav
+Sub:Front End Web Develpoment
+Course:Mcs_2
+Roll.no:36
+
+----------------------------------------------------------------------------------------------
+[5] Display your browser properties
+--------------------------------------------------------------------------------------------
+
+<html>
+<head>
+	<title>
+5
+	</title>
+	<link rel="stylesheet" href="5.css">
+</head>
+<body>
+	<table align="center"  >
+		<tr>
+				<td>
+						Is Cookie Enabled?
+				</td>
+				<td id="cookie_enabled"></td>
+					<script  type="text/javascript" language="javascript">
+					document.getElementById("cookie_enabled").innerHTML= navigator.cookieEnabled;
+				</script>
+				</tr>
+			<tr>
+				<td>
+						Application Name
+				</td>
+				<td id="App_name"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App_name").innerHTML= navigator.appName;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Application Code Name
+				</td>
+				<td id="App_codename"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App_codename").innerHTML= navigator.appCodeName;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Engine Name
+				</td>
+				<td id="browser_name"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_name").innerHTML= navigator.product;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						App Version
+				</td>
+				<td id="App version"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("App version").innerHTML= navigator.appVersion;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Agent
+				</td>
+				<td id="browser_agent"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_agent").innerHTML= navigator.userAgent;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Browser Platform
+				</td>
+				<td id="browser_platform"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_platform").innerHTML= navigator.platform;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Language
+				</td>
+				<td id="browser_language"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_language").innerHTML= navigator.language;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Is Browser Online?
+				</td>
+				<td id="browser_online"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("browser_online").innerHTML= navigator.onLine;
+				</script>
+			</tr>
+			<tr>
+				<td>
+						Is Browser Java Enabled?
+				</td>
+				<td id="java_enabled"></td>
+				<script  type="text/javascript" language="javascript">
+					document.getElementById("java_enabled").innerHTML= navigator.javaEnabled();
+				</script>
+			</tr>
+
+		</table>
+		
+		
+</body>
+</html>
+
+
+
+CSS
+
+th, td {
+  border-bottom: 1px dotted #ddd;
+  padding: 15px;
+  text-align: left;
+   height: 50px;
+  vertical-align: bottom;
+}
+table {
+  border: 1px solid black;
+}
+	

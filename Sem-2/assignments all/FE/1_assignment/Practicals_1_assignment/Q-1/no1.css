@@ -1,0 +1,78 @@
+.india{
+    position: absolute;
+    right: 90px;
+    top: 40px;
+    
+}
+.a{
+    display: inline-block;
+    position: absolute;
+    left: 170px;
+    top: 135px;
+}
+.b{
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    margin: 137px 160px;
+    padding: 18px 0px;
+}
+.img1{
+    background-image: url(art_1.jfif);
+    padding: 27px 0px;
+    display: inline-block;
+    width: 202px;
+    height: 200px;
+    position: absolute;
+    top: 187px;
+    left: 494px;
+}
+.img3 h2{
+    width: 200px;
+    margin: 93px 0px;
+}
+.img2{
+    background-image: url(art_2.jfif);
+    padding: 25px 0px;
+    display: inline-block;
+    position: absolute;
+    top: 187px;
+    left: 700px;
+    width: 200px;
+    height: 204px;
+}
+.img3{
+    background-image: url(art_3.jfif);
+    display: inline-block;
+    padding: 12px 12px;
+    width: 137px;
+    height: 82px;
+    position: absolute;
+    top: 187px;
+    right: 275px;
+}
+
+.img4{
+    background-image: url(art_4.jfif);
+    display: inline-block;
+    padding: 12px 12px;
+    width: 137px;
+    height: 82px;
+    position: absolute;
+    top: 380px;
+    right: 275px;
+}
+.img4 h2{
+    width: 183px;
+    margin: 93px 0px;
+}
+.c{
+    display: inline-block;
+    padding: 1px 0px;
+    margin: 445px 520px;
+    width: 329px;
+    height: 48px;
+}
+.d li{
+display: block}
