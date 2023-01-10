@@ -1,0 +1,185 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+/// 9) Write a programme to Overload the New and Delete for Stack Class.
+#include<stdlib.h>
+#include <iostream>
+using namespace std;
+class stack
+{
+    int num[15];
+    int noRec;
+public:
+    stack()
+    {
+        noRec = 0;
+    }
+    void push(int i);
+    void pop();
+    void display();
+    void* operator new(size_t size);
+    void operator delete(void* ptr);
+};
+void stack::push(int i)
+{
+    num[noRec] = i;
+    noRec++;
+    cout << "===PUSH===" << endl;
+}
+void stack::pop()
+{
+    noRec--;
+    cout << "===POP===" << endl;
+}
+void stack::display()
+{
+    system("cls");
+    for (int i = 0; i < noRec; i++)
+    {
+        cout << num[i] << "\n" << endl;
+    }
+}
+void* stack::operator new(size_t size)
+{
+    cout << "Overloading new operator with size: " << size << endl;
+    void* p = malloc(size);
+    return p;
+}
+void stack::operator delete(void* ptr)
+{
+    cout << "Overloading delete operator " << endl;
+    free(ptr);
+}
+int choice()
+{
+    int ch;
+    cout << "----------Enter your choice-----------\n"
+        << endl;
+    cout << "1. Enter numbers" << endl;
+    cout << "2. Delete a number" << endl;
+    cout << "3. Display numbers" << endl;
+    cout << "4. Delete a stack object" << endl;
+    cout << "5. Exit" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+    int opt;
+    stack* ob = new stack;
+again:
+    opt = choice();
+    switch (opt)
+    {
+    case 1:
+    {
+        int in, a = 1;
+        do
+        {
+            cout << "Enter a number " << endl;
+            cin >> in;
+            ob->push(in);
+            cout << "Do you want to enter again yes(1)";
+            cin >> a;
+        } while (a == 1);
+        break;
+    }
+    case 2:
+    {
+        ob->pop();
+        break;
+    }
+    case 3:
+    {
+        ob->display();
+        break;
+    }
+    case 4:
+    {
+        cout << "Delete a stack memory" << endl;
+        delete &ob;
+        break;
+    }
+    case 5:
+    {
+        exit(0);
+        break;
+    }
+    default:
+    {
+        cout << "\n\tNOTE:\n Please again enter from the option" << endl;
+        goto again;
+        break;
+    }
+    }
+    goto again;
+    return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+Overloading new operator with size: 64
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit
+1
+Enter a number 
+4
+===PUSH===
+Do you want to enter again yes(1)1
+Enter a number 
+9
+===PUSH===
+Do you want to enter again yes(1)1
+Enter a number 
+0
+===PUSH===
+Do you want to enter again yes(1)0
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit
+3
+4
+9
+0
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit
+2
+===POP===
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit
+3
+4
+9
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit
+4
+Delete a stack memory
+Overloading delete operator
+----------Enter your choice-----------
+1. Enter numbers
+2. Delete a number
+3. Display numbers
+4. Delete a stack object
+5. Exit

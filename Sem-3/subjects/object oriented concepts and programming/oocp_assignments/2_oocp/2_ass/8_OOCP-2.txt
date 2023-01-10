@@ -1,0 +1,174 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+/*
+8)
+Write a menu driven program that can perform the following functions on
+strings. (Use overloaded operators where possible).(Do not use predefined
+string function or class.)
+
+1. Compare two strings for equality (== operator)
+2. Check whether first string is smaller than the second (<= operator)
+3. Copy the string to another
+4. Extract a character from the string (Overload [])
+5. Reverse the string
+6. Concatenate two strings (+ operator)
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+class opt
+{
+    string val;
+public:
+    opt() {}
+    opt(string i)
+    {
+        val= i;
+    }
+    bool operator==(opt& op);
+    bool operator<=(opt& op);
+    void operator[](int a);
+    void operator+(opt& op);
+    void operator=(opt& op);
+    void reverse();
+    friend ostream& operator<<(ostream& out, opt& o);
+};
+void opt::reverse()
+{
+    for (int i=val.length(); i >= 0; i--)
+    {
+        cout << val[i];
+    }
+}
+bool opt::operator==(opt& op)
+{
+    if (this->val == op.val)
+        return true;
+    else
+        return false;
+}
+bool opt::operator<=(opt& op)
+{
+    if (this->val <= op.val)
+        return true;
+    else
+        return false;
+}
+void opt::operator[](int a)
+{
+        cout<<val[a] << endl;
+}
+void opt::operator+(opt& op)
+{
+    this->val += op.val;
+}
+void opt::operator=(opt& op)
+{
+    this->val = op.val;
+}
+ostream&operator<<(ostream&out,opt&o)
+{
+    return out << "-----Printing string-----\n"<<o.val << endl;
+}
+int choice()
+{
+    int ch;
+    cout << "---------Enter your choice------\n" << endl;
+    cout << "1. Compare two strings for equality(== operator)" << endl;
+    cout << "2. Check whether first string is smaller than the second (<= operator)" << endl;
+    cout << "3. Copy the string to another " << endl;
+    cout << "4. Extract a character from the string (Overload [])" << endl;
+    cout << "5. Reverse the string" << endl;
+    cout << "6. Concatenate two strings (+ operator)" << endl;
+    cout << "7. Exit" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+    int ch;
+ do{
+     ch = choice();
+    switch (ch)
+    {
+    case 1:
+    {
+        cout << "Enter two string" << endl;                                //Compare two strings for equality(== operator)
+        string st1, st2;
+        cin >> st1 >> st2;
+        opt ob1(st1);
+        opt ob2(st2);
+        if ((ob1 == ob2) == true)
+            cout << "Both are same" << endl;
+        else
+            cout << "Both are not same" << endl;
+        break; 
+    }
+    case 2:
+    {
+        cout << "Enter two string" << endl;                              // Check whether first string is smaller than the second (<= operator)
+        string st1, st2;
+        cin >> st1 >> st2;
+        opt ob1(st1), ob2(st2);
+        if ((ob1 <= ob2) == true)
+            cout << "First is smaller than the second" << endl;
+        else
+            cout << "First is greater than the second" << endl;
+        break;
+    }
+    case 3:
+    {
+        cout << "Enter two string" << endl;                             //Copy the string to another
+        string st1, st2;
+        cin >> st1 >> st2;
+        opt ob1(st1),ob2(st2);
+        ob2 = ob1;
+        cout << ob2;
+        break;
+    }
+    case 4:
+    {
+        cout << "Enter one string" << endl;                             // Extract a character from the string (Overload [])
+        string st1;
+        cin >> st1;
+        opt ob1(st1);
+        int a;
+        cout << "Enter place where you want to extract; ";
+        cin >> a;
+        a+=1;
+        ob1[a];
+        break;
+    }
+    case 5:
+    {
+        cout << "Enter string" << endl;                             //Reverse the string
+        string st1;
+        cin >> st1;
+        opt ob1(st1);
+        ob1.reverse();
+        break;
+    }
+    case 6:
+    {
+        cout << "Enter two string" << endl;                             //Concatenate two strings (+ operator)
+        string st1, st2;
+        cin >> st1 >> st2;
+        opt ob1(st1),ob2(st2),ob3;
+        ob1 + ob2;
+        cout<<ob1;
+        break;
+    }
+    default:
+    {
+        cout << "Invlaid option" << endl;
+        break;
+    }
+    }
+ } while (ch!=7);
+ return 0;
+}

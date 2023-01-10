@@ -1,0 +1,144 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+/*
+14) Write a generic function that will sort a character string, integer and value.Create a menu with appropriate
+    options and accept the values from the user.
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+template <class t>
+void sort(t val)
+{
+    if (isdigit(t val))
+        cout << "It is a digit" << endl;
+    else if (isalpha(t val) = 1)
+        cout << "It is a character" << endl;
+    else
+        cout << "It is a string" << endl;
+}
+   int menu()
+{
+    int ch;
+    cout << " \tWhich Data type you enter \n" << endl;
+    cout << "1. String" << endl;
+    cout << "2. Integer" << endl;
+    cout << "3. Character" << endl;
+    cout << "4. Exit" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+    int m;
+loop:
+    m = menu();
+    switch (m)
+    {
+    case 1:
+    {
+        string tr;
+        cout << " Enter total String's you enter " << endl;
+        cin >> tr;
+        sort<string>(tr);
+    break;
+    }
+    case 2:
+    {
+        int tr;
+        cout << " Enter total  Integer's you enter " << endl;
+        cin >> tr;
+        sort<int>(tr);
+        break;
+    }
+    case 3:
+    {
+        char tr;
+        cout << " Enter total char's you enter " << endl;
+        cin >> tr;
+        sort<char>(tr);
+        break;
+    }
+    case 4: {
+        exit(0);
+        break;
+    }
+    default:
+    {
+        cout << "--NOTE-- :\n";
+        cout << "\t Enter it again";
+        goto loop;
+        break;
+    }
+    }
+    goto loop;
+    return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+        Which Data type you enter
+1. String
+2. Integer
+3. Float
+4. Exit
+2
+ Enter total  Integer's you enter
+4
+Enter 4
+2
+7
+4
+7
+        -------PRINTING OUTPUT----------
+2
+4
+7
+7
+        Which Data type you enter
+1. String
+2. Integer
+3. Float
+4. Exit
+1
+ Enter total String's you enter
+5
+Enter 5
+xavier
+alex
+ajay
+ekta
+janvi
+        -------PRINTING OUTPUT----------
+ajay
+alex
+ekta
+janvi
+xavier
+        Which Data type you enter
+1. String
+2. Integer
+3. Float
+4. Exit
+3
+ Enter total float's you enter
+4
+Enter 4
+10.3
+10.5
+11.00
+15.09
+        -------PRINTING OUTPUT----------
+10.3
+10.5
+11
+15.09
+        Which Data type you enter
+1. String
+2. Integer
+3. Float
+4. Exit

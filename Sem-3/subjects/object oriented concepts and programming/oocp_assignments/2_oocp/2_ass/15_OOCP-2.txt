@@ -1,0 +1,149 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+/*
+15) Write a template function called find().This function searches an array for an
+	object.It returns either the index of the matching object(if one is found) or
+	-1 if no match is found.
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+template <class t>
+class search
+{
+	t var[15];
+	int noRec;
+	t val;
+	int index;
+public:
+	search(int n)
+	{
+		noRec = n;
+	};
+	t input();
+	t find();
+	t output();
+};
+template <class t>
+t search<t>::input()
+{
+	system("cls");
+	cout<<"\nEnter the array"<<endl;
+	for (int i = 0; i < noRec; i++)
+	{
+		cin >> var[i];
+	}
+	cout << " Enter value you want to find :" << endl;
+	cin >> val;
+	return var[noRec];
+}
+template <class t>
+t search<t>::find()
+{
+	for (int i = 0; i < noRec; i++)
+	{
+		if (var[i] == val)
+		{
+			index = i+1;
+		}
+	}
+}
+template <class t>
+t search<t>::output()
+{
+	cout << " Position of the array if found  else \"-1\" if not found :" << index << endl;
+}
+int choice()
+{
+	int ch;
+	cout << "1. Enter Integer value" << endl;
+	cout << "2. Enter string value" << endl;
+	cout << "3. Exit" << endl;
+	cin >> ch;
+	return ch;
+}
+int main()
+{
+again:
+	int ch;
+	ch = choice();
+	switch (ch)
+	{
+	case 1:
+	{
+		int i;
+		cout << "Enter total number of data you want to enter in integer's " << endl;
+		cin >> i;
+		search<int> c1(i);
+		c1.input();
+		c1.find();
+		c1.output();
+		break;
+	}
+	case 2:
+	{
+		int s;
+		cout << "Enter total number of data you want to enter in string's" << endl;
+		cin >> s;
+		search<string> c3(s);
+		c3.input();
+		c3.find();
+		c3.output();
+		break;
+	}
+	case 3:
+	{
+		exit(0);
+		break;
+	}
+	default:
+	{
+		cout << " Seem's not an option please enter it again " << endl;
+		goto again;
+		break;
+	}
+	}
+	goto again;
+	return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+1. Enter Integer value
+2. Enter string value
+3. Exit
+1
+Enter total number of data you want to enter in integer's 
+5
+Enter the array
+1
+2
+3
+44
+55
+ Enter value you want to find :
+3
+ Position of the array if found  else "-1" if not found :3
+1. Enter Integer value
+2. Enter string value
+3. Exit
+2
+Enter total number of data you want to enter in string's
+6
+Enter the array
+ansh
+vijay
+ekt
+ankit
+harsh
+nidhi
+ Enter value you want to find :
+ekt
+ Position of the array if found  else "-1" if not found :3
+1. Enter Integer value
+2. Enter string value
+3. Exit

@@ -1,0 +1,66 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+// 1 .Write a program to use binary operator + add two object of class Numbers having num1 and num2 as its data members and display result.
+#include <iostream>
+using namespace std;
+class addition
+{
+    int num1, num2;
+public:
+
+    addition()
+    {
+        num1 = 0;
+        num2 = 0;
+    }
+    addition(int n1, int n2)
+    {
+        num1 = n1;
+        num2 = n2;
+    }
+    addition operator + (addition & n)
+    {
+        addition tmp;
+        tmp.num1 = num1 + n.num1;
+        tmp.num2 = num2 + n.num2;
+        return tmp;
+    }
+    friend ostream& operator << (ostream& out, const addition& c);
+};
+ostream& operator << (ostream& out, const addition& c)
+{
+    out << c.num1 << endl;
+    out << c.num2 << endl;
+    return out;
+}
+int main()
+{
+    int n1, n2,n3,n4;
+    cout << "Please enter four numbers :";
+    cin >> n1 >> n2 >> n3 >> n4;
+    addition add1(n1, n2),add2(n3,n4);
+    cout << "object 1 :" << add1<< endl;
+    cout << "object 2 :" << add2 << endl;
+    cout << "Addition of two numbers :" << add1 + add2 << endl;
+
+    return 0;
+}
+=======================================================
+OUTPUT :
+=======================================================
+Please enter four numbers :1
+2
+3
+4
+object 1 :1
+2
+
+object 2 :3
+4
+
+Addition of two numbers :4
+6

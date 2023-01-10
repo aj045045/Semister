@@ -1,0 +1,110 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+/*
+7) WAP to define a class Time with properties int hour; int minute; int second; overload the following operators.
+6.1) + operator [a+b] (a is of time type and b is an integer)
+6.2) – operator [a-b(same as above)]
+6.3) = operator
+6.4) <,<=,>,>=
+6.5) ++,--[post and pre both]
+*/
+#include <iostream>
+using namespace std;
+template <typename type>
+class time
+{
+	type hour, min, sec;
+public:
+	time(type h = 0, type = 0, type s = 0) :hour(h), min(m), sec(s) {}
+	void operator+(time& tim)
+	{
+		this->hour += tim.hour;
+		this->min += tim.min;
+		this->sec += tim.sec;
+	}
+	void operator-(time& tim)
+	{
+		this->hour -= tim.hour;
+		this->min -= tim.min;
+		this->sec -= tim.sec;
+	}
+	void operator=(time& tim)
+	{
+		this->hour = tim.hour;
+		this->min = tim.min;
+		this->sec = tim.sec;
+	}
+	void operator++()
+	{
+		this->++hour;
+		this->++min;
+		this->++sec;
+	}
+	void operator++(time& tim)
+	{
+		this->hour++;
+		this->min++;
+		this->sec++;
+	}
+	void operator--()
+	{
+		this->--hour;
+		this->--min;
+		this->--sec;
+	}
+	void operator--(time& tim)
+	{
+		this->hour++;
+		this->min++;
+		this->sec++;
+	}
+	int operator<(time & tim)
+	{
+		bool er;
+		if (this->hour < tim.hour && this->min < tim.min && this->sec < tim.sec)
+			er = true;
+		else
+			er = false;
+		return er;
+	}
+	int operator>(time& tim)
+	{
+		bool er;
+		if (this->hour > tim.hour && this->min > tim.min && this->sec > tim.sec)
+			er = true;
+		else
+			er = false;
+		return er;
+	}
+	int operator<=(time& tim)
+	{
+		bool er;
+		if (this->hour <= tim.hour && this->min <= tim.min && this->sec <= tim.sec)
+			er = true;
+		else
+			er = false;
+		return er;
+	}
+	int operator>=(time& tim)
+	{
+		bool er;
+		if (this->hour >= tim.hour && this->min >= tim.min && this->sec >= tim.sec)
+			er = true;
+		else
+			er = false;
+		return er;
+	}
+};
+int choice()
+{}
+int main()
+{
+	return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================

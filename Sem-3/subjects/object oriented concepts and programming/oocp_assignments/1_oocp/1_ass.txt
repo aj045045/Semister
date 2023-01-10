@@ -1,0 +1,49 @@
+                   5 Year Integrated M. Sc. (Computer Science) - III
+                      Object Oriented Concepts and Programming
+
+                                     Practical Sheet — I
+
+Note : (1) Programs should have proper validations for the inputs
+       (2) Use proper variable names
+       (3) Program should contain program definition as comments and
+        should have proper Indentation
+
+
+Classes , Obiects , Functions
+
+   1. Write a program to create class Student with student’s rollno, name and
+      marks of three subjects (OOCP, DBMS and English) and display the details of
+     student with total marks of all subjects along with the percentage in proper
+     format.(Output should be in descending order of percentage.
+    . Write a program to create class Num (int n1, int n2, int n3, int n4). Display
+      total and average of n1, n2, n3 and n4.
+    . Write a program to create class Time (int h, int m). Read a value as minutes
+     from user to display new time after adding the value to minutes in Time.
+     Write a program to create class Date (int day, int month, int year). Read a
+     value as day from user to display new date after adding the value to day in
+     Date.
+    . Write a program to create class employee with employee’s id, name and basic
+      salary. Calculate gross salary for each employee(HRA 20%, DA 30%, 0A 10%).
+    . Write a program to deﬁne a class called book. Write a program to read
+     information about 10 books and display books details in ascending order of
+     price in proper format.
+    . Demonstrate the use of static variables in a class by using it to count the
+      number of times the value is being inputted in the program.
+    . Create class STUDENT having rollno, name and age as data members, also
+     take subject with three subjects and initialize their value with minimum
+     passing marks. Using member function, modify marks of student with speciﬁc
+      rollno which is given by user.
+    . Deﬁne a class to represent a bank account. Include the following members :
+
+     DATA MEMBERS                   MEMBER FUNCTIONS
+
+     Name of depositor               (1) To assign initial values
+     Account Number                   (2) To Deposit the amount
+     Type of Account                 (3) To withdraw an amount after checking the
+     Balance amount in account       (4) To display name and balance
+
+     Write C++ program to handle 10 customers.
+10. Write a program to create class ‘Search’ having data members (int a[ ], X) and
+    deﬁne member functions as void input(), void output(), void search(int position),
+    void add(int value) to display result.
+

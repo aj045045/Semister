@@ -1,0 +1,65 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-1
+
+************************************************************************************************************************************
+
+// 3.Write a program to create class Time (int h, int m). Read a value as minutes from user to display new time after adding the value to minutes in Time.
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int h, m;
+
+public:
+    void time();
+    void input();
+    void process(Time time);
+    void output();
+};
+
+int main()
+{
+    Time time;
+    Time add;
+
+    time.time();
+
+    add.input();
+    add.process(time);
+    add.output();
+
+    cout << "\nDone :)" << endl;
+    return 0;
+}
+
+void Time::time()
+{
+    cout << "Enter time hh:mm :" << endl;
+    cin >> h;
+    cout << ":\n";
+    cin >> m;
+    h=h*60;
+    m+=h;
+}
+void Time::input()
+{
+    cout << "\nEnter minutes :";
+    cin >> m;
+}
+
+void Time::process(Time time)
+{
+    m+=time.m;
+    h = m / 60;
+    m = m % 60;
+}
+
+void Time::output()
+{
+    cout << "Printing Time :" << h << " : " << m;
+}

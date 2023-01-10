@@ -1,0 +1,147 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+// 13) Write an object-oriented program to implement a generic Stack. Incorporate all the possible operation on Stack in the program.
+#include<iostream>
+using namespace std;
+template <class t>
+class stack
+{
+	t num[20];
+	int top;
+public:
+	stack(){ top=0; };
+	t push(t a)
+	{
+		num[top] = a;
+		top++;
+		return 0;
+	}
+	t pop()
+	{
+		top--;
+		return top--;
+	}
+	t display()
+	{
+		cout << "\t-----------------------Printing values-------------------"<<endl;
+		for (int i = 0; i < top; i++)
+		{
+			cout<<num[i]<<endl;
+		}
+		return num[top];
+	}
+	t option()
+	{
+		int ch;
+		cout << "\n1. For Enter number" << endl;
+		cout << "\n2. For Delete a number" << endl;
+		cout << "\n3. For Display" << endl;
+		cout << "\n4. Exit" << endl;
+		cin >> ch;
+		system("cls");
+		return ch;
+	}
+};
+int main()
+{
+	stack<int> s1;
+again:
+	int m;
+	m = s1.option();
+	switch (m)
+	{
+	case 1: {
+		int n;
+		do {
+			int  a;
+			cout << "Enter value " << endl;
+			cin >> a;
+			s1.push(a);
+			cout << " Enter one more number Yes(1) " << endl;
+			cin >> n;
+		} while (n == 1);
+		break;
+	}
+	case 2: {
+		int n;
+		do {
+			s1.pop();
+			cout << " Delete one more number Yes(1)" << endl;
+			cin >> n;
+		} while (n == 1);
+		break;
+	}
+	case 3: {
+		s1.display();
+		break;
+	}
+	case 4: {
+		exit(0);
+		break;
+	}
+	default: {
+		cout << "\n\t---NOTE ----\nSeems It is not an option Enter again :" << endl;
+		goto again;
+		break;
+	}
+	}
+	goto again;
+	return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+1. For Enter number
+2. For Delete a number
+3. For Display
+4. Exit
+1
+Enter value
+4
+ Enter one more number Yes(1)
+1
+Enter value
+7
+ Enter one more number Yes(1)
+1
+Enter value
+9
+ Enter one more number Yes(1)
+1
+Enter value
+8
+ Enter one more number Yes(1)
+0
+1. For Enter number
+2. For Delete a number
+3. For Display
+4. Exit
+3
+        -----------------------Printing values-------------------
+4
+7
+9
+8
+1. For Enter number
+2. For Delete a number
+3. For Display
+4. Exit
+2
+ Delete one more number Yes(1)
+2
+1. For Enter number
+2. For Delete a number
+3. For Display
+4. Exit
+3
+        -----------------------Printing values-------------------
+4
+7
+1. For Enter number
+2. For Delete a number
+3. For Display
+4. Exit

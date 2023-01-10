@@ -1,0 +1,73 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-1
+
+************************************************************************************************************************************
+
+// 2. Write a program to create class Num (int n1, int n2, int n3, int n4). Display total and average of n1, n2, n3 and n4.
+
+#include <iostream>
+using namespace std;
+
+class Num
+{
+    int n1, n2, n3, n4;
+    int avg, total;
+
+public:
+    void input();
+    void process();
+    void output();
+};
+
+int main()
+{
+    Num num;
+
+    num.input();
+    num.process();
+    num.output();
+
+    cout << "\nDone :)" << endl;
+    return 0;
+}
+
+void Num::input()
+{
+    cout << "\nEnter " << 1 << " number :";
+    cin >> n1;
+    cout << "\nEnter " << 2 << " number :";
+    cin >> n2;
+    cout << "\nEnter " << 3 << " number :";
+    cin >> n3;
+    cout << "\nEnter " << 4 << " number :";
+    cin >> n4;
+}
+
+void Num::process()
+{
+    total = n1 + n2 + n3 + n4;
+    avg = total / 4;
+}
+void Num::output()
+{
+    cout << "\nTotal :" << total << "\nAverage :" << avg;
+}
+
+==============================================================================
+OUTPUT :
+==============================================================================
+
+Enter 1 number :1
+
+Enter 2 number :2
+
+Enter 3 number :3
+
+Enter 4 number :4
+
+Total :10
+Average :2
+Done :)

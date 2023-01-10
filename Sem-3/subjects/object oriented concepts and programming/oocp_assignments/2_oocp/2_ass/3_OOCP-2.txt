@@ -1,0 +1,101 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+// 3) Write a program to Overload the *, +, -, == , != and = operators for the complex class.
+#include <iostream>
+using namespace std;
+class complex
+{
+	int image;
+	int real;
+public:
+	complex(int img = 0, int re = 0) :image(img), real(re) {}
+	complex operator * (complex obj)
+	{
+		complex tmp;
+		tmp.image = image * obj.image;
+		tmp.real = real * obj.real;
+		return tmp;
+	}
+	complex operator + (complex obj)
+	{
+		complex tmp;
+		tmp.image = image + obj.image;
+		tmp.real = real + obj.real;
+		return tmp;
+	}
+	complex operator - (complex obj)
+	{
+		complex tmp;
+		tmp.image = image - obj.image;
+		tmp.real = real - obj.real;
+		return tmp;
+	}
+	void operator = (complex obj)
+	{
+		image = obj.image;
+		real = obj.real;
+	}
+	void operator == (complex obj)
+	{
+		if (image == obj.image && real == obj.real)
+			cout << "Equal to";
+	}
+	void   operator != (complex obj)
+	{
+		if (image != obj.image && real != obj.real)
+			cout << "Not equal ";
+	}
+	friend ostream& operator <<(ostream& output, complex& out);
+};
+ostream& operator <<(ostream& output, complex& out)
+{
+	return output << "\n\t------------ PRINTING OUTPUT ------------\n Image value : " << out.image << " Real value : " << out.real;
+}
+int main()
+{
+	complex num1(10, 20), num2(30, 40), num3(50, 60), num4(50, 60), num5(50, 70), num6(40, 80), res;
+	cout << " \nPrinting First number : " << num1;
+	cout << " \n\nPrinting Second number : " << num2;
+	cout << " \n\nPrinting Third number : " << num3;
+	res = num1 + num2;
+	cout << " \n\n\t ---------------Printing Result of +  : " << res;
+	res = num2 * num3;
+	cout << " \n\n\t ---------------Printing Result of *  : " << res;
+	res = num6 - num5;
+	cout << " \n\n\t ---------------Printing Result of -  : " << res;
+	cout << " \n\n\t --------------- Checking num3 == num 4  : " << endl;
+	num3 == num4;
+	cout << " \n\n\t --------------- Checking num5 != num 6  : " << endl;
+	num5 != num6;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+Printing First number :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 10 Real value : 20
+Printing Second number :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 30 Real value : 40
+Printing Third number :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 50 Real value : 60
+         ---------------Printing Result of +  :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 40 Real value : 60
+         ---------------Printing Result of *  :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 1500 Real value : 2400
+         ---------------Printing Result of -  :
+        ------------ PRINTING OUTPUT ------------
+ Image value : 50 Real value : 60
+         --------------- Checking num3 == num 4  :
+Equal to
+         --------------- Checking num5 != num 6  :
+Not equal
+D:\practice\cpp\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe (process 19376) exited with code 0.
+Press any key to close this window . . .

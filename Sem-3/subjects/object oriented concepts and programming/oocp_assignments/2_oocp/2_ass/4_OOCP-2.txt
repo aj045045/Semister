@@ -1,0 +1,60 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+// 4) Write a program to define an object m1 of matrix class, use m1 << cout.
+#include <iostream>
+using namespace std;
+class mat
+{
+    int m[10];
+    int noRec;
+public:
+    void input();
+    void output();
+};
+void mat::input()
+{
+    cout << "Enter total no you want to enter\n" << endl;
+    cin >> noRec;
+    cout << "\n Enter " << noRec << " records\n";
+    for (int i = 0; i < noRec; i++)
+    {
+        cout << "\n";
+        cin >> m[i];
+    }
+}
+void mat::output()
+{
+    cout << "\n\t Printing " << noRec << " records\n";
+    for (int i = 0; i < noRec; i++)
+    {
+        cout << "\n";
+        cout << m[i];
+    }
+}
+int main()
+{
+    mat m1;
+    m1.input();
+    m1.output();
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+Enter total no you want to enter
+5
+ Enter 5 records
+1
+2
+3
+4
+5
+         Printing 5 records
+1
+2
+3
+4
+5

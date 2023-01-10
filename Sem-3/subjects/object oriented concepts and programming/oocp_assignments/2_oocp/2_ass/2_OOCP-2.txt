@@ -1,0 +1,72 @@
+Name :Ansh Yadav
+ROLLNO :36
+COURSE :MSC(cs) -3
+SUBJECT :Object oriented Concept and Programming
+ASSIGNMENT : Assignment-2 
+************************************************************************************************************************************
+// 2) WAP to overload operator * which multiply a number to each element of an array within a class arrayContainer and display the result.
+
+#include <iostream>
+using namespace std;
+
+class arrayContainer
+{
+    int num[10];
+    int noMul;
+    int noRec;
+
+public:
+    arrayContainer() { noMul = 0; noRec = 0;}
+    void operator*()
+    {
+        for (int i = 0; i < noRec; i++)
+        {
+            num[i] = noMul * num[i];
+            cout << num[i] << "\n";
+        }
+    }
+    void input();
+    void output();
+
+};
+
+void arrayContainer::input()
+{
+    cout << "Enter total no you want to enter " << endl;
+    cin >> noRec;
+
+    cout << "Enter  no you want to Multiply with other " << endl;
+    cin >> noMul;
+    for (int i = 0; i < noRec; i++)
+    {
+        cout << "Enter " << i + 1 << " record" << endl;
+        cin >> num[i];
+    }
+}
+
+int main()
+{
+    arrayContainer arr1;
+    arr1.input();
+    cout << "\n\t ------------------------ PRINTING OUTPUT : --------------------" << endl;
+    *arr1;
+
+    return 0;
+}
+===================================================================================================
+OUTPUT :
+===================================================================================================
+Enter total no you want to enter
+3
+Enter  no you want to Multiply with other
+3
+Enter 1 record
+1
+Enter 2 record
+2
+Enter 3 record
+3
+         ------------------------ PRINTING OUTPUT : --------------------
+3
+6
+9
