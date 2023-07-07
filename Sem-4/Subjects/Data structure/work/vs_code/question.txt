@@ -1,0 +1,14 @@
+28) Write a program to sort array elements using bubble sort technique.
+
+34) Write a program to implement binary tree using link list and traverse the tree in PreOrder, PostOrder and InOrder ( Without using Recursion ).
+
+
+
+
+
+38) Write a program to implement Depth-first search traversal algorithm on graph.
+
+40) Write a program to search specific value is in array or not using Transpose sequential search Technique/ self-organizing sequential search.
+
+41) Write a menu driven program to implement shortest path algorithms.
+( Prim’s algorithm, Kruskal’s algorithm, Dijkstra’s algorithm ).

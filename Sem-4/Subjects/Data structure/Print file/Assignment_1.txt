@@ -1,0 +1,3012 @@
+Name :Ansh Yadav
+Course :Msc(cs) 
+Semister :4
+Roll No :36
+Subject :Data Structure
+Assignment :1
+
+*************************************************************************************************************** 
+/*
+1)  Define a structure of book store with appropriate data members and declare
+    nested structure in it as book information. Read the information of book store  
+    and display the information in proper format.
+*/
+
+#include <iostream>
+using namespace std;
+struct store                          
+{
+    char customerName[20];
+    struct date 
+    {
+        int date, month, year;
+    }borrowDate, returnDate;
+    struct book
+    {
+        char bookName[20], publication[20], author[30];
+        int edition, price;
+    }bookInfo;
+};
+int main()
+{
+    struct store customer[10];
+    int ch,iterator=0;
+    do 
+    {
+        cout << "=============[ Enter the Details ]===============" << endl;
+        cout << "Customer Name" << endl;
+        cin >> customer[iterator].customerName;
+        cout << "Borrowing date (dd mm yy)" << endl;
+        cin >> customer[iterator].borrowDate.date >> customer[iterator].borrowDate.month >> customer[iterator].borrowDate.year;
+        cout << "Book Name" << endl;
+        cin >> customer[iterator].bookInfo.bookName;
+        cout << "Book Author" << endl;
+        cin >> customer[iterator].bookInfo.author;
+        cout << "Book Publication" << endl;
+        cin >> customer[iterator].bookInfo.publication;
+        cout << "Book Edition" << endl;
+        cin >> customer[iterator].bookInfo.edition;
+        cout << "Book Price" << endl;
+        cin >> customer[iterator].bookInfo.price;
+        cout << "Returning date (dd mm yy)" << endl;
+        cin >> customer[iterator].returnDate.date >> customer[iterator].returnDate.month >> customer[iterator].returnDate.year;
+        cout << "Do you want to continue YES[1]" << endl;
+        cin >> ch;
+        (ch == 1) ? iterator++ : ch=0;
+    } while (ch == 1);
+    cout << "===========[ Displaying the Customer Details ]=============" << endl;
+    for (int i = 0; i <= iterator; i++)
+    {
+        cout << "Customer Name :" << customer[i].customerName << endl;;
+        cout << "Borrowing date (dd mm yy) :" << customer[i].borrowDate.date <<"/"<< customer[i].borrowDate.month <<"/"<< customer[i].borrowDate.year << endl;
+        cout << "Returning date (dd mm yy) :" << customer[i].returnDate.date << "/" << customer[i].returnDate.month << "/" << customer[i].returnDate.year << endl;
+        cout << "Book Name :" << customer[i].bookInfo.bookName << endl;
+        cout << "Book Author :" << customer[i].bookInfo.author << endl;
+        cout << "Book Publication :" << customer[i].bookInfo.publication << endl;
+        cout << "Book Edition :" << customer[i].bookInfo.edition << endl;
+        cout << "Book Price :" << customer[i].bookInfo.price << endl;
+    }
+}
+=======================================
+OUTPUT :
+=======================================
+=============[ Enter the Details ]===============
+Customer Name
+Ansh
+Borrowing date (dd mm yy)
+23
+04
+23
+Book Name
+Core_Python
+Book Author
+Dr.Nageshwar_Rao
+Book Publication
+Dream_tech
+Book Edition
+3
+Book Price
+700
+Returning date (dd mm yy)
+25
+04
+23
+Do you want to continue YES[1]
+3
+===========[ Displaying the Customer Details ]=============
+Customer Name :Ansh
+Borrowing date (dd mm yy) :23/4/23
+Returning date (dd mm yy) :25/4/23
+Book Name :Core_Python
+Book Author :Dr.Nageshwar_Rao
+Book Publication :Dream_tech
+Book Edition :3
+Book Price :700
+
+*****************************************************************************************************************
+/*
+2)  Write a program to take input in array of 10 elements. Use array of pointer to
+    display the array elements.
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int array[10], * ptr;
+        cout << "Enter the 10 number" << endl;
+    for (int i = 0; i < 10; i++)
+            cin>>array[i];
+    ptr = &array[0];
+    cout << "\n\n===================[ Printing ]==================" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << *ptr << endl;
+        ptr++;
+    }
+}
+
+=======================================
+OUTPUT :
+=======================================
+Enter the 10 number
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+===================[ Printing ]==================
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+*****************************************************************************************************************
+/*
+3)  Write program to define an array. Insert elements and display elements.
+    After display insert the element at particular location in array.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array[10],pos,num;
+    cout << "Enter 9 Number" << endl;
+    for (int i = 0; i < 9; i++)
+    {
+        cout << "Num " << i<<" :";
+        cin >> array[i];
+    }
+    cout << "Enter location where you want to enter the number :";
+    cin >> pos;
+    cout << "Enter number to insert into previous location :";
+    cin >> num;
+    int temp1 = array[pos], temp2 = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (i >= pos)
+        {
+            temp2 = array[i+1];   
+            array[i + 1] = temp1; 
+            temp1=temp2;  
+        }
+    }
+    array[pos] = num;
+    cout << "Printing the array" << endl;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << array[i] << endl;
+    }
+}
+=====================================
+OUTPUT
+=====================================
+Enter 9 Number
+Num 0 :0
+Num 1 :1
+Num 2 :2
+Num 3 :3
+Num 4 :4
+Num 5 :5
+Num 6 :7
+Num 7 :8
+Num 8 :9
+Enter location where you want to enter the number :6
+Enter number to insert into previous location :6
+Printing the array
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+***************************************************************************************************************
+/*
+    4) Define two array A and B. and merge both array in array C.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{   
+    int array_a[10], val_a, array_b[10], val_b, array_c[20];
+    cout << "Enter how many element you want to enter in the first list:";
+    cin >> val_a;
+    cout << "Enter " << val_a << " element" << endl;
+    for (int i = 0; i < val_a; i++)
+        cin >> array_a[i];
+    cout << "Enter how many element you want to enter in the second list :";
+    cin >> val_b;
+    cout << "Enter " << val_b << " element" << endl;
+    for (int i = 0; i < val_b; i++)
+        cin >> array_b[i];
+    cout << "Mergeing both the list to the third list" << endl;
+    int j = 0;
+    for (int i = 0; i < val_a+val_b; i++)
+    {
+        if(i<val_a)
+        {
+            array_c[i] = array_a[i];
+        }
+        else
+        {
+            array_c[i] = array_b[j];
+            j++;
+        }
+    }
+    cout << "==========[ PRINTING THE VALUE ]=============" << endl;
+    for (int i = 0; i < val_a + val_b; i++)
+        cout << array_c[i]<<", ";
+}
+
+======================
+OUTPUT
+=====================
+Enter how many element you want to enter in the first list:10
+Enter 10 element
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Enter how many element you want to enter in the second list :7
+Enter 7 element
+11
+12
+13
+14
+15
+16
+17
+Mergeing both the list to the third list
+==========[ PRINTING THE VALUE ]=============
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+
+****************************************************************************************************************
+/*
+5)  Define two array A and B. and merge both array in array C (Both array 1st
+    element will be 1st and 2nd of C, Both array 2nd element will be 3nd and 4rd of
+    C, so on…).
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array_a[10], val_a, array_b[10], val_b, array_c[20];
+    cout << "Enter the element for the first list " << endl;
+    cin >> val_a;
+    cout << "Enter " << val_a << " element" << endl;
+    for (int i = 0; i < val_a; i++)
+        cin >> array_a[i];
+    cout << "Enter the element for the second list " << endl;
+    cin >> val_b;
+    cout << "Enter " << val_b << " element" << endl;
+    for (int i = 0; i < val_b; i++)
+        cin >> array_b[i];
+    int a = 0;
+    for (int i = 0; i < val_a + val_b; i += 2)
+    {
+        array_c[i] = array_a[a];
+        array_c[i + 1] = array_b[a];
+        a++;
+    }
+    cout << "=========[ PRINTING THE VALUES ]=============" << endl;
+    for (int i = 0; i < val_a + val_b; i++)
+        cout << array_c[i] << ", ";
+
+    return 0;
+}
+
+================
+OUTPUT
+================
+Enter the element for the first list
+5
+Enter 5 element
+1
+2
+3
+4
+5
+Enter the element for the second list
+5
+Enter 5 element
+6
+7
+8
+9
+10
+=========[ PRINTING THE VALUES ]=============
+1, 6, 2, 7, 3, 8, 4, 9, 5, 10,
+
+****************************************************************************************************************
+/*
+6)  Write a menu driven program to implement stack with it’s operation with all 
+    the validations.
+*/
+
+#include <iostream>
+using namespace std;
+int stack[30];
+int top = 0;
+void push(int val) {
+    if (top == 29)
+    {
+        cout << "Stack is overflow" << endl;
+    }
+    else
+    {
+    stack[top]=val;
+    top++;
+    }
+}
+void pop(){
+    if (top ==0)
+    {
+        cout << "Stack is underflow" << endl;
+    }
+    else {
+    top--;
+    }
+}
+void peep(int val)
+{
+    for (int i = 0; i < top; i++)
+    {
+        if (stack[i] == val)
+            cout << "Values is found" << endl;
+    }
+}
+void change(int index, int val)
+{
+    stack[index] = val;
+}
+void display() {
+    cout << "===========[ PRINTING THE VALUES ]============" << endl;
+    for (int i = 0; i < top; i++)
+        cout << stack[i] << endl;
+}
+void isfull() {
+    if (top == 29)
+        cout << "Stack is overflow" << endl;
+    else
+        cout << "Stack is not overflow" << endl;
+}
+void isempty() {
+    if (top == 0)
+        cout << "Stack is underflow" << endl;
+    else
+        cout << "Stack is not underflow" << endl;
+}
+int choice()
+{
+    int ch;
+    cout << "1. Insert value (PUSH)" << endl;
+    cout << "2. Delete value (POP)" << endl;
+    cout << "3. Find value (PEEP)" << endl;
+    cout << "4. Replace value (CHANGE)" << endl;
+    cout << "5. Check stack is overflow(ISFULL)" << endl;
+    cout << "6. Check stack is underflow (ISEMPTY)" << endl;
+    cout << "7. Display the value of stack" << endl;
+    cout << "8. Exit" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+    do 
+    {
+        switch (choice())
+        {
+        case 1:
+        {   // PUSH
+            int val;
+            cout << "Enter the value you want to add in list :";
+            cin >> val;
+            push(val);
+            break;
+        }
+        case 2:
+        {   // POP
+            pop();
+            break;
+        }
+        case 3:
+        {  // PEEP
+            int val;
+            cout << "Enter the value"; cin >> val;
+            peep(val);
+            break;
+        }
+        case 4:
+        {  // CHANGE
+            int index, val;
+            cout << "Enter the place you want to change :"; cin >> index;
+            cout << "Enter the value"; cin >> val;
+            change(index,val);
+            display();
+            break;
+        }
+        case 5:
+        {  // ISFULL
+            isfull();
+            break;
+        }
+        case 6:
+        {   // ISEMPTY
+            isempty();
+            break;
+        }
+        case 7:
+        {   // DISPLAY
+            display();
+            break;
+        }
+        case 8:
+        {   // EXIT
+            exit(0);
+            break;
+        }
+        default:
+        {
+            cout << "INVALID OPTION!" << endl;
+            break;
+        }
+        }
+    } while (true);
+    return 0;
+}
+================
+OUTPUT
+================
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+1
+Enter the value you want to add in list :1
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+1
+Enter the value you want to add in list :2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+1
+Enter the value you want to add in list :3
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+7
+===========[ PRINTING THE VALUES ]============
+1
+2
+3
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+7
+===========[ PRINTING THE VALUES ]============
+1
+2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+3
+Enter the value1
+Values is found
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+7
+===========[ PRINTING THE VALUES ]============
+1
+2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+4
+Enter the place you want to change :0
+Enter the value11
+===========[ PRINTING THE VALUES ]============
+11
+2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+7
+===========[ PRINTING THE VALUES ]============
+11
+2
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+5
+Stack is not overflow
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+6
+Stack is not underflow
+1. Insert value (PUSH)
+2. Delete value (POP)
+3. Find value (PEEP)
+4. Replace value (CHANGE)
+5. Check stack is overflow(ISFULL)
+6. Check stack is underflow (ISEMPTY)
+7. Display the value of stack
+8. Exit
+8
+
+****************************************************************************************************************
+/*
+7)  Write a program to demonstrate the use of dynamic memory allocation 
+    function
+*/
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int choice() {
+    int ch;
+    cout << "\n1.Malloc memmory allocation" << endl;
+    cout << "2.Calloc memmory allocation" << endl;
+    cout << "3.EXIT" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+    do {
+        int* ptr, n;
+        char ch;
+        switch (choice())
+        {
+            system("cls");
+        case 1: {
+            int i = 0;
+            cout << "Enter how many number you want to enter :"; cin >> n;
+            ptr = (int*)malloc(n * sizeof(int));
+            if (ptr == NULL)
+            {
+                cout << "Memmory allocation failued" << endl;
+                exit(0);
+            }
+            cout << "Enter the " << n << " value" << endl;
+            for (int i = 0; i < n; i++)
+            {
+                cin >> ptr[i];
+            }
+            cout << "===========[ PRINTING THE VALUES ]============" << endl;
+            for ( i ; i < n; i++)
+            {
+                cout << ptr[i] << ", ";
+            }
+            cout << "\nDo you want to add the value YES[y] :"; cin >> ch;
+            if (ch == 'y' || ch == 'Y')
+            {
+                int v;
+                cout << "Enter the total number you want to enter :"; cin >> v;
+                int r = v + n;
+                ptr = (int*)realloc(ptr, sizeof(int) * v);
+                if (ptr == NULL)
+                {
+                    cout << "Memmory allocation failued" << endl;
+                    exit(0);
+                }
+                cout << "Enter the " << v << " value" << endl;
+                while(i<r)
+                {
+                    cin >> ptr[i];
+                    i++;
+                }
+                cout << "===========[ PRINTING THE VALUES ]============" << endl;
+                for (int i = 0; i < r; i++)
+                {
+                    cout << ptr[i] << ", ";
+                }
+            }
+            break;
+        }
+        case 2: {
+            int i = 0;
+            cout << "Enter how many number you want to enter :"; cin >> n;
+            ptr = (int*)calloc(n, sizeof(int));
+            if (ptr == NULL)
+            {
+                cout << "Memmory allocation failued" << endl;
+                exit(0);
+            }
+            cout << "Enter the " << n << " value" << endl;
+            for (i; i < n; i++)
+            {
+                cin >> ptr[i];
+            }
+            cout << "===========[ PRINTING THE VALUES ]============" << endl;
+            for (int i = 0; i < n; i++)
+            {
+                cout << ptr[i] << ", ";
+            }
+            cout << "\nDo you want to add the value YES[y] :"; cin >> ch;
+            if (ch == 'y' || ch == 'Y')
+            {
+                int v;
+                cout << "Enter the total number you want to enter :"; cin >> v;
+                int r = v + n;
+                ptr = (int*)realloc(ptr, sizeof(int)*v);
+                if (ptr == NULL)
+                {
+                    cout << "Memmory allocation failued" << endl;
+                    exit(0);
+                }
+                cout << "Enter the " << v << " value" << endl;
+                while (i < r)
+                {
+                    cin >> ptr[i];
+                    i++;
+                }
+                cout << "===========[ PRINTING THE VALUES ]============" << endl;
+                for ( i = 0; i < r; i++)
+                {
+                    cout << ptr[i] << ", ";
+                }
+            }
+            break;
+        }
+        case 3: {
+            exit(0);
+        }
+        default: {
+            cout << "INVALID  INPUT" << endl;
+        }
+        }
+    } while (true);
+ 
+}
+
+================
+OUTPUT
+================
+
+1.Malloc memmory allocation
+2.Calloc memmory allocation
+3.EXIT
+2
+Enter how many number you want to enter :3
+Enter the 3 value
+1
+2
+3
+===========[ PRINTING THE VALUES ]============
+1, 2, 3,
+Do you want to add the value YES[y] :y
+Enter the total number you want to enter :3
+Enter the 3 value
+4
+5
+6
+===========[ PRINTING THE VALUES ]============
+1, 2, 3, 4, 5, 6,
+1.Malloc memmory allocation
+2.Calloc memmory allocation
+3.EXIT
+2
+Enter how many number you want to enter :3
+Enter the 3 value
+1
+2
+3
+===========[ PRINTING THE VALUES ]============
+1, 2, 3,
+Do you want to add the value YES[y] :y
+Enter the total number you want to enter :3
+Enter the 3 value
+4
+5
+6
+===========[ PRINTING THE VALUES ]============
+1, 2, 3, 4, 5, 6,
+1.Malloc memmory allocation
+2.Calloc memmory allocation
+3.EXIT
+3
+
+1.Malloc memmory allocation
+2.Calloc memmory allocation
+3.EXIT
+3
+
+****************************************************************************************************************
+/*
+8) Write a menu driven program to implement stack with it’s operation with all the validations using list.
+*/
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+struct node {
+	int data;
+	struct node* next;
+}*top = NULL;
+
+void push(int val) {
+	struct node* temp;
+	temp = (struct node*)malloc(sizeof(struct node));
+	if (top == NULL)
+	{
+		temp->data = val;
+		temp->next = NULL;
+		top = temp;
+		cout << "Entered in push" << endl;
+	}
+	else {
+		temp->data = val;
+		temp->next = top;
+		top = temp;
+		cout << "Entered in push 2" << endl;
+	}
+}
+
+void display() {
+	struct node* temp1;
+	temp1 = (struct node*)malloc(sizeof(struct node));
+	temp1 = top;
+	cout << "DISPLAY" << endl;
+	do {
+		cout << "Value is :" << temp1->data << endl;
+		temp1 = temp1->next;	
+	} while (temp1 != NULL);
+	
+}
+void pop() {
+	struct node* temp1;
+	temp1 = (struct node*)malloc(sizeof(struct node));
+	temp1 = top;
+	top=top->next;
+	temp1->next = NULL;
+	free(temp1);
+}
+int choice()
+{
+
+	int ch;
+	cout << "1.Enter new value" << endl;
+	cout << "2.Delete the value" << endl;
+	cout << "3.Display the value" << endl;
+	cout << "4.EXIT" << endl;
+	cin >> ch;
+	return ch;
+}
+int main()
+{
+	int val;
+	int ch;
+	do {
+		ch = choice();
+		switch (ch)
+		{
+		case 1:
+		{
+			cout << "Enter the value :";
+			cin >> val;
+			push(val);
+			break;
+		}
+		case 2:
+		{
+			pop();
+			break;
+		}
+		case 3:
+		{
+			display();
+			break;
+		}
+		case 4:
+		{
+			exit(0);
+			break;
+		}
+		default:
+		{
+			cout << "INVALID INPUT!" << endl;
+			break;
+		}
+		}
+	} while (ch != 0);
+	return 0;
+}
+
+===========================
+OUTPUT 
+===========================
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+1
+Enter the value :45
+Entered in push
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+1
+Enter the value :67
+Entered in push 2
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+3
+DISPLAY
+Value is :67
+Value is :45
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+2
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+3
+DISPLAY
+Value is :45
+1.Enter new value
+2.Delete the value
+3.Display the value
+4.EXIT
+4
+
+****************************************************************************************************************
+/*
+	9) Write a program to create compact matrix from spares matrix using 2-D array and make a transpose of matrix.
+*/
+
+#include <iostream>
+using namespace std;
+int choice()
+{
+	int ch;
+	cout << "\n\n1. Using 1-d array" << endl;
+	cout << "2. Using 2-d array" << endl;
+	cout << "3. Transporse the array" << endl;
+	cout << "4. EXIT" << endl;
+	cin >> ch; return ch;
+}
+int main()
+{
+	int sparceMatrix[4][5] =
+	{
+		{0,0,0,4,0},
+		{6,5,0,0,0},
+		{0,0,6,0,0},
+		{0,0,4,4,0}
+	};
+	do {
+		switch (choice())
+		{
+		case 1: {
+			int row[4]={}, col[5]={}, value[20]={}, k = 0;
+			for (int i = 0; i < 4; i++)
+				for (int j = 0; j < 5; j++)
+					if (sparceMatrix[i][j] != 0)
+					{
+						row[k] = i;
+						col[k] = j;
+						value[k] = sparceMatrix[i][j];
+						k++;
+					}
+
+			cout << "Convert 2-D array to 1-D" << endl;
+			k = 0;
+			cout << endl;
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (row[k] == i && col[k] == j)
+					{
+						cout << value[k];
+						k++;
+					}
+					else
+						cout << "0";
+				}
+				cout << endl;
+			}
+			break;
+		}
+		case 2: {
+			int compactMatrix[3][10], size = 0, k = 0;
+			for (int i = 0; i < 4; i++)
+				for (int j = 0; j < 5; j++)
+					if (sparceMatrix[i][j] != 0)
+					{
+						compactMatrix[0][k] = i;
+						compactMatrix[1][k] = j;
+						compactMatrix[2][k] = sparceMatrix[i][j];
+						k++; size++;
+					}
+			k = 0;
+			cout << "Printing the values" << endl;
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < size; j++)
+				{
+					if (compactMatrix[0][k] == i && compactMatrix[1][k] == j)
+					{
+						cout << compactMatrix[2][k];
+						k++;
+					}
+					else
+						cout << "0";
+				}cout << endl;
+			}
+			break;
+		}
+		case 3: {
+			int compactMatrix[3][10], size = 0, k = 0;
+			for (int i = 0; i < 4; i++)
+				for (int j = 0; j < 5; j++)
+					if (sparceMatrix[i][j] != 0)
+					{
+						compactMatrix[0][k] = j;
+						compactMatrix[1][k] = i;
+						compactMatrix[2][k] = sparceMatrix[i][j];
+						k++; size++;
+					}
+			k = 0;
+			cout << "Printing the values" << endl;
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < size; j++)
+				{
+					if (compactMatrix[0][k] == j && compactMatrix[1][k] == i)
+					{
+						cout << compactMatrix[2][k];
+						k++;
+					}
+					else
+						cout << "0";
+				}cout << endl;
+			}
+			break;
+		}
+		case 4: {
+			exit(0);
+			break;
+
+		}
+		default: {
+			cout << "INVALID OPTION !" << endl;
+			break;
+		}
+		}
+	} while (true);
+	return 0;
+}
+
+===========================
+OUTPUT 
+===========================
+
+
+1. Using 1-d array
+2. Using 2-d array
+3. Transporse the array
+4. EXIT
+1
+Convert 2-D array to 1-D
+
+00040
+65000
+00600
+00440
+
+
+1. Using 1-d array
+2. Using 2-d array
+3. Transporse the array
+4. EXIT
+2
+Printing the values
+000400
+650000
+006000
+004400
+
+
+1. Using 1-d array
+2. Using 2-d array
+3. Transporse the array
+4. EXIT
+3
+Printing the values
+000400
+650000
+006000
+004400
+
+
+1. Using 1-d array
+2. Using 2-d array
+3. Transporse the array
+4. EXIT
+4
+
+****************************************************************************************************************
+/*
+    10) Write a program to create compact matrix from spares matrix using link list and make a transpose of matrix.
+*/
+#include <iostream>
+#include <stdlib.h>
+#include<iomanip>
+using namespace std;
+
+int sparceMatrix[4][5] =
+{
+    {0,0,0,4,0},
+    {6,5,0,0,0},
+    {0,0,6,0,0},
+    {0,0,4,4,0}
+};
+
+struct node {
+    int row,col,value;
+    struct node* next;
+}*TOP=NULL;
+
+void compactMatrix() {
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (sparceMatrix[i][j] != 0)
+            {
+                struct node* temp;
+                temp = (struct node*)malloc(sizeof(struct node));
+                if (TOP == NULL)
+                {
+                    temp->row = i;
+                    temp->col = j;
+                    temp->value = sparceMatrix[i][j];
+                    temp->next = NULL;
+                    TOP = temp;
+                }
+                else {
+                    temp->row = i;
+                    temp->col = j;
+                    temp->value = sparceMatrix[i][j];
+                    temp->next = TOP;
+                    TOP = temp;
+                }
+            }
+        }
+    }
+}
+void transpose() {
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (sparceMatrix[i][j] != 0)
+            {
+                struct node* temp;
+                temp = (struct node*)malloc(sizeof(struct node));
+                if (TOP == NULL)
+                {
+                    temp->row = i;
+                    temp->col = j;
+                    temp->value = sparceMatrix[i][j];
+                    temp->next = NULL;
+                    TOP = temp;
+                }
+                else {
+                    temp->row = j;
+                    temp->col = i;
+                    temp->value = sparceMatrix[i][j];
+                    temp->next = TOP;
+                    TOP = temp;
+                }
+            }
+        }
+    }
+}
+void display() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp = TOP;
+    cout << "----------------[ PRINTING The VALUES ]---------------" << endl;
+    cout << "ROWS" << setw(10) << "COLS" << setw(10) << "VALUE" << endl;
+    while (temp->next != NULL)
+    {
+        cout << temp->row << setw(10);
+        cout << temp->col << setw(10);
+        cout << temp->value << endl;
+        temp = temp->next;
+    }
+    cout << "TEMP" << endl;
+    struct node* temp1;
+    temp1 = (struct node*)malloc(sizeof(struct node));
+    temp1 = TOP;
+    while (temp1 != NULL)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                if (temp1->row == i && temp1->col == j)
+                {
+                    cout << temp1->value << endl;
+                    temp1 = temp1->next;
+                }
+            }
+        }
+    }
+}
+int choice()
+{
+    int ch;
+    cout << "1. Display values" << endl;
+    cout << "2. Transporse the matrix" << endl;
+    cout << "3. EXIT" << endl;
+    cin >> ch;
+    return ch;
+}
+int main()
+{
+      do {
+        switch (choice())
+        {
+        case 1: {
+            compactMatrix();
+            display();
+            break;
+        }
+        case 2: {
+            transpose();
+            display();
+            break;
+        }
+        case 3: {
+            exit(0);
+            break;
+        }
+        default: {
+            cout << "INVALID OPTION !" << endl;
+            break;
+        }
+        }
+      } while (true);
+}
+
+===========================
+OUTPUT 
+===========================
+
+1. Display values
+2. Transporse the matrix
+3. EXIT
+1
+----------------[ PRINTING The VALUES ]---------------
+ROWS      COLS     VALUE
+3         3         4
+3         2         4
+2         2         6
+1         1         5
+1         0         6
+TEMP
+4
+4
+6
+5
+6
+4
+
+1. Display values
+2. Transporse the matrix
+3. EXIT
+2
+----------------[ PRINTING The VALUES ]---------------
+ROWS      COLS     VALUE
+3         3         4
+2         3         4
+2         2         6
+1         1         5
+0         1         6
+TEMP
+4
+4
+6
+5
+6
+4
+
+****************************************************************************************************************
+/*
+11) Write a program to input two polynomial expressions and make sum of it and display the result.
+*/
+#include <iostream>
+using namespace std;
+
+struct terms {
+	int coefficient, expression;
+};
+struct polynomial {
+	int num;
+	struct terms* term;
+};
+void createNew(struct polynomial* val)
+{
+	cout << "Enter number of terms :"; 
+	cin >> val->num;
+	val->term = (struct terms*)malloc(sizeof(struct terms) * val->num);
+	for (int i = 0; i < val->num; i++)
+	{
+		cout << "Enter the value of (eg.expression and values) :" << i+1 << endl;
+		cin >> val->term[i].coefficient >> val->term[i].expression;
+	}
+	cout << endl;
+}
+void display(struct polynomial val) {
+	for (int i = 0; i < val.num; i++)
+	{
+		cout << val.term[i].coefficient << "x^" << val.term[i].expression;
+		if (i + 1 < val.num)
+			cout << " + ";
+	}
+	cout << endl;
+}
+struct polynomial* sum(struct polynomial* p1, struct polynomial* p2)
+{
+	int i, j, k;
+	struct polynomial* sum;
+	sum = (struct polynomial*)malloc(sizeof(struct polynomial));
+	sum->term = (struct terms*)malloc((p1->num + p2->num) * sizeof(struct terms));
+	i = j = k = 0;
+	while (i < p1->num && j < p2->num)
+	{
+		if (p1->term[i].expression > p2->term[j].expression)
+			sum->term[k++] = p1->term[i++];
+		else if (p1->term[i].expression < p2->term[j].expression)
+			sum->term[k++] = p2->term[j++];
+		else
+		{
+			sum->term[k].expression = p1->term[i].expression;
+			sum->term[k++].coefficient = p1->term[i++].coefficient + p2->term[j++].coefficient;
+		}
+	}
+	for (; i < p1->num; i++)
+		sum->term[k++] = p1->term[i];
+	for (; j < p2->num; j++)
+		sum->term[k++] = p2->term[j];
+	sum->num = k;
+	return sum;
+}
+int main()
+{
+	struct polynomial p1, p2, * p3;
+	cout << "Enter the first polynomial equations " << endl;
+	createNew(&p1);
+	display(p1);
+	cout << "Enter the second polynomial equations" << endl;
+	createNew(&p2);
+	display(p2);
+	p3 = sum(&p1, &p2);
+	cout << "Sum of both the equations" << endl;
+	cout << "First equation is :"; display(p1);
+	cout << "Second equation is :"; display(p2);
+	cout << "Sum of first and second is :"; display(*p3);
+}
+
+===============================
+OUTPUT :
+===============================
+Enter the first polynomial equations
+Enter number of terms :3
+Enter the value of (eg.expression and values) :1
+6
+3
+Enter the value of (eg.expression and values) :2
+5
+2
+Enter the value of (eg.expression and values) :3
+4
+1
+
+6x^3 + 5x^2 + 4x^1
+Enter the second polynomial equations
+Enter number of terms :3
+Enter the value of (eg.expression and values) :1
+7
+3
+Enter the value of (eg.expression and values) :2
+6
+2
+Enter the value of (eg.expression and values) :3
+5
+1
+
+7x^3 + 6x^2 + 5x^1
+Sum of both the equations
+First equation is6x^3 + 5x^2 + 4x^1
+Second equation is7x^3 + 6x^2 + 5x^1
+13x^3 + 11x^2 + 9x^1
+
+=====================================================================================================================================================================
+/*
+12) Write a program to implement singly link list of student record with following
+operations:
+a. Input Record
+b. Inset Record at beginning
+c. Inset Record at end
+d. Inset Record after given data
+e. Inset Record before given data
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+i. Display List
+j. Exit
+*/
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+using namespace std;
+struct node {
+    int rollNo, sem;
+    struct node* next;
+}*first = NULL;
+struct node* record();
+
+void input() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    if (first == NULL)
+    {
+        temp = record();
+        temp->next = NULL;
+        first = temp;
+    }
+    else
+        cout << "First record is previously create" << endl;
+}
+void insertBeg() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    if (first != NULL)
+    {
+        temp = record();
+        temp->next = first;
+        first = temp;
+    }
+    else
+        cout << "First record is empty" << endl;
+}
+void insertEnd() {
+    struct node* temp, * tmp1;
+    temp = (struct node*)malloc(sizeof(struct node));
+    tmp1 = first;
+    if (first != NULL)
+    {
+        temp = record();
+        while (tmp1->next != NULL)
+            tmp1 = tmp1->next;
+        tmp1->next = temp;
+    }
+}
+void insertAfter(int roll)
+{
+    struct node* temp, * ptr;
+    ptr = (struct node*)malloc(sizeof(struct node));
+    temp = (struct node*)malloc(sizeof(struct node));
+    ptr = first;
+    temp = record();
+    while (ptr->rollNo != roll)
+        ptr = ptr->next;
+    temp->next = ptr->next;
+    ptr->next = temp;
+}
+void insertBefore(int v_rollNo) {
+    struct node* temp, * ptr, * prePtr;
+    temp = (struct node*)malloc(sizeof(struct node));
+    ptr = (struct node*)malloc(sizeof(struct node));
+    ptr = first;
+    prePtr = ptr;
+    temp = record();
+    while (ptr->rollNo != v_rollNo)
+    {
+        prePtr = ptr;
+        ptr = ptr->next;
+    }
+    temp->next = prePtr->next;
+    prePtr->next = temp;
+}
+void deleteBeg() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp = first;
+    first = first->next;
+    temp->next = NULL;
+    free(temp);
+}
+void deleteLast()
+{
+    struct node* temp, * ptr = NULL;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp = first;
+    while (temp->next != NULL)
+    {
+        ptr = temp;
+        temp = temp->next;
+    }
+    ptr->next = NULL;
+    free(temp);
+}
+void deleteParticular(int roll)
+{
+    struct node* temp,*prePtr;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp = first;
+    prePtr = temp;
+    while (temp->rollNo != roll)
+    {
+        prePtr = temp;
+        temp = temp->next;
+    }
+    prePtr->next = temp->next;
+    free(temp);
+}
+struct node* record() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    cout << "---------[ Enter student Detail ]---------" << endl;
+    cout << "Roll.no :"; cin >> temp->rollNo;
+    cout << "Semister :"; cin >> temp->sem;
+    temp->next = NULL;
+    return temp;
+}
+void display() {
+    struct node* temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp = first;
+    while (temp != NULL)
+    {
+        cout << "Roll.No :" << temp->rollNo << endl;
+        cout << "Semister :" << temp->sem << endl;
+        cout << "\n" << endl;
+        temp = temp->next;
+    }
+}
+char choice() {
+    int ch; char opt = 'x';
+    cout << "\n\n\n1.Input" << endl;
+    cout << "2.Delete" << endl;
+    cout << "3.Display" << endl;
+    cout << "4.Exit" << endl;
+    cin >> ch;
+    switch (ch) {
+    case 1: {
+        cout << "a. Insert Record ( Create a record )" << endl;
+        cout << "b. Insert Record at beginning" << endl;
+        cout << "c. Insert Record at end" << endl;
+        cout << "d. Insert Record after given data" << endl;
+        cout << "e. Insert Record before given data" << endl;
+        cin >> opt;
+        break;
+    }
+    case 2: {
+        cout << "f. Delete first record" << endl;
+        cout << "g. Delete last record" << endl;
+        cout << "h. Delete a particular record" << endl;
+        cin >> opt;
+        break;
+    }
+    }
+    system("cls");
+    if (ch < 3)
+        return opt;
+    else
+        return ch;
+}
+int main()
+{
+    do {
+        switch (choice())
+        {
+        case 'A':
+        case 'a': {
+            // INPUT RECORDS
+            input();
+            break;
+        }
+        case 'B':
+        case 'b': {
+            // INPUT RECORDS AT BEGINING
+            insertBeg();
+            break;
+        }
+        case 'C':
+        case 'c': {
+            // INPUT RECORDS AT END //
+            insertEnd();
+            break;
+        }
+        case 'D':
+        case 'd': {
+            // INPUT RECORDS AFTER
+            int roll;
+            cout << "Enter roll no to enter after "; cin >> roll;
+            insertAfter(roll);
+            break;
+        }
+        case 'E':
+        case 'e': {
+            // INPUT RECORDS BEFORE
+            int roll;
+            cout << "Enter roll no to enter after "; cin >> roll;
+            insertBefore(roll);
+            break;
+        }
+        case 'F':
+        case 'f': {
+            // DELETE FIRST RECORD
+            deleteBeg();
+            break;
+        }
+        case 'G':
+        case 'g': {
+            // DELETE LAST RECORD
+            deleteLast();
+            break;
+        }
+        case 'H':
+        case 'h': {
+            // DELETE PARTICULAR RECORD
+            int roll;
+            cout << "Enter roll no to enter after "; cin >> roll;
+            deleteParticular(roll);
+            break;
+        }
+        case 3:
+        {
+            // DISPLAY LIST
+            display();
+            break;
+        }
+        case 4:
+        {
+            exit(0);
+            break;
+        }
+        default: {
+            cout << "INVALID OPTIONS !" << endl;
+        }
+        }
+    } while (true);
+}
+
+=============
+OUTPUT
+=============
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+1
+a. Insert Record ( Create a record )
+b. Insert Record at beginning
+c. Insert Record at end
+d. Insert Record after given data
+e. Insert Record before given data
+a
+---------[ Enter student Detail ]---------
+Roll.no :88
+Semister :4
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+1
+a. Insert Record ( Create a record )
+b. Insert Record at beginning
+c. Insert Record at end
+d. Insert Record after given data
+e. Insert Record before given data
+b
+---------[ Enter student Detail ]---------
+Roll.no :77
+Semister :6
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+1
+a. Insert Record ( Create a record )
+b. Insert Record at beginning
+c. Insert Record at end
+d. Insert Record after given data
+e. Insert Record before given data
+c
+---------[ Enter student Detail ]---------
+Roll.no :99
+Semister :4
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :77
+Semister :6
+
+
+Roll.No :88
+Semister :4
+
+
+Roll.No :99
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+1
+a. Insert Record ( Create a record )
+b. Insert Record at beginning
+c. Insert Record at end
+d. Insert Record after given data
+e. Insert Record before given data
+d
+Enter roll no to enter after 77
+---------[ Enter student Detail ]---------
+Roll.no :102
+Semister :4
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :77
+Semister :6
+
+
+Roll.No :102
+Semister :4
+
+
+Roll.No :88
+Semister :4
+
+
+Roll.No :99
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+1
+a. Insert Record ( Create a record )
+b. Insert Record at beginning
+c. Insert Record at end
+d. Insert Record after given data
+e. Insert Record before given data
+e
+Enter roll no to enter after 88
+---------[ Enter student Detail ]---------
+Roll.no :104
+Semister :5
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :77
+Semister :6
+
+
+Roll.No :102
+Semister :4
+
+
+Roll.No :104
+Semister :5
+
+
+Roll.No :88
+Semister :4
+
+
+Roll.No :99
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+f
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :102
+Semister :4
+
+
+Roll.No :104
+Semister :5
+
+
+Roll.No :88
+Semister :4
+
+
+Roll.No :99
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+g
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :102
+Semister :4
+
+
+Roll.No :104
+Semister :5
+
+
+Roll.No :88
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+h
+Enter roll no to enter after 104
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+3
+Roll.No :102
+Semister :4
+
+
+Roll.No :88
+Semister :4
+
+
+
+
+
+1.Input
+2.Delete
+3.Display
+4.Exit
+4
+
+****************************************************************************************************************
+/*
+13) Write a program to implement doubly link list of student record with following
+operations:
+a. Input Record
+b. Inset Record at beginning
+c. Inset Record at end
+d. Inset Record after given data
+e. Inset Record at before given data
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+i. Display List
+j. Exit
+*/
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+struct record {
+	char name[15];
+	int rollNo;
+	char course[10];
+	int sem;
+	struct record* next, * prev;
+}*start = NULL;
+
+void createRecords(struct record* rec)
+{
+	if (start == NULL)
+		start = rec;
+	else
+		cout << "First Record is already exists" << endl;
+}
+void createRecordBeginning(struct record* temp) {
+	if (start != NULL)
+	{
+		temp->next = start;
+		start->prev = temp;
+		start = temp;
+	}
+	else
+		cout << "First Record is not exists" << endl;
+}
+void createRecordEnd(struct record* temp) {
+	struct record* rec;
+	rec = start;
+	while (rec->next != NULL)
+		rec = rec->next;
+	rec->next = temp;
+	temp->prev = rec;
+}
+
+void createRecordAfter(struct record* temp, int rollNO) {
+	struct record* rec;
+	rec = start;
+	while (rec->rollNo != rollNO)
+		rec = rec->next;
+	temp->prev = rec;
+	temp->next = rec->next;
+	rec->next->prev = temp;
+	rec->next = temp;
+}
+void createRecordBefore(struct record* temp, int rollNO) {
+	struct record* rec;
+	rec = start;
+	while (rec->rollNo != rollNO)
+		rec = rec->next;
+	temp->next = rec;
+	temp->prev = rec->prev;
+	rec->prev->next = temp;
+	rec->prev = temp;
+}
+
+void deleteRecordBeginning() {
+	struct record* temp;
+	temp = start;
+	start = start->next;
+	start->prev = NULL;
+	temp->next = NULL;
+	free(temp);
+}
+void deleteRecordEnd() {
+	struct record* temp;
+	temp = start;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->prev->next = NULL;
+	temp->prev = NULL;
+	free(temp);
+}
+void deleteRecordParticular() {
+
+}
+void display()
+{
+	struct record* temp;
+	temp = (struct record*)malloc(sizeof(struct record));
+	temp = start;
+	cout << "--------[ RECORD ]---------" << endl;
+	while (temp != NULL)
+	{
+		cout << "Name :" << temp->name << endl;
+		cout << "Roll.No :" << temp->rollNo << endl;
+		cout << "Course :" << temp->course << endl;
+		cout << "Semister :" << temp->sem << endl;
+		cout << "\n" << endl;
+		temp = temp->next;
+	}
+}
+int choice()
+{
+	int opt;
+	char ch = 'A';
+	cout << "1.INPUT" << endl;
+	cout << "2.DELETE" << endl;
+	cout << "3.DISPLAY" << endl;
+	cout << "4.EXIT" << endl;
+	cin >> opt;
+	switch (opt) {
+	case 1: {
+		cout << "a.Insert record ( Create record )" << endl;
+		cout << "b.Insert record at beginning" << endl;
+		cout << "c.Insert record at end" << endl;
+		cout << "d.Insert record after given data" << endl;
+		cout << "e.Insert record before given data" << endl;
+		cin >> ch;
+		break;
+	}
+	case 2: {
+		cout << "f.Delete first record" << endl;
+		cout << "g.Delete last record" << endl;
+		cout << "h.Delete a particular record" << endl;
+		cin >> ch;
+		break;
+	}
+	}
+	system("cls");
+	if (opt < 3)
+		return ch;
+	else
+		return opt;
+}
+int main()
+{
+	do {
+		switch (choice())
+		{
+		case 3: {
+			// TO DISPLAY
+			display();
+			break;
+		}
+		case 4: {
+			// EXIT
+			exit(0);
+			break;
+		}
+		case 'A':
+		case 'a': {
+			// CREATE RECORDS
+			struct record* temp = NULL;
+			temp = (struct record*)malloc(sizeof(struct record));
+			cout << "---------[ Enter student Detail ]---------" << endl;
+			cout << "Name :"; cin >> temp->name;
+			cout << "Roll.No :"; cin >> temp->rollNo;
+			cout << "Course :"; cin >> temp->course;
+			cout << "Semister :"; cin >> temp->sem;
+			temp->prev = NULL;
+			temp->next = NULL;
+			createRecords(temp);
+			break;
+		}
+		case 'B':
+		case 'b': {
+			// INSERT RECORD AT BEGINNING
+			struct record* temp = NULL;
+			temp = (struct record*)malloc(sizeof(struct record));
+			cout << "---------[ Enter student Detail ]---------" << endl;
+			cout << "Name :"; cin >> temp->name;
+			cout << "Roll.No :"; cin >> temp->rollNo;
+			cout << "Course :"; cin >> temp->course;
+			cout << "Semister :"; cin >> temp->sem;
+			temp->prev = NULL;
+			temp->next = NULL;
+			createRecordBeginning(temp);
+			break;
+		}
+		case 'C':
+		case 'c': {
+			// INSERT RECORD AT END
+			struct record* temp = NULL;
+			temp = (struct record*)malloc(sizeof(struct record));
+			cout << "---------[ Enter student Detail ]---------" << endl;
+			cout << "Name :"; cin >> temp->name;
+			cout << "Roll.No :"; cin >> temp->rollNo;
+			cout << "Course :"; cin >> temp->course;
+			cout << "Semister :"; cin >> temp->sem;
+			temp->prev = NULL;
+			temp->next = NULL;
+			createRecordEnd(temp);
+			break;
+		}
+		case 'D':
+		case 'd': {
+			// INSERT RECORD AFTER THE RECORD
+			int v_name;
+			cout << "Enter the rollNo you want to enter after that record :";
+			cin >> v_name;
+			struct record* temp = NULL;
+			temp = (struct record*)malloc(sizeof(struct record));
+			cout << "---------[ Enter student Detail ]---------" << endl;
+			cout << "Name :"; cin >> temp->name;
+			cout << "Roll.No :"; cin >> temp->rollNo;
+			cout << "Course :"; cin >> temp->course;
+			cout << "Semister :"; cin >> temp->sem;
+			temp->prev = NULL;
+			temp->next = NULL;
+			createRecordAfter(temp, v_name);
+			break;
+		}
+		case 'E':
+		case 'e': {
+			// INSERT RECORD BEFORE RECORD
+			int v_name;
+			cout << "Enter the rollNo you want to enter after that record :";
+			cin >> v_name;
+			struct record* temp = NULL;
+			temp = (struct record*)malloc(sizeof(struct record));
+			cout << "---------[ Enter student Detail ]---------" << endl;
+			cout << "Name :"; cin >> temp->name;
+			cout << "Roll.No :"; cin >> temp->rollNo;
+			cout << "Course :"; cin >> temp->course;
+			cout << "Semister :"; cin >> temp->sem;
+			createRecordAfter(temp, v_name);
+			break;
+		}
+		case 'F':
+		case 'f': {
+			// DELETE RECORD AT BEGINNING
+			deleteRecordBeginning();
+			break;
+		}
+		case 'G':
+		case 'g': {
+			// DELETE RECORD AT END
+			deleteRecordEnd();
+			break;
+		}
+		case 'H':
+		case 'h': {
+			// DELETE RECORD AT PARTICULAR PLACE
+			deleteRecordParticular();
+			break;
+		}
+		default: {
+			cout << "ENVALID OPTIONS !" << endl;
+			break;
+		}
+		}
+	} while (true);
+	return 0;
+}
+
+=========================
+OUTPUT:
+=========================
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+1
+a.Insert record ( Create record )
+b.Insert record at beginning
+c.Insert record at end
+d.Insert record after given data
+e.Insert record before given data
+a
+---------[ Enter student Detail ]---------
+Name :A
+Roll.No :1
+Course :ms
+Semister :1
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+1
+a.Insert record ( Create record )
+b.Insert record at beginning
+c.Insert record at end
+d.Insert record after given data
+e.Insert record before given data
+b
+---------[ Enter student Detail ]---------
+Name :B
+Roll.No :2
+Course :mcs
+Semister :2
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+1
+a.Insert record ( Create record )
+b.Insert record at beginning
+c.Insert record at end
+d.Insert record after given data
+e.Insert record before given data
+c
+---------[ Enter student Detail ]---------
+Name :C
+Roll.No :3
+Course :mcs
+Semister :3
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+1
+a.Insert record ( Create record )
+b.Insert record at beginning
+c.Insert record at end
+d.Insert record after given data
+e.Insert record before given data
+d
+Enter the rollNo you want to enter after that record :2
+---------[ Enter student Detail ]---------
+Name :D
+Roll.No :4
+Course :mcs
+Semister :4
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+1
+a.Insert record ( Create record )
+b.Insert record at beginning
+c.Insert record at end
+d.Insert record after given data
+e.Insert record before given data
+e
+Enter the rollNo you want to enter after that record :4
+---------[ Enter student Detail ]---------
+Name :E
+Roll.No :5
+Course :mcs
+Semister :5
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+3
+--------[ RECORD ]---------
+Name :B
+Roll.No :2
+Course :mcs
+Semister :2
+
+
+Name :D
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :E
+Roll.No :5
+Course :mcs
+Semister :5
+
+
+Name :A
+Roll.No :1
+Course :ms
+Semister :1
+
+
+Name :C
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+2
+f.Delete first record
+g.Delete last record
+h.Delete a particular record
+f
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+3
+--------[ RECORD ]---------
+Name :D
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :E
+Roll.No :5
+Course :mcs
+Semister :5
+
+
+Name :A
+Roll.No :1
+Course :ms
+Semister :1
+
+
+Name :C
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+2
+f.Delete first record
+g.Delete last record
+h.Delete a particular record
+g
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+2
+f.Delete first record
+g.Delete last record
+h.Delete a particular record
+h
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+3
+--------[ RECORD ]---------
+Name :D
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :E
+Roll.No :5
+Course :mcs
+Semister :5
+
+
+Name :A
+Roll.No :1
+Course :ms
+Semister :1
+
+
+1.INPUT
+2.DELETE
+3.DISPLAY
+4.EXIT
+4
+
+****************************************************************************************************************
+/*
+14) Write a program to implement circular link list of student record with following operations:
+a. Input Record
+b. Inset Record at beginning
+c. Inset Record at end
+d. Inset Record before given data
+e. Inset Record after given data
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+i. Display List
+j. Exit
+*/
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+struct record {
+	int rollNo, sem;
+	char course[15], name[15];
+	struct record* next, * prev;
+};
+struct record* start = NULL;
+struct record* input();
+
+struct record* input() {
+	struct record* temp ;
+	temp = (struct record*)malloc(sizeof(struct record));
+		cout << "Name :" ; cin >> temp->name;
+		cout << "Roll.No :" ; cin >> temp->rollNo;
+		cout << "Course :" ; cin >> temp->course;
+		cout << "Semister :" ; cin >> temp->sem;
+	return temp;
+}
+
+void insertRecord() {
+	struct record* temp = NULL;
+	temp = input();
+	if (start == NULL)
+	{
+		start = temp;
+		start->next = start;
+		cout << "First Record is created" << endl;
+	}
+	else
+		cout << "First Record is already exists" << endl;
+}
+void insertAtBeginning() {
+	struct record* temp, * ptr = NULL;
+	temp = input();
+	ptr = start;
+	while (ptr->next != start)
+		ptr = ptr->next;
+	temp->prev= ptr;
+	ptr->next = temp;
+	temp->next = start;
+	start->prev = temp;
+	start = temp;
+}
+void insertAtEnd() {
+	struct record* temp, *ptr = NULL;
+	temp = input();
+	ptr = start;
+	while (ptr->next != start)
+		ptr = ptr->next;
+	temp->prev = ptr;
+	ptr->next = temp;
+	temp->next = start;
+	start->prev = temp;
+}
+void insertBefore(int v_rollno) {
+	struct record* temp, * ptr = NULL;
+	temp = input();
+	ptr = start;
+	while (ptr->rollNo != v_rollno)
+		ptr = ptr->next;
+	temp->prev = ptr->prev;
+	temp->next = ptr;
+	ptr->prev->next = temp;
+	ptr->prev = temp;
+}
+void insertAfter(int v_rollno){
+	struct record* temp, * ptr = NULL;
+	temp = input();
+	ptr = start;
+	while (ptr->rollNo != v_rollno)
+		ptr = ptr->next;
+	temp->next = ptr->next;
+	temp->prev = ptr;
+	ptr->next->prev = temp;
+	ptr->next = temp;
+}
+void deleteAtBeginning() {
+	struct record* temp, * ptr = NULL;
+	ptr = start;
+	while (ptr->next != start)
+		ptr = ptr->next;
+	ptr->next = start->next;
+	start->next->prev = ptr;
+	temp = start;
+	start = start->next;
+	free(temp);
+}
+void deleteAtEnd() {
+	struct record* ptr = NULL;
+	ptr = start;
+	while (ptr->next != start)
+		ptr = ptr->next;
+	ptr->prev->next = start;
+	start->prev = ptr->prev;
+	ptr->prev = NULL;
+	ptr->next = NULL;
+	free(ptr);
+}
+void deleteParticular(int v_rollno) {
+	struct record * ptr = NULL;
+	ptr = start;
+	while (ptr->rollNo != v_rollno)
+		ptr = ptr->next;
+	ptr->prev->next = ptr->next;
+	ptr->next->prev = ptr->prev;
+	free(ptr);
+}
+void display() {
+	struct record* temp = NULL;
+	temp = start;
+	cout << "-------------[ PRINTING RECORDS ]-------------" << endl;
+	while (true) {
+		cout << "Name :" << temp->name << endl;
+		cout << "Roll.No :" << temp->rollNo << endl;
+		cout << "Course :" << temp->course << endl;
+		cout << "Semister :" << temp->sem << endl;
+		cout << endl << endl;
+		temp = temp->next;
+		if (temp == start)
+			break;
+	}
+}
+
+int  choice() {
+	char ch = 'a'; int opt;
+	cout << "1. INPUT" << endl;
+	cout << "2. DELETE" << endl;
+	cout << "3. DISPLAY" << endl;
+	cout << "4. EXITS" << endl;
+	cin >> opt;
+	if (opt == 1) {
+		cout << "a. Input record (create first record)" << endl;
+		cout << "b. Input record at beginning" << endl;
+		cout << "c. Input record at end" << endl;
+		cout << "d. Inset Record before given data " << endl;
+		cout << "e.Inset Record after given data" << endl;
+		cin >> ch;
+	}
+	if (opt == 2) {
+		cout << "f. Delete first record" << endl;
+		cout << "g. Delete last record" << endl;
+		cout << "h. Delete a particular record" << endl;
+		cin >> ch;
+	}
+	system("cls");
+	if (opt < 3)
+		return ch;
+	else
+		return opt;
+}
+int main()
+{
+	do {
+		switch (choice())
+		{
+		case 'a':
+		case 'A': {
+			// a.Input Record
+			insertRecord();
+			break;
+		}
+		case 'b':
+		case 'B': {
+			// b.Inset Record at beginning
+			insertAtBeginning();
+			break;
+		}
+		case 'c':
+		case 'C': {
+			// c.Inset Record at end
+			insertAtEnd();
+			break;
+		}
+		case 'd':
+		case 'D': {
+			// d.Inset Record before given data
+			int rollno;
+			cout << "Enter roll number that to enter the values ( BEFORE )" << endl;
+			cin >> rollno;
+			insertBefore(rollno);
+			break;
+		}
+		case 'e':
+		case 'E': {
+			// e.Inset Record after given data
+			int rollno;
+			cout << "Enter roll number that to enter the values ( AFTER )" << endl;
+			cin >> rollno;
+			insertAfter(rollno);
+			break;
+		}
+		case 'f':
+		case 'F': {
+			// f.Delete first record
+			deleteAtBeginning();
+			break;
+		}
+		case 'g':
+		case 'G': {
+			// g.Delete last record
+			deleteAtEnd();
+			break;
+		}
+		case 'h':
+		case 'H': {
+			// h.Delete a particular record
+			int rollno;
+			cout << "Enter roll number that to enter the values ( DELETE )" << endl;
+			cin >> rollno;
+			 deleteParticular(rollno);
+			break;
+		}
+		case 3: {
+			// i.Display List
+			display();
+			break;
+		}
+		case 4: {
+			// j.Exit
+			exit(0);
+			break;
+		}
+		default: {
+			cout << "INVLAID INPUT !" << endl;
+			break;
+		}
+		}
+		cout << endl << endl;
+	} while (true);
+	return 0;
+}
+=======================
+OUTPUT:
+=======================
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+1
+a. Input record (create first record)
+b. Input record at beginning
+c. Input record at end
+d. Inset Record before given data
+e.Inset Record after given data
+a
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+First Record is created
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+1
+a. Input record (create first record)
+b. Input record at beginning
+c. Input record at end
+d. Inset Record before given data
+e.Inset Record after given data
+b
+Name :Start
+Roll.No :2
+Course :mcs
+Semister :2
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+1
+a. Input record (create first record)
+b. Input record at beginning
+c. Input record at end
+d. Inset Record before given data
+e.Inset Record after given data
+c
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Start
+Roll.No :2
+Course :mcs
+Semister :2
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+1
+a. Input record (create first record)
+b. Input record at beginning
+c. Input record at end
+d. Inset Record before given data
+e.Inset Record after given data
+d
+Enter roll number that to enter the values ( BEFORE )
+1
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Start
+Roll.No :2
+Course :mcs
+Semister :2
+
+
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+
+    
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+1
+a. Input record (create first record)
+b. Input record at beginning
+c. Input record at end
+d. Inset Record before given data
+e.Inset Record after given data
+e
+Enter roll number that to enter the values ( AFTER )
+1
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Start
+Roll.No :2
+Course :mcs
+Semister :2
+
+
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+f
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+Name :End
+Roll.No :3
+Course :mcs
+Semister :3
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+g
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :Ansh
+Roll.No :1
+Course :mcs
+Semister :1
+
+
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+2
+f. Delete first record
+g. Delete last record
+h. Delete a particular record
+h
+Enter roll number that to enter the values ( DELETE )
+1
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+3
+-------------[ PRINTING RECORDS ]-------------
+Name :Before
+Roll.No :4
+Course :mcs
+Semister :4
+
+
+Name :After
+Roll.No :7
+Course :mcs
+Semister :7
+
+
+
+
+1. INPUT
+2. DELETE
+3. DISPLAY
+4. EXITS
+4
+

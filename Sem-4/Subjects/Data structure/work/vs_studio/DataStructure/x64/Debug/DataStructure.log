@@ -1,0 +1,4 @@
+﻿  DataStructure.cpp
+D:\Subjects\Data structure\assignment\work\vs_studio\DataStructure\DataStructure.cpp(52,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Subjects\Data structure\assignment\work\vs_studio\DataStructure\DataStructure.cpp(45): warning C4715: 'evalute': not all control paths return a value
+  DataStructure.vcxproj -> D:\Subjects\Data structure\assignment\work\vs_studio\DataStructure\x64\Debug\DataStructure.exe
