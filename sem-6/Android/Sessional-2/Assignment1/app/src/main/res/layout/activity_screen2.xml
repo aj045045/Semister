@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screen_2">
+
+    <TextView
+        android:id="@+id/sc2_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_employee_detail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="30sp"
+        android:layout_marginTop="20sp"
+        />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/sc2_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_salary"
+        app:layout_constraintTop_toBottomOf="@id/sc2_welcome"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="20sp"
+        android:autofillHints="phone"
+        />
+
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/sc2_experience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_experience"
+        app:layout_constraintTop_toBottomOf="@id/sc2_salary"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:autofillHints="phone"
+        android:inputType="numberDecimal" />
+
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/sc2_last_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_last_company_name"
+        app:layout_constraintTop_toBottomOf="@id/sc2_experience"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="textCapWords"
+        android:autofillHints="name"
+        />
+
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/sc2_last_company_ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_last_company_reference"
+        app:layout_constraintTop_toBottomOf="@id/sc2_last_company_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:autofillHints="name"
+        android:inputType="text"
+        />
+
+
+    <Button
+        android:id="@+id/sc2_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@id/sc2_last_company_ref"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

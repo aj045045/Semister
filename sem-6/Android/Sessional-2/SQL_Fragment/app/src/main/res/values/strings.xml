@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SQL_Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="student_registration_form">Student registration form</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_second_name">Enter Second Name</string>
+    <string name="enter_roll_no">Enter Roll No.</string>
+    <string name="enter_contact_number">Enter Contact Number</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="submit">Submit</string>
+    <string name="add_student">Add Student</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+</resources>

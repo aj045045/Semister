@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="custom_view_1">
+        <attr name="first_name" format="string"/>
+        <attr name="last_name" format="string"/>
+        <attr name="age" format="string"/>
+        <attr name="address" format="string"/>
+        <attr name="email" format="string"/>
+        <attr name="mobile" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="custom_view_2">
+        <attr name="salary" format="string"/>
+        <attr name="experience" format="string"/>
+        <attr name="company_name" format="string"/>
+        <attr name="company_name_ref" format="string"/>
+    </declare-styleable>
+</resources>

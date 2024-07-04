@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Practice_1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_student">Add Student</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="enter_mobile">Enter Mobile</string>
+    <string name="enter_mail">Enter Mail</string>
+    <string name="submit">Submit</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string-array name="email_values">
+        <item>aj045045@gmail.com</item>
+        <item>anna@gmail.com</item>
+        <item>arii@gmail.com</item>
+        <item>dedka@gmail.com</item>
+        <item>haddi@gmail.com</item>
+        <item>dashedi@gmail.com</item>
+        <item>johnwick@gmail.com</item>
+    </string-array>
+</resources>

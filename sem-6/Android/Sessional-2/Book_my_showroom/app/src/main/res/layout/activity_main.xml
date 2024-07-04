@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="20sp"
+        android:textSize="30sp"
+        android:id="@+id/main_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/book_my_show_room"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+<Spinner
+    android:layout_marginTop="20sp"
+    android:id="@+id/main_movie"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:entries="@array/movie"
+    app:layout_constraintTop_toBottomOf="@+id/main_show"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+
+    <Spinner
+        android:entries="@array/time"
+        android:id="@+id/main_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/main_movie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+<TextView
+    android:id="@+id/main_or"
+    android:layout_marginVertical="50sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/or"
+    android:textSize="20sp"
+    app:layout_constraintTop_toBottomOf="@id/main_time"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+    <HorizontalScrollView
+        android:layout_marginTop="20sp"
+        app:layout_constraintTop_toBottomOf="@id/main_or"
+        android:id="@+id/main_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+<!--<LinearLayout-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--android:orientation="horizontal">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+
+<!--            >-->
+<!--        <ImageView-->
+<!--            android:src="@drawable/img_avatar"-->
+<!--            android:id="@+id/main_first_image"-->
+<!--           android:contentDescription="@string/image_first"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/image_first"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/main_second_image"-->
+<!--            android:contentDescription="@string/second_image"-->
+<!--            android:src="@drawable/img_avatar"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/second_image"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:src="@drawable/img_avatar"-->
+<!--            android:id="@+id/main_third_image"-->
+<!--            android:contentDescription="@string/third_image"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/third_image"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:src="@drawable/img_avatar"-->
+<!--            android:id="@+id/main_fourth_image"-->
+<!--            android:contentDescription="@string/fourth_image"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/fourth_image"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:src="@drawable/ic_launcher_background"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:src="@drawable/img_avatar"-->
+<!--            android:id="@+id/main_fifth_image"-->
+<!--            android:contentDescription="@string/fifth_image"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"/>-->
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/fifth_image"-->
+<!--                />-->
+<!--</LinearLayout>-->
+<!--    </LinearLayout>-->
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.example.book_my_showroom.MovieView
+                    android:id="@+id/main_custom_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:image="@drawable/baseline_movie_24"
+                    custom:name="Fighter"
+                    />
+</LinearLayout>
+    </HorizontalScrollView>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/main_name_display"
+        app:layout_constraintTop_toBottomOf="@id/main_scroll"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_time_display"
+        app:layout_constraintTop_toBottomOf="@id/main_name_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+     />
+</androidx.constraintlayout.widget.ConstraintLayout>

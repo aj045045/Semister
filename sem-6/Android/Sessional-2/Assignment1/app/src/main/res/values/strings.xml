@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Assignment-1</string>
+    <string name="enter_employee_detail">Enter employee detail</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="enter_age">Enter age</string>
+    <string name="enter_address">Enter address</string>
+    <string name="enter_e_mail_id">Enter e-mail Id</string>
+    <string name="enter_mobile_no">Enter mobile no.</string>
+    <string name="next"><![CDATA[Next >>]]></string>
+    <string name="enter_salary">Enter Salary</string>
+    <string name="enter_experience">Enter Experience</string>
+    <string name="enter_last_company_name">Enter last company name</string>
+    <string name="enter_last_company_reference">Enter last company Reference</string>
+    <string name="submit">Submit</string>
+    <string name="welcome_to_the_employee_database">Welcome to the Employee Database</string>
+    <string name="display_employee">Display Employee</string>
+    <string name="add_employee">Add Employee</string>
+    <string name="age">Age :</string>
+    <string name="name">Name :</string>
+    <string name="address">Address :</string>
+    <string name="e_mail">E-mail :</string>
+    <string name="mobile">Mobile :</string>
+    <string name="experience">Experience :</string>
+    <string name="salaray">Salaray :</string>
+    <string name="company_name">Company Name :</string>
+    <string name="company_reference">Company reference :</string>
+</resources>

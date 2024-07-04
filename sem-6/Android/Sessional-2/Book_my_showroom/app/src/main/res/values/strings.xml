@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Book_my_showroom</string>
+    <string name="image_first">Image First</string>
+    <string name="second_image">Second Image</string>
+    <string name="third_image">Third Image</string>
+    <string name="fourth_image">Fourth Image</string>
+    <string name="fifth_image">Fifth Image</string>
+    <string name="or">--------------------  OR  --------------------</string>
+    <string name="book_my_show_room">Book My Show Room</string>
+    <string name="movie">Movie</string>
+    <string-array name="movie">
+        <item>Dange</item>
+        <item>Avenger: Time Frame</item>
+        <item>Leo</item>
+        <item>Kaithi</item>
+        <item>Beast</item>
+    </string-array>
+    <string-array name="time">
+        <item>Time 11:11</item>
+        <item>Time 22:22</item>
+        <item>Time 33:33</item>
+        <item>Time 44:44</item>
+        <item>Time 55:55</item>
+    </string-array>
+</resources>
