@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='output.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='sweetalert2.min.css') }}" />
+        <title>{% block title required %}{% endblock %} - Olympic</title>
+</head>
+
+<body class="bg-lime-50">
+        {% include 'util/header.html' %}
+        <div class="px-5 py-20 min-h-screen">
+                {% block body required %} {% endblock %}
+        </div>
+        {% include 'util/footer.html' %}
+
+        <script src="{{ url_for('static',filename='sweetalert2.min.js')}}"></script>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                        {% for category, message in messages %}
+                        Swal.fire({
+                                title: "{{ message.title }}",
+                                text: "{{ message.message }}",
+                                icon: "{{ category }}"
+                        });
+                        {% endfor %}
+                });
+        </script>
+        {% endif %}
+        {% endwith %}
+</body>
+
+</html>

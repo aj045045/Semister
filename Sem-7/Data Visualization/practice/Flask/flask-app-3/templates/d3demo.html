@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js with Flask</title>
+    <script src="{{ url_for('static', filename='d3min.js') }}"></script>
+</head>
+<body>
+    <h2>D3.js Bar Chart</h2>
+    <div id="chart"></div>
+
+    <script>
+        // Fetch data from Flask backend
+        fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+            // Set dimensions and margins for the chart
+            const width = 500;
+            const height = 300;
+            const margin = {top: 20, right: 30, bottom: 40, left: 40};
+
+            // Append an SVG element to the div with id="chart"
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            // Set the scales
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.name))
+                .range([0, width])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data, d => d.value)])
+                .nice()
+                .range([height, 0]);
+
+            // Add the bars
+            svg.selectAll(".bar")
+                .data(data)
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", d => x(d.name))
+                .attr("y", d => y(d.value))
+                .attr("width", x.bandwidth())
+                .attr("height", d => height - y(d.value))
+                .attr("fill", "steelblue");
+
+            // Add the X Axis
+            svg.append("g")
+                .attr("transform", `translate(0, ${height})`)
+                .call(d3.axisBottom(x));
+
+            // Add the Y Axis
+            svg.append("g")
+                .call(d3.axisLeft(y));
+        });
+    </script>
+</body>
+</html>

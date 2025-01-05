@@ -1,0 +1,10 @@
+Use StudentsPerformance Dataset and Perform following Task:
+
+Generate a dashboard on webpage which represent following
+1. Pie Chart for How many students got more than 70 score, between 60 to 70, between 40 to 60 and below 40 in math. When cursor is above part of chart it should display DIST for above 70, First for below 70 and above 60, and so on.
+2. Pie Chart for How many students got more than 70 score, between 60 to 70, between 40 to 60 and below 40 in reading. When cursor is above part of chart it should display DIST for above 70, First for below 70 and above 60, and so on.
+3. Pie Chart for How many students got more than 70 score, between 60 to 70, between 40 to 60 and below 40 in writing. When cursor is above part of chart it should display DIST for above 70, First for below 70 and above 60, and so on.
+4. Bar chart for how many student completed test preparation course and how many student not completed test preparation course.
+5. Line chart for math score of 20 to 30 roll nos.
+6. Display the count with proper design that how many students parent having bachelor and master degree.
+7. In dataset, replace data of lunch for free/reduced to premium and display the count of no of students who choose standard lunch and premium lunch.

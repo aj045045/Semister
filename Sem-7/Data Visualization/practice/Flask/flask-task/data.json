@@ -1,0 +1,27 @@
+[
+    {
+        "userName": "Ansh Yadav",
+        "emailId": "aj045045@gmail.com",
+        "password": "ansh"
+    },
+    {
+        "userName": "Janvi Chauhan",
+        "emailId": "janvi@gmail.com",
+        "password": "janvi"
+    },
+    {
+        "userName": "Ankit Yadav",
+        "emailId": "ankit@gmail.com",
+        "password": "ankit"
+    },
+    {
+        "userName": "Hiren Singh",
+        "emailId": "hiren@gmail.com",
+        "password": "hiren"
+    },
+    {
+        "userName": "Jay Patel",
+        "emailId": "jay@gmail.com",
+        "password": "jay"
+    }
+]

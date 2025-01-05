@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <style>
+        /* Basic reset */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar container */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Navbar list style */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Navbar item (link) style */
+        nav ul li {
+            padding: 14px 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect on links */
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Main content area padding */
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            {% for val in valList %}
+            <li>
+                <a href="/graph/{{ loop.index }}">{{ loop.index }} {{ val }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</body>
+
+</html>

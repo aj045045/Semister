@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block title %}Graphs {% endblock %}
+{% block body %}
+<div>
+    <div onclick="window.history.back();" class="text-xl mb-3 bg-gradient-to-r from-blue-200 to-cyan-200 w-fit px-2 py-0.5 border border-lime-500 rounded-md">Go Back</div>
+    <div class="text-3xl font-bold">{{ title }}</div>
+    <img src="data:image/png;base64,{{ src }}">
+</div>
+{% endblock %}

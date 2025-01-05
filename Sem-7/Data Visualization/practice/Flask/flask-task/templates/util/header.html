@@ -1,0 +1,31 @@
+<header class="bg-lime-700 text-white fixed w-full">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-lg font-bold">
+            <a href="{{ url_for('index') }}" class="hover:text-gray-400">Olympic</a>
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li>
+                    <a href="{{ url_for('index') }}" class="hover:text-lime-400 hover:underline hover:underline-offset-4">Home</a>
+                </li>
+                {% if 'emailId' in session %}
+                    {% for i in navBar() %}
+                    <li>
+                        <a href="{{ url_for('bar', question_id= loop.index ) }}" class="hover:text-lime-400 hover:underline hover:underline-offset-4">{{ i }}</a>
+                    </li>
+                    {% endfor %}
+                    <li>
+                        <a href="{{ url_for('logout') }}" class="hover:text-lime-400 hover:underline hover:underline-offset-4 font-bold">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ url_for('sign_up') }}" class="hover:text-lime-400 hover:underline hover:underline-offset-4">Sign-up</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('sign_in') }}" class="hover:text-lime-400 hover:underline hover:underline-offset-4">Sign-in</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <h1>Flask Graphs App</h1>
+        <nav>
+            <!-- <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/graph1">Graph 1</a></li>
+                <li><a href="/graph2">Graph 2</a></li>
+                <li><a href="/graph3">Graph 3</a></li>
+                <li><a href="/graph4">Graph 4</a></li>
+                <li><a href="/graph5">Graph 5</a></li>
+            </ul> -->
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
