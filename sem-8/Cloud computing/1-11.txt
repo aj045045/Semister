@@ -1,0 +1,506 @@
+==================================
+CHAPTER : 1
+==================================
+
+1. What is meant by ‘cloud’ in cloud computing?
+ANS: A cloud is combination of servers, storages, network devices (like switches etc.) networked together
+from where computing facilities are delivered to users. Cloud facility is developed by activating this
+specially designed network of commodity computing components with advanced software to power
+them up for the task. This powered up facility becomes capable delivering computing as utility service
+that user can access from any location through Internet.
+
+2. Where do the clouds reside?
+ANS: Globally cloud computing facilities are provided by major computing vendors. They generally develop
+huge infrastructure for cloud at different locations around the globe. Such arrangements are known
+as cloud data centers or CDCs. Apart from computing facilities, these centers have other essential
+amenities like uninterrupted power supply system, fire control system and cooling system. CDCs are
+highly protected areas where vendors set up networks of large number of computing devices like
+servers, storages etc. and create cloud computing utility service out of those.
+
+3. How can users gain from utility computing?
+ANS: Utility computing is the way of supplying computing service through an on-demand, pay-per-usage
+billing method. It focusses on the business model where users receive computing resources from
+a service provider delivered over network communication channel. The prime advantage of utility
+computing is its economic benefit that reduces users’ computing cost.
+
+4. Will cloud computing replace traditional computing devices with high-configured desktops or laptops?
+ANS: In cloud computing approach, all load of computing shifts into the highly configured computing
+facilities provided by the cloud. People just need an interfacing device through which they can
+connect to the cloud using Internet. This interfacing device can be any desktop, laptop, tablet or
+even a mobile interface which can run the cloud interfacing application. Hence, these interfacing
+devices do not need to be highly configured any more. So, cloud computing is going to replace 
+highly-configured traditional desktops or laptops with minimally-configured ones, as they will only
+have to act as interfacing devices to cloud.
+ 
+5. Is cloud computing beneficial only for larger organizations?
+ANS: Individual users who work in their PCs at home can avail cloud facility sitting at home itself. They
+can store files, install software, or run programs just like they did it in PCs. Apart from individual
+users, small offices that need a networked environment with a small number of terminals can easily
+move into the cloud. In short, cloud computing is for all those who need computing facilities in any
+form as well as volume.
+
+
+==================================
+CHAPTER : 2
+==================================
+
+6. Why is cloud computing considered an evolution rather than as an innovation?
+ANS: Cloud computing is the outcome of the convergence of research and developments in different
+fields of computing. Advancements in distributed computing, emergence of resource virtualization
+technique, developments in the field of web services and communication technology, arrival of SOA
+paradigm in application development, advancements in the field of AI to automatically manage
+computing infrastructure and related others, all of whom have contributed to realize the dream of cloud
+computing. This is why cloud computing is considered as the next phase of evolution in computing.
+
+7. How did the introduction of distributed system revolutionize computing?
+ANS: Distributed systems introduced many features those are considered as revolutionary. It took the
+parallel processing concept to next step where computing became faster. Faster processing results
+in low latency. Formation of resource pool is another feature of distributed computing model. Apart
+from this, distributed system opened the scope for making a system extra powerful by adding more
+(virtually unlimited) resources (computing nodes) into the system. Thus, computing systems got its
+scalable nature which turned a revolutionary feature with further developments.
+
+8. Why is grid computing considered the predecessor of cloud computing?
+ANS: Cloud computing is developed based on the distributed model of computing. There are several
+methodologies those in cloud computing have been combined together to realize itself but
+grid computing model was the first major breakthrough towards realizing the dream of cloud 
+computing system. This advanced mode of computing has inherited important characteristics like
+creation of resource pool or system scalability from the grid computing model. This is why grid
+computing is considered as the predecessor of cloud computing.
+
+9. How application mobility has been possible with resource virtualization?
+ANS: In traditional way of computing, once an application or process was launched, it used to get attached with
+some physical resource(s) and fully or partially occupied the resource(s) till the completion or termination.
+It was impossible to move a running application to a separate set of resources. Resource virtualization
+decoupled application from physical computing resources. Application then did not have any direct
+access or could not directly occupy hardware resources too. In between them there lies the virtualized
+resources which can assign loads among physical resources. Thus, shifting load becomes possible.
+
+10. Do enterprises need to purchase new hardware to shift into cloud?
+ANS: For working in cloud, enterprises need low-configuration computing devices to be used as terminals.
+The existing in-house machines (which are having high configurations) are more than sufficient to
+be used as terminals for accessing cloud. It is likely that enterprises will have to make changes in
+their networks while adopting cloud computing. Every terminals need to have high speed Internet
+connectivity. This reorganization of the network may need some new procurement. But the
+organizations need not to purchase any significant volume of hardware while shifting in cloud.
+
+
+==================================
+CHAPTER : 3
+==================================
+
+11. Justify the ‘low initial investment’ philosophy of cloud computing.
+ANS: In cloud computing, cloud vendors develop and keep all facilities ready for its potential customers
+(the users). Vendors invest in large to develop the computing facilities those are essential to attract
+customers. Thus, investment of cloud computing vendors is very high in its initial phase.
+Users on the other hand can avail those facilities on rent basis as per the requirement. They need
+not to procure resources or purchase software licenses any more. This reduces the initial investment
+of users radically. Thus, the low investment philosophy of cloud is true from users’ perspective.
+
+12. Why is cloud computing called variable cost computing model?
+ANS: Cloud computing philosophy enables users to use computing resources on rent basis. Unlike
+traditional computing, users need not to invest huge capital at the beginning for developing
+computing infrastructure and can pay to the cloud vendors as per their usage of resources. Resource
+consumption is measured and billed. When use is higher, users pay accordingly and during low usage
+they pay less. This is why cloud computing is called a variable cost computing model.
+
+13. What are the advantages of utility computing?
+ANS: Utility computing brings many benefits to users. It eliminates the burden of huge initial investment
+from users. It allows them to pay as per their usage. Sharing of common resources among multiple
+users under one computing infrastructure reduces cost of computing also. Users can simply
+connect and use computing. In brief, users get tension-free computing facilities at much lower
+cost. 
+
+14. What is pervasive computing?
+ANS: Pervasive computing refers to the computing environment having created through the use of
+embedded microprocessor that always remains connected with other devices via Internet. Devices
+those are part of pervasive computing can be anything from car, electric meter to human body. Such
+computing environment is generally built based on wireless communication technology, Internet
+and advanced electronic chips. Pervasive computing devices always remain connected
+
+15. Is it true that cloud computing ensures round the clock availability?
+ANS: It can be said that cloud computing is available anywhere and anytime. But it is true that cloud
+computing vendors cannot generally deliver services with hundred percent service uptime assurance.
+Reputed cloud vendors guarantee more than 99.9% of service uptime, but till now it has not been
+possible for vendors to deliver 100% service uptime over a reasonable period of time. Anyway, despite
+of this, its service availability is still much better than the traditional computing scenario. And cloud
+users rarely suffer or can even feel the effect of the almost insignificant service downtime.
+
+
+==================================
+CHAPTER : 4
+==================================
+
+16. What is the importance of multi-tenancy feature in any utility service?
+ANS: Utility service model eliminates the need of maintaining separate and dedicated service generation
+(as well as delivery) units for each and every consumer. In this model, everyone consume service from
+some common source being offered by some service provider. Here, resources are used as demand
+basis to serve consumers. A resource held by one consumer at a point of time may serve another
+consumer when gets released. This approach makes the utility service cost-effective.
+Hence, multi-tenancy is an integral part of utility service model.
+
+
+17. Why multi-tenancy is not considered as an essential feature of cloud computing?
+ANS: This is because of private cloud which does not have the scope for multi-tenancy of resources. In
+public cloud arena, computing resources are usually shared with consumers. One resource held
+by some consumer can be given to some other when it gets released from the first consumer. This
+increases resource utilization and decreases cost of computing. But, in private cloud, all resources get
+reserved for one consumer (or consumer organization), and not shared with others. 
+This is why multi-tenancy is not treated as an essential feature of cloud computing.
+
+18. ‘Private cloud is hosted within the security boundary of owner organization’ – Justify.
+ANS: Enterprises who are concerned about the protection of their business interest often choose not
+to share cloud environment with external organizations or external users. They work in private
+cloud environment. Private cloud can be deployed on-premises or off-premises both. But the
+cloud (which is the resources of the cloud) even if it is hosted off-premises, cannot be shared with
+anyone else apart from the owner enterprise. The cloud environment works as an integral part
+within the security boundary of the owner organization to keep the computing environment more
+protected. 
+
+19. Which one is more cost-effective: private cloud or public cloud?
+ANS: Private cloud uses dedicated resources. Resources there cannot be shared with anyone else but the
+owner (consumer). This guarantees a secured computing environment as storage and other resources
+are not shared with others. But, this reservation of resources increases cost of computing. In public
+cloud, resources are supplied to a consumer as per actual demand. No one can forcefully hold
+resource without utilization and unutilized resources can be shared with any other consumers. This
+multi-tenancy philosophy reduces cost of computing a lot.
+
+20. How can organizations benefit from hybrid cloud?
+ANS: Public cloud is cost-effective but private cloud can provide more security. Hence, many organizations
+prefer to use private cloud. But, one problem often is being faced with private cloud during its peak
+hours. The reserved resources may not meet the demand during such period of time. There we can
+use hybrid cloud instead. In hybrid cloud, the enterprises can run the essential (or core) part of their
+applications in the private cloud and expand into the public cloud utility when the demand goes
+beyond a certain limit. Thus, they enjoy the security of private cloud by reducing the total cost.
+
+
+==================================
+CHAPTER : 5
+==================================
+
+21. Computing infrastructure as service: What does it mean and how is it possible?
+ANS: When computing infrastructure becomes available as service that means people need not to acquire
+physical computing systems for getting their works done; be it about performing computational
+task, forming network of computers or storing data. All kinds of computing infrastructural facilities
+become readily available in virtual mode which users can access through a thin client interface
+(usually a browser) from any computing device. Users can perform all activities using these virtual
+computing resources just like they used to do with actual physical computers. Computing vendors
+arrange, manage and deliver the resources to users over internetwork/Internet. This is called as the
+computing infrastructure as service.
+
+22. What activities can be performed by consumers of PaaS facility?
+ANS: Consumers of PaaS get a computing platform which is actually an application development and
+deployment environment. PaaS delivers virtual machines loaded with operating system and
+integrated with the runtime(s) of the desired development and/or deployment platform. Consumers
+can develop applications over the delivered platform and debug or test them. They can also install
+and run supported applications over a PaaS offering.
+
+23. How can a private cloud be enabled to expand into hybrid cloud environment?
+ANS: For a private cloud solution to expand into hybrid cloud environment, it must be integrated with
+some public cloud solutions. This is only possible when the private cloud solution is compatible
+with the public cloud solution. There are instances where open-source cloud solutions (those are
+used to build private cloud) have gone into agreement with commercial public cloud providers
+for compatibility. Several open-source cloud solutions like Eucalyptus, OpenNebula and Nimbus
+implement Amazon cloud’s APIs and thus can integrate with Amazon cloud in order to build hybrid
+cloud.
+
+24. Do all service providers follow NIST model for cloud service development?
+ANS: Several architectural models have been proposed for cloud computing over the years. Among
+them, the model proposed by NIST has been recognized as the globally accepted cloud reference
+architecture. Service providers generally do not disclose their cloud computing models. But major
+cloud computing vendors have their own cloud architectural model and it is most likely that they
+follow their own model.
+
+25. What is the difference between elasticity and scalability in cloud computing?
+ANS: One important feature of cloud computing is its scalable nature. A scalable architecture handles
+growing workload by increasing resource capacity in same proportion. Thus scalability of cloud
+architecture helps in delivering resources as per demand of application.
+Elasticity of cloud facilitates resource quantity and characteristics to vary at runtime. It is associated
+with the commissioning and decommissioning of resources. It is determined by the relative speed by
+which resources are allocated (to some process) and are consumed. 
+
+
+==================================
+CHAPTER : 6
+==================================
+
+26. What is the importance of the security reference model in cloud computing?
+ANS: Cloud computing is made for collaboration and accessed remotely. It allows de-perimeterization
+that is admission of external systems into organization’s network security boundary. Users may not
+own a major part of the systems they work in. Accountability of service providers plays an important
+role in this computing model. Thus, the security erupts as a basic concern. A guideline for managing
+security makes the scenario easy for consumers while moving into cloud environment. The model
+distinguishes all of the possible formations of cloud and highlights their pros and cons both.
+
+27. Were the four dimensions of cloud security model relevant in traditional computing too? 
+ANS: Outsourcing of computing was present in traditional computing also. Thus, the sourcing dimension
+(third dimension of cube model) stands relevant there. In traditional approach, data center location
+could either be on-premises or off-premises. Hence data storage location could be internal or
+external. Eventually, the data boundary dimension (first dimension of cube model) is also relevant
+there. The second dimension becomes relevant as the ownership of technology used in traditional
+computing could be both proprietary and open. Now in relation with the third dimension, it we can
+say that the traditional computing used to prefer the perimeterized security approach. But in special
+cases, de-perimeterization could be done through virtual private network. Consequently, the cloud
+computing is primarily created to take the advantages of de-perimeterized computing approach.
+
+28. What is Cloud Security Alliance?
+ANS: Cloud Security Alliance  (CSA) is a non-profit organization formed by a group of industry leaders,
+focussing on implementation of wide range of initiatives in cloud security. CSA promotes cloud
+security awareness programs, regularly publishes security guidance on cloud computing and offers
+security certifications. The organization was formed in 2008 and registered in United States.
+
+29. IT outsourcing is more secured under which model: traditional computing or cloud computing?
+ANS: Outsourcing model of computing can be of two types as perimeterized and de-perimeterized.
+Primeterization keeps the computing environment under the network boundary of consumer
+enterprise. Thus, it is sometimes considered as more secured option than de-perimeterization because
+all resources, especially storage and others remain under the control of the enterprise. Otherwise, the
+security in outsourcing mainly depends on the reputation and expertise of the computing vendor.
+In this regard, public cloud services offered by reputed computing vendors are often considered as
+more secured, reliable and robust in comparison to traditional model of outsourcing.
+
+30. Is there any way of enjoying facilities of cloud computing without compromising security?
+ANS: This is absolutely possible with private cloud deployment model. In private cloud, consumers can
+get all benefits of cloud computing like resource pooling, on-demand service, elasticity etc. Only
+thing they do not get is multi-tenancy facility which makes public cloud services more cost-effective.
+Private clouds can provide traditional computing like security confidence both for insourced and
+outsourced services
+
+
+==================================
+CHAPTER : 7
+==================================
+
+31. How virtualization enables multi-tenancy in computing?
+ANS: In virtualization, the users as well as the applications can only access virtualized computing resources
+(like processor, memory, disk, switch etc.). These virtualized computing resources are made out of
+support from physical computing resources. One physical device may empower multiple virtual
+devices (of its own type) at same or different point of time which are consumed by users (tenants) not
+known to each other. This flexibility is there since applications or users are not tied with any physical
+resources, rather virtual resource are being allocated according to the demand of applications, thus
+one physical resource can support multiple tenants.
+
+32. When does it become necessary to implement emulation-based virtualization?
+ANS: Normal virtualization is simulation-based. Software simulates the actual hardware components into
+set of software-based (virtual) components. Architectural structure of these virtual components
+remains same as the actual physical components. Hence, software systems (operating system or
+applications) fit for the architecture (or instruction set) of the physical resources can be installed over
+the corresponding virtual resources.
+When situation demands that software made for one architecture (that is written for one type of
+instruction set) has to be installed over hardware resources having some other architecture (made
+for some other instruction set); then only way is to create the required set of virtual devices through
+emulation-based virtualization. In emulation-based virtualization, the architecture of virtual devices
+and the underlying physical devices need not to match.
+
+33. Why is hypervisor also called virtual machine monitor?
+ANS: Hypervisor produces all of the virtual computing resources. Virtual machines are created over the
+layer of hypervisor using these virtual resources. It is the responsibility of the hypervisor to manage
+activities, monitor functionalities and provide support to the virtual machines. This is why hypervisor
+is also called as virtual machine monitor or VMM
+
+34. How virtualization empowers computing using resource pool?
+ANS: In contrast to the fact that one physical resource can support multiple virtual devices (through multitenancy), 
+it is also possible to form one powerful virtual device combining the power of multiple
+physical resources. One 6GB memory can be formed combining three 2GB RAMs. Again those three 
+RAMs can be replaced by two 3GB RAMs without disrupting the service or without any knowledge
+of applications using them. All of these mapping of virtual resources with underlying physical pool
+of resources occur dynamically to support maximum resource utilization. Decoupling of applications
+from hardware allows administrators to think more about aggregate computing capacity and
+less about individual hosts. Thus, the virtualization endorses to gain maximum benefit of pooled
+resources. 
+
+35. What is sandboxing?
+ANS: In computing, a sandbox is a restricted or isolated environment for execution of application. This
+environment does not allow to execute all functionalities by prohibiting certain functions for security
+purpose. This environment works as virtual lab where un-trusted programming codes or applications
+can be tested without allowing it to cause any harm.
+Virtualization and sandboxing are not same. Rather, sandboxing can be seen as a special and
+partial example of virtualization. But virtualization sometimes referred as sandboxing as it creates a
+protected enclosure that mimics a real-life computing infrastructure and thus malicious applications
+cannot damage the actual resources.
+Cloud vendors often use sandboxing for security. For instance, Google App Engine uses sandbox
+feature to keep applications isolated to ensure that all App Engine applications run in a restricted
+environment. This also ensures the security of the applications against the attacks.
+
+36. What is the difference between sandboxing and virtualization?
+ANS: The objective of sandboxing and virtualization are entirely different. Sandboxing is to isolate a
+running program or application from the physical computing system so that the program cannot
+harm the system. It is used to verify untrusted applications. While virtualization is used to create
+entire machine environment, sandboxing software provides minimal functionalities required for
+application execution or testing and withheld codes that can harm the server and data.
+
+37. Resource abstraction through virtualization: What does this mean?
+ANS: When working in virtualized environment, no one can access physical resources directly. Applications
+run upon virtual machines and they can never know which physical devices are actually supporting
+those virtual devices or where they are located. Thus, the actual resource components, their
+architecture, and system configuration remain out of everyone’s sight. Virtualization thus adds a layer
+of abstraction over physical resources.
+
+38. When is operating system-level virtualization useful?
+ANS: Server or machine virtualization facilitates the running of multiple virtual or guest machines on a
+single physical or host machine. In hypervisor-based virtualization, the different guest machines
+running over a host need not to run same OS as the host. They are free to run any OS and multiple
+VMs running over a host may run different OS simultaneously.
+System level (or operating system level) virtualization is an option when it is known that all of
+the virtual servers will use same Linux-based operating system. In system-level virtualization, virtual
+servers share one single OS kernel (that of the host OS) and hence can run same operating system
+only
+
+
+==================================
+CHAPTER : 8
+==================================
+39. What is resource pooling?
+ANS: Cloud data centers need to arrange huge volume of different types of computing resource components
+to serve a large number of consumers. Pooling is grouping of resources. It is about how the groups or
+nested-groups are formed, and how resources are organized and so on. Without appropriate design
+and organization during pool formation, computing may not function efficiently with those pooled
+resources. 
+
+40. How has commoditization helped in the growth of cloud computing?
+ANS: Commodity hardware resources are cheaper and easily available all over the world. Cloud data centers
+require good amount of hardware resources to create resource pools. Easy availability of commodity
+resources and their replacements at cheaper rate makes it easy for vendors to establish and maintain
+data centers as they need not to look for costly and uncommon specialized (high power) resource
+components which are not easily available in the market.
+ 
+41. ‘Servers in traditional computing also seem to support multi-tenancy’ – justify.
+ANS: It is true that in traditional computing, multiple users can use a server system. But more than tenants,
+they actually own the whole server. They permanently occupy the resources. No other people (external
+or unknown) can utilize the resources even when server utilization rate is low. Thus, traditional servers
+only support multiple users but do not support multi-tenancy. In cloud computing, the users do not
+permanently occupy a fixed set of physical resources. Resource allocation happens at runtime and
+consumers use them only as tenants.
+
+42. How does ‘long-term resource reservation plan’ fall under dynamic provisioning category?
+ANS: Unlike short-term on-demand plan, in long-term resource reservation model, the cloud providers
+keep aside a certain volume of computing resources in advance (depending on SLA) for consumers.
+Although volumes of resources are reserved under this plan, the physical resource components are still 
+Resource Pooling, Sharing and Provisioning
+provisioned dynamically since all of the resources are delivered as virtual resources. Even, any faulty
+resource component can immediately be replaced dynamically. Thus, the long-term reservation plan
+does not confirm permanent acquisition of any physical resources and physical resources are only
+provisioned dynamically
+
+43. Does cloud computing entirely eliminate resource under- and over-provisioning
+problems?
+ANS: Under on-demand resource provisioning plan, the under-provisioning and over-provisioning
+problems of resources are eliminated in cloud computing. But, cloud computing also keeps open a
+resource reservation plan for consumers which is much like owning fixed volume of resources. Under
+this plan, the problems of under-provisioning and over-provisioning of resources persist.
+
+
+==================================
+CHAPTER : 9
+==================================
+
+44. What is auto-scaling? How does it work?
+ANS: Auto-scaling is a mechanism through which resources can automatically be provisioned into a
+computing system during demand. Provisioned resources also get released when demand drops in
+auto-scaling. This can be done by keeping constant monitoring a system and by setting of certain
+thresholds. Whenever those thresholds are touched the automated mechanism takes necessary care
+to meet the demand with maximum resource utilization.
+
+45. Are, dynamic scaling and automatic scaling not synonymous?
+ANS: Dynamic scaling and automatic scaling are not synonymous. Dynamic scaling means scaling
+of a running system without any interruption. This can be done in two ways as manually or
+through automation. Cloud computing implements automatic dynamic scaling which is known
+as ‘auto scaling’. In some critical situations though the manual dynamic scaling becomes
+unavoidable. 
+
+46. What is ‘Auto-Scaling Group’?
+ANS: ‘Auto-scaling group’ is a feature initially been offered by Amazon cloud services. It is collection of
+EC2 instances. An auto-scaling group can be created to maintain the number of EC2 instances for the
+group. At any instance, an unhealthy Amazon EC2 instance is replaced by new one. The group can be
+automatically scaled up and down based on specified conditions.
+
+47. Does cloud literally provide infinite scaling facility?
+ANS: Infinite scalability during growth in application demand means infinite provisioning of resources
+which is an impractical idea. While resources are not literally infinite, the cloud computing creates
+the illusion of infinite resources through sharing of resources among different applications.
+The implementation is based on the concept that an application cannot have same resource
+requirements all of the time and hence the resources from a pool can be shared among applications
+and users. When an application demand grows, this pool of shared resources can provide support
+for scaling of that application as long as free resources are available there. Since public cloud
+computing facilities to maintain huge pool of resources it provides illusion of infinite scaling during
+demand.
+
+48. Can resource capacity planning be avoided through auto-scaling?
+ANS: Resource capacity planning has been done to estimate resource requirements so that provider
+can arrange resources accordingly. Through auto-scaling, a sudden traffic spike can be supported
+effectively. But in long run, without proper capacity planning in place, either resource shortage or
+resource surplus problem appears. Auto-scaling is a special characteristic of cloud computing systems
+but it is never a replacement for capacity planning. Moreover, for an effective implementation of
+auto-scaling, capacity planning should be done at each and every level of cloud service layers.
+
+
+==================================
+CHAPTER : 10
+==================================
+
+49. Is the traditional N+1 rule of capacity planning applicable in cloud computing?
+ANS: Cloud Computing has auto-scaling capability, through which it can grow or shrink itself according to
+the high and low demand of application. Hence it is not mandatory for the cloud service consumers
+to follow N+1 rule of capacity. They can start working exactly with as much resource they require and
+the cloud takes care of varying future needs. This may reduce the billing amount in the pay-per-use
+philosophy
+
+50. Can a cloud service consumer avoid capacity planning through auto-scaling?
+ANS: The IaaS consumers (who are also PaaS provider) theoretically can avoid the capacity planning task with
+all virtual infrastructures, since cloud takes care of that. But sole dependency on auto-scaling may create
+trouble in two ways. First, with no limit governing the maximum capacity; the resource consumption
+may cross the allotted budget. Second, the cloud may not always be able to support sudden, unexpected
+resource demand hikes, if not clued-up in advance, as resources are literally not infinite.
+
+51. What role does the service level agreement play in capacity planning?
+ANS: Any cloud service consumers who wants to avail the variable capacity maintenance facility has to
+mention their resource requirement patterns in the SLA, like in which particular periods in a year
+the application demand increases etc. Otherwise the service provider will remain unaware about
+their resource requirements and may not be able to satisfy all resource demands.
+
+52. How do the IaaS provider manage capacity planning?
+ANS: It is important to note that, unlike PaaS or SaaS providers, IaaS providers do not have the option
+of building their services over some other underlying cloud services. Hence they cannot avail any
+facilities or features of cloud services, like unlimited resource availability; rather they are responsible
+for building those features. In reality, cloud infrastructure service builders maintain resource
+capacity  following traditional approach of capacity planning. They gather requirements of all
+the consumers and then arrange for the capacity accordingly.
+
+53. Is it always clever to add capacity to support additional application demand? 
+ANS: No. Additional resources should only be released to add capacity to support spikes in application
+demand, if that expense adds value to business. It is important to know how more capacity can help
+the business before adding any more resources to the system just because it has hit the stress point.
+
+54. How load balancing technique helps to build fault tolerant system?
+ANS: Load balancing mechanism not only balances distribution of load among available resources,
+it also shifts load from one resource node to another if it be required. When some node becomes
+overloaded, the load balancer avoids forwarding any further load to that node. This improves system
+performance. But if a node fails for some reason, load balancer not only stops forwarding new tasks to
+that node it also withdraws all of the tasks from the failed node and re-assigns them to other working
+nodes. This makes a system more tolerant to faults.
+
+55. How cloud scaling is linked with load balancing?
+ANS: Scalability is an important characteristic of cloud computing. Scaling describes a system’s ability to
+grow and shrink whenever required. Now, growing of a system means addition of new resources
+into the system. But only addition of components cannot contribute much if they are not utilized.
+Whenever the addition happens, the load balancer starts redirecting system loads towards those
+new resources and thus the new resources become active parts of the system. The opposite thing
+happens during the shrinking of the system. Thus, the scaling of distributed computing system is
+strongly dependent on the efficiency of load balancing
+
+56. For a relatively smaller and simpler system, the static load balancing approach can be
+more effective than dynamic approach. Justify the statement.
+ANS: Dynamic load balancing technique uses a knowledge base while scheduling tasks among resources.
+The knowledge base is developed by collecting information about existing status of the resources.
+This is done by establishing feedback paths between resources and load balancer. Thus, the
+development of the knowledge base causes extra traffic and needs real-time communication via
+network. Static approach of load balancing does not use any such knowledge base and distributes
+service requests only by analyzing the characteristics of the incoming requests. This keeps the load
+balancing system simpler. This is why, for smaller and non-critical systems, the static load balancing
+may yield better result.
+
+57. How persistence is implemented in load balancing?
+ANS: Persistence ensures the assignment of all of the service requests from a client to the same server under
+a session, after a task from the client is assigned to some server. Persistence can be implemented based
+on several factors associated with a load balancing solution, but most commonly it is implemented
+using session cookie or source IP addresses so that the requests can be directed to the same server
+throughout the life of a session.

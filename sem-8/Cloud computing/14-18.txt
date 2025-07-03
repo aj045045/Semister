@@ -1,0 +1,238 @@
+==================================
+CHAPTER : 14
+==================================
+
+58. How is accessing the Azure SQL Database-as-a-Service different from deploying SQL
+Server Application on Microsoft Azure cloud and using it?
+ANS: Azure SQL is a database-as-a-Service (DBaaS) facility offered by Microsoft. It is the implementation of
+Microsoft SQL Server over Azure cloud. This is a fully-managed service which users can access like any 
+other cloud services and the back-end administration tasks like installation, configuration, back-up
+etc. become the responsibilities of the provider.
+The other way of using database facility in cloud is by installing any supported database application
+over a cloud virtual machine. It is like installing some application in a computer and using it. Thus, the
+users can install Microsoft SQL Server over Azure Virtual Machine. The difference between two of
+these can be viewed through cloud service models. Deployment of SQL Server is consumption of IaaS
+facility where a consumer uses virtual machine infrastructure. But accessing Azure SQL Database is
+consumption of a PaaS facility.
+
+59. How is it possible to use databases like Oracle or SQL Server in Amazon RDS?
+ANS: Amazon RDS is a relational Database-as-a-Service facility being available with AWS. It is not a new
+database application. Rather, it supports functionalities of other traditional databases like Oracle
+Server, Microsoft SQL Server, MySQL database and PostgreSQL database. Recently it has also added
+another database engine designed by Amazon called as Amazon Aurora. The consumers can use any
+of these database functionalities through Amazon Relational Database Service.
+
+60. How NoSQL databases survive after sacrificing consistency attribute of CAP theorem?
+ANS: NoSQL databases like Cassandra, DynamoDB and CouchDB do not consider consistency as an
+essential attribute. Their internal architecture concentrates on ‘AP’ attributes of CAP theorem. But
+that does not mean that these NoSQL databases have totally sacrificed the consistency issue. The
+real fact is that they have changed the approach of handling the data consistency. Consistency of
+data in a database system can be maintained in two ways: either by the database system itself which
+will ensure consistency through its internal mechanism or the responsibility can be passed on to the
+developers of the databases who must ensure that no inconsistency can occur. Above mentioned
+NoSQL databases follow this second approach. This releases a lots of burden from the part of database
+system and performance increases in terms of availability and partition tolerance.
+
+61. What is the need for NoSQL database in cloud computing system?
+ANS: Large volume of structured as well as unstructured data are produced in cloud computing environment
+every day at present. While structured data can be processed efficiently using relational databases,
+unstructured data-sets do not fit into relational data model. Moreover, the distributed processing of
+data in multiple nodes is difficult in relational data model which results as the system does not scale
+well. NoSQL data model has fulfilled all of these requirements and being considered as cloud native.
+
+
+==================================
+CHAPTER : 15
+==================================
+
+62. How should a content provider select a CDN operator to deliver its content among
+consumers efficiently?
+ANS: CDN service providers operate by establishing point of presence (POP) at different geographic
+locations from where they deliver content to users of surrounding regions so that delivery of content
+can be fastest. Hence one important parameter for high-performance content delivery is how close
+the user is to some POPs of the concerned CDN operator.
+A content provider will have to survey well before selecting operator for content delivery network
+services. The basic goal of the content provider is to deliver its content to its customers without any
+delay. Hence, a content provider should look for a CDN operator which has strong presence (having
+POPs) around the regions where the content provider has strong customer base
+
+63. How is the content delivery network service associated with cloud computing?
+ANS: In cloud computing, the users avail computing resources and perform all of the computation tasks
+generally via Internet. Data-intensive computation tasks require high-speed availability of data so
+that users can experience on-premises like performances. Thus, every cloud service provider needs
+to use content delivery network service in the background to deliver speedy and high-performing
+content to consumers.
+
+64. Like Amazon and Microsoft, is there any CDN service that Google offers to consumers?
+ANS: No. Google has its own CDN infrastructure that they use to deliver their services worldwide. But, unlike
+Amazon or Microsoft, Google does not offer CDN service to consumers commercially. The content
+delivery service of Amazon and Microsoft are known as CloudFront and Azure CDN respectively.
+Amazon and Microsoft use their own CDN services to deliver content to consumers but these services
+are also offered independently. Hence any content provider can avail CloudFront or Azure CDN like
+any other third-party CDN services (like Akamai and CDNetworks) to get relief from the tensions of
+content delivery.
+Google has a robust content delivery infrastructure built upon Google’s backbone network that
+reaches more than 100 countries and has points of presence (POPs) across the globe. But they does
+not offer this CDN service for others. Google Global Cache (GGC) represents the final tier of Google’s
+content delivery platform and is closest to users.  It enables the organizations to deliver Google and
+YouTube content efficiently. But this service is available by invitation only.
+
+65. Does CDN help in every kind of cloud services?
+ANS: No. CDN is a must for cloud services whose consumers are not concentrated around some particular
+geographic location. Generally, the public cloud services who have consumers across the globe use
+the CDN. Other cloud services, especially on-premises private cloud services most often need not to
+take help of CDN as they deliver service to a limited number of consumers.
+
+
+==================================
+CHAPTER : 16
+==================================
+
+66. Where is data stored in the cloud?
+ANS: In public cloud computing, all of the data are stored at the service provider’s end, at the data centers.
+Major public cloud service providers generally maintain multiple data centers spread over several
+geographical locations. Hence consumers’ data goes in to the storage of some of those data centers.
+Consumers generally have no knowledge about specific location of their data storage.
+For private cloud deployed under an organization’s network security boundary, the scenario is a
+little different. In such cases, stored data remains under the control of the consumer enterprise. 
+
+67. Does cloud security vary with service providers?
+ANS: Every service provider has their own policy, business goal and technical expertise. Security of cloud
+service depends on those factors. Hence, security may vary with service provider in cloud. Consumers
+must keep the reputation of the service provider in mind and examine the security measures
+employed by them before adopting a cloud service.
+
+68. Is it safe to store personal data in the cloud? 
+ANS: It is quite similar to ask like ‘Is it safe to keep valuables in locker of bank?’ People deposit currency and
+valuables in bank while they trust the banks. This trust/reputation building is the responsibility of the
+bank and business of the bank also depends on this trust building.
+It is same in cloud computing too. Service provider’s business depends on this trust relationship.
+Security of sensitive data is the prime concern in cloud computing. But with reputed vendors,
+consumers’ data are almost safe. And moreover, the vendors works continuously to provide further
+protection to the stored data at their data centers. 
+
+69. How does the data security issue in cloud compare with that in traditional computing
+system?
+ANS: For enterprise level applications, organizations always choose to outsource the job to some outside
+service-company. Those IT service companies have either managed the stored data themselves or
+have used storage of some other service providers. Hence the security of enterprise data used to
+depend on the policy of those IT service companies in traditional computing environment. The risk
+(regarding data security) associated with cloud computing is no more than those systems. People
+who managed computing and storage on their own in traditional computing, have the options of
+private cloud. But again, with reputed cloud service providers, the backup and recovery mechanism
+promise to be more robust and may return significantly in case of a disaster.
+ 
+70. Justify the statement: ‘Security of IaaS level resources is the exclusive responsibility of
+consumer.’
+ANS: At IaaS level, the providers deliver virtual computing resources to consumers. Consumers become
+the owner of those virtual resources, like virtual servers. Service providers blindly trust those owners
+regarding any activity and the safety becomes responsibility of the IaaS consumers
+
+
+==================================
+CHAPTER : 17
+==================================
+
+71. Is it possible to ensure the privacy of information when the information security is
+maintained properly?
+ANS: No. Privacy does not get ensured if information security is maintained properly. Information security
+and privacy are different things altogether. For instance, a consumer who stores data at the facility
+of some cloud service provider will expect that all of the data will remain secure and no one will be
+able to access any data without his/her authorization. A reputed cloud service provider leaves no
+stone unturned to keep the data absolutely secured for their own business interest. But, if somehow
+any personal detail (PII) of the customer gets reveled to the outer world from the service provider’s 
+end beyond interest and without having the permission of the customer, then that will be called as
+privacy breach. The data may still remain secure but this already has caused the privacy breach.
+
+72. What is personally-identifiable information in real life?
+ANS: Information which can be used to identify a person or organization or which can be used to distinguish
+one person or organization from others, is known as personally-identifiable information (PII). This
+does not mean information like name, address or unique identification number which can be used
+for direct identification only. It may also include a combination of multiple information which can
+indirectly identify an individual or business. 
+
+73. Why is compliance issue such a big worry in cloud computing?
+ANS: Cloud computing is supported by huge infrastructural setup at the back situated at data centers
+located at different places around the world. The consumers storing data in the cloud most often do
+not know in which data centers their data are actually being stored. The data stored at a data center
+remains under the jurisdiction of the country or region where the data center is located. Hence, data
+of a client of some country is likely to remain under the jurisdiction of some other legal or regulatory
+bodies when data are stored in several data centers of different countries. This causes worry about
+the legal compliance issue in cloud computing as the client remains unsure about whether their
+business policies are sufficient to fulfill the legal or regulatory requirements of all of those different
+jurisdictions.
+
+74. What can a cloud service consumer do to ensure compliance?
+ANS: A cloud service consumer can seek an information technology audit of the system it is using, by some
+external professional audit firms. This may help it get a fair idea about compliance issues. To ensure
+conducting such auditing on their own, consumers can add the Right to Audit (RTA) clause in the
+SLA which is often used for outsourced IT services. Apart from this, consumers may look for reputed
+service provider who have data centers in their (consumer’s) jurisdiction of business (and offers choice
+to consumers to select the data centers) before moving into a cloud service. But this solution is not
+much effective for big businesses who have multi-national presence. 
+
+
+==================================
+CHAPTER : 18
+==================================
+
+75. Why is the cloud computing community so concerned about portability issue?
+ANS: As cloud computing services are gaining popularity, an obvious concern for technologists as well
+as the consumers is the vendor lock-in problem. Services of one cloud vendor cannot run on other
+cloud environments. The problem arises when someone develops a critical application that locks
+him to a particular vendor. Cloud computing can have significant economic benefits but if cloud
+service consumers need to depend on the mercy of a vendor’s facilities and pricing strategy, that may
+become a concern. 
+
+76. Are the portability and interoperability problems new in cloud? 
+ANS: Portability and interoperability problems are nothing new to cloud computing. They were very
+much in traditional computing environment. For example, an application developed for Windows
+environment may not run in Mac or Unix environment. Java platform provides a solution towards
+portability through java virtual machine (JVM) in traditional computing by generating machine
+(hardware) independent application codes. Otherwise, the portability and interoperability issues
+were received less attention in traditional computing.
+
+77. How is cloud computing going to benefit from the open format of virtualization?
+ANS: In cloud computing, consumers ultimately use virtualized computing resources. Hypervisor is an
+integral part of virtualization. Different cloud vendors use different hypervisors. For example, Amazon
+uses Zen hypervisor whereas Google uses KVM. Appliance of one cloud vendor will only run on other
+vendor’s cloud service when there is some open format of virtualization which all of the vendors
+adhere to. Open virtualization format is outcome of one such effort.
+
+78. Why will anyone move to cloud if such portability and interoperability issues exist?
+ANS: As we know that the traditional computing did not provide any solution to these issues. Apart from
+offering various new age benefits, cloud computing has created scope for greater flexibility and
+business collaboration. Thus the necessity of application portability and interoperability are being
+felt. Technologists and cloud vendors are not only trying to resolve the portability issue in cloud
+computing staying limited to the application area, they are also trying to build portable platform
+environment. This will make the technology more attractive and flexible for consumers.
+
+79. Does the installation of an application on a virtual machine create a virtual appliance?
+ANS: No. Installation of software application on virtual machine does not create a virtual appliance. Virtual
+appliance itself is a complete solution which combines just enough operating system (JeOS), other
+dependencies and the application together. Such appliances are self-sufficient and can be installed
+on virtualized environment independently.
+
+80. Can a virtual appliance include two or more applications?
+ANS: Ideally each virtual appliance is made for a single application. This is because virtual appliances
+are nothing but self-sufficient pre-configured solution for installing and running applications in
+virtualized environments by users. So, in order to use some application generally a user will search for
+the corresponding virtual appliance. But, there is no restriction in combining two or more applications
+in one virtual appliance.
+
+81. Can a machine image be called a virtual appliance?
+ANS: The term ‘appliance’ in ‘virtual appliance’ generally represents some applications. In the making
+of virtual appliance, it packs the application into a self-contained package containing the minimal
+OS and other dependencies to run the application on virtualized environment independently.
+Machine imaging captures a particular state of a virtual machine. It contains the full operating system
+(unlike  JeOS in virtual appliance) and may or may not include any applications. While in virtual
+appliance the one and only focus is the application (and how to make it functional), machine image
+rather focuses on to hold the full state of a virtual machine.
+
+82. Why is OVF important for independent software vendors? 
+ANS: OVF is a common packaging format to distribute virtual appliances. Independent software vendors
+(ISVs) who develop virtual appliances do not want to make their product as vendor-locked. They
+market their solutions with the hope to make their appliances popular among consumers of various
+(vendors’) cloud services. OVF provides them the scope to distribute their applications in such a
+way that it can be installed on many virtualized environments or on cloud infrastructure of different
+vendors.
