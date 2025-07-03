@@ -1,0 +1,86 @@
+Amazon EC2 (Elastic Compute Cloud)
+Amazon EC2 provides resizable compute capacity in the cloud, allowing users to run virtual servers with customizable configurations. 
+It supports multiple operating systems and integrates with various AWS services. EC2 instances can be used for web hosting,
+big data analytics, machine learning, and enterprise applications. Users can choose from different instance types optimized for compute,
+memory, or storage needs, and they can scale resources up or down based on demand.
+
+Amazon EFS (Elastic File System)
+Amazon EFS is a scalable, fully managed file storage system that allows multiple EC2 instances to access shared files simultaneously. 
+It provides elastic storage that grows and shrinks automatically as files are added or removed. 
+EFS is designed for applications requiring high availability, durability, and shared access, such as big data analytics, content management,
+and machine learning workflows. It supports NFS (Network File System) and integrates with AWS services for easy deployment.
+
+Amazon EBS (Elastic Block Store)
+Amazon EBS provides persistent block storage for EC2 instances. Unlike EFS, which is a shared file system, EBS volumes are attached 
+to a single EC2 instance at a time. EBS is ideal for applications that require low-latency access to data, such as databases and enterprise applications. 
+It offers features like snapshot backups, encryption, and different performance tiers (e.g., SSD for high-speed access, HDD for cost-effective storage).
+
+Amazon S3 (Simple Storage Service)
+Amazon S3 is an object storage service designed for scalability, durability, and security. It allows users to store and retrieve any amount of data,
+such as images, videos, logs, and backups. S3 supports lifecycle policies, versioning, encryption, and access controls to protect data. 
+It is widely used for data lakes, website hosting, disaster recovery, and machine learning model storage. S3 offers multiple storage classes, 
+including Standard, Intelligent-Tiering, and Glacier for long-term archival storage.
+
+Amazon Route 53
+Amazon Route 53 is a scalable Domain Name System (DNS) web service that routes end-user requests to AWS services or external websites. 
+It provides domain registration, traffic routing, and health checks to ensure application availability. 
+Route 53 supports latency-based routing, geolocation routing, and failover routing to optimize performance and resilience. 
+It integrates with AWS services like EC2, S3, and CloudFront for seamless DNS management.
+
+Amazon RDS (Relational Database Service)
+Amazon RDS is a managed database service that supports multiple database engines, including MySQL, PostgreSQL, MariaDB, SQL Server, and Amazon Aurora. 
+It automates administrative tasks such as backups, patching, and scaling, reducing the operational burden on developers. 
+RDS provides high availability through Multi-AZ deployments and read replicas to improve performance. 
+It is ideal for applications that require a reliable and scalable relational database.
+
+AWS Lambda
+AWS Lambda is a serverless compute service that runs code in response to events without provisioning or managing servers. 
+It automatically scales based on the number of requests and charges users only for the compute time consumed. 
+Lambda functions can be triggered by various AWS services, such as S3, DynamoDB, and API Gateway. It is commonly used for event-driven applications, 
+real-time data processing, and microservices architectures.
+
+Amazon SageMaker
+Amazon SageMaker is a fully managed machine learning (ML) service that enables developers and data scientists to build, train, and deploy ML models quickly. 
+It provides pre-built algorithms, automated model tuning, and infrastructure management, reducing the complexity of ML workflows. 
+SageMaker integrates with other AWS services for data preprocessing, model training, and deployment. 
+It is widely used for predictive analytics, natural language processing, and computer vision tasks.
+
+Amazon ECS (Elastic Container Service)
+Amazon ECS is a container orchestration service that allows users to run, manage, and scale containerized applications using Docker. 
+It supports both AWS Fargate (serverless) and EC2-based deployment models. ECS integrates with AWS services like IAM, CloudWatch, and Load Balancers for security,
+monitoring, and scalability. It is commonly used for microservices architectures, batch processing, and DevOps automation.
+
+AWS Cloud9
+AWS Cloud9 is a cloud-based integrated development environment (IDE) that allows developers to write, run, and debug code in a web browser. 
+It supports multiple programming languages and provides built-in tools for collaboration, debugging, and version control. 
+Cloud9 integrates with AWS Lambda, EC2, and other services, making it ideal for serverless application development and cloud-based coding.
+
+AWS WAF (Web Application Firewall)
+AWS WAF is a security service that protects web applications from common threats such as SQL injection, cross-site scripting (XSS), 
+and bot attacks. It allows users to create custom rules to filter and block malicious traffic before it reaches their applications. 
+WAF integrates with AWS services like CloudFront, API Gateway, and ALB to provide real-time security and logging.
+
+AWS IAM (Identity and Access Management)
+AWS IAM enables secure access control for AWS resources by managing users, groups, roles, and permissions. It allows administrators to 
+enforce security policies, implement multi-factor authentication (MFA), and define fine-grained access control using policies. 
+IAM integrates with all AWS services to provide centralized security management.
+
+Amazon Kinesis
+Amazon Kinesis is a real-time data streaming service that allows users to collect, process, and analyze large volumes of data in real time. 
+It supports multiple components, including Kinesis Data Streams for continuous data ingestion, Kinesis Data Firehose for data delivery to 
+AWS services, and Kinesis Analytics for real-time analytics. It is used for log processing, fraud detection, and IoT data analytics.
+
+Amazon DynamoDB
+Amazon DynamoDB is a fully managed NoSQL database service designed for fast, scalable, and highly available applications. 
+It provides key-value and document-based storage, with support for automatic scaling and encryption. 
+DynamoDB is widely used for applications requiring low-latency access, such as gaming leaderboards, e-commerce platforms, and real-time analytics.
+
+Amazon SNS (Simple Notification Service)
+Amazon SNS is a messaging service that enables application-to-application (A2A) and application-to-person (A2P) communication. 
+It supports push notifications, SMS, email, and message queuing. SNS integrates with AWS Lambda, SQS, and other services for event-driven architectures. 
+It is commonly used for sending alerts, notifications, and real-time updates.
+
+Amazon Rekognition
+Amazon Rekognition is a machine learning-based image and video analysis service that provides facial recognition, object detection, and text extraction capabilities. 
+It enables applications to analyze visual content, detect inappropriate images, and recognize emotions. Rekognition is used for security applications, 
+media analysis, and automated tagging of visual content.
